@@ -29,3 +29,8 @@ Route::get("/logout", [LogoutController::class, 'logout'])
 Route::get("/dashboard", [DashboardController::class, 'index'])
     ->name('dashboard.index')
     ->middleware('auth'); 
+
+// Enregistre l'ajout d'un employé
+Route::post("/employes", [DashboardController::class, 'store'])
+    ->name('employes.store')
+    ->middleware('auth'); 

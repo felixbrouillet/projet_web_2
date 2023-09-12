@@ -22,8 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('forfait_id')->nullable();
             $table->integer('role_id');
-            $table->string('date_arrivee');
-            $table->string('date_depart');    
+            $table->string('date_arrivee')->nullable();
+            $table->string('date_depart')->nullable(); 
             $table->rememberToken();
             $table->timestamps();
         });
