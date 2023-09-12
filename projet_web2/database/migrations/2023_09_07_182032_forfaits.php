@@ -18,7 +18,6 @@ class Forfaits extends Migration
             $table->string('nom');
             $table->string('details');
             $table->integer('prix');
-            $table->string('infos_forfait');
             $table->timestamps();
         });
     }

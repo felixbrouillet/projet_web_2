@@ -16,28 +16,35 @@ class ForfaitSeeder extends Seeder
     {
         $forfaits = [
             [
-                'nom' => 'Forfait Standard',
-                'details' => 'Accès général au festival pendant les deux jours.',
-                'prix' => 99,
-                'infos_forfait' => 'Inclus : Accès à toutes les scènes, stands de nourriture et boissons.',
+                'nom' => 'Admission générale',
+                'details' => 'Accès général au festival pendant les trois jours.
+                              Accès à toutes les scènes et zones du festival.
+                              Possibilité de camper sur le site du festival (emplacement non réservé).
+                              Accès aux stands de restauration et de boissons.
+                              Accès aux zones de repos et aux espaces de détente.',
+                'prix' => 149,
             ],
             [
                 'nom' => 'Forfait VIP',
-                'details' => 'Expérience VIP exclusive pendant le festival.',
-                'prix' => 249,
-                'infos_forfait' => 'Inclus : Accès VIP, sièges réservés, service de restauration VIP.',
+                'details' => 'Accès VIP exclusif au festival pendant les trois jours.
+                              Accès à toutes les scènes et zones du festival, y compris une zone VIP réservée.
+                              Accès à une zone VIP avec bar premium et service de restauration exclusif.              
+                              Accès aux toilettes VIP.                
+                              Kit de festival VIP comprenant des goodies et des avantages exclusifs.               
+                              Possibilité de camper sur le site du festival (emplacement VIP réservé).',
+                'prix' => 349,
             ],
             [
-                'nom' => 'Forfait Camping',
-                'details' => 'Camping sur le site du festival pendant tout le week-end.',
-                'prix' => 49,
-                'infos_forfait' => 'Inclus : Emplacement de camping, accès aux douches et aux toilettes.',
-            ],
-            [
-                'nom' => 'Forfait Étudiant',
-                'details' => 'Forfait spécial pour les étudiants avec réduction.',
-                'prix' => 79,
-                'infos_forfait' => 'Inclus : Accès au festival avec carte étudiante valide.',
+                'nom' => 'Forfait Premium',
+                'details' => "Accès premium au festival pendant les trois jours.
+                              Accès à toutes les scènes et zones du festival, y compris une zone premium réservée.                
+                              Accès à une zone premium avec bar illimité et service de restauration de qualité supérieure.                
+                              Accès aux toilettes premium.                
+                              Panier cadeau comprenant des goodies, un t-shirt exclusif et d'autres surprises.                
+                              Accès prioritaire à toutes les activités du festival.                
+                              Possibilité de camper sur le site du festival (emplacement premium réservé).             
+                              Rencontre exclusive avec un DJ ou un artiste (réservation requise).",
+                'prix' => 599,
             ],
         ];
 
