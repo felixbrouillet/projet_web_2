@@ -49,17 +49,18 @@ class ForfaitController extends Controller
         // Met à jour le champ 'forfait_id' de l'utilisateur connecté si l'utilisateur à cliqué sur le bouton oui et redirige à l'accueil avec un message de succes
         if ($action === 'confirmer') {
             $user->forfait_id = $forfait_id;
+        
+            // Mettez à jour le timestamp
+            $user->date_achat_forfait = now();
+        
             $user->save();
             return redirect()->route('index')->with('success', 'Forfait de l\'utilisateur mis à jour avec succès.');
-
-        // Si l'utilisateur clique sur non, il est redirigé vers la page des forfaits avec un message 
         } elseif ($action === 'annuler') {
             return redirect()->route('forfaits.show')->with('info', 'Réservation annulée.');
         } else {
             return redirect()->route('forfaits.show')->with('error', 'Action non reconnue.');
         }
     }
-
     public function delete() {
         // Récupère l'utilisateur connecté
         $user = Auth::user();
