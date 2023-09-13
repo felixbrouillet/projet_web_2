@@ -40,3 +40,11 @@ Route::post("/employes", [DashboardController::class, 'store'])
 Route::get("/forfaits", [ForfaitController::class, 'show'])
     ->name('forfaits.show')
     ->middleware('auth');
+
+Route::get("/forfaits/{id}", [ForfaitController::class, 'reservation'])
+    ->name('forfaits.reservation')
+    ->middleware('auth');
+
+Route::post("/forfaits/update/{id}", [ForfaitController::class, 'updateForfaits'])
+    ->name('forfaits.update')
+    ->middleware('auth');
