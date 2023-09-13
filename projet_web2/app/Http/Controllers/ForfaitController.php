@@ -59,4 +59,16 @@ class ForfaitController extends Controller
             return redirect()->route('forfaits.show')->with('error', 'Action non reconnue.');
         }
     }
+
+    public function delete() {
+        // Récupère l'utilisateur connecté
+        $user = Auth::user();
+    
+        // Mettre à jour forfait_id à null
+        $user->forfait_id = null;
+        $user->save();
+    
+        // Redirige l'utilisateur vers la page d'accueil avec un message
+        return redirect()->route('index')->with('success', 'Votre forfait a bien été annulé');
+    }
 }

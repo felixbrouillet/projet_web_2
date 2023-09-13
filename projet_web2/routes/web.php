@@ -57,3 +57,7 @@ Route::get("/activites", [ActiviteController::class, 'show'])
 Route::get("/user", [UserController::class, 'showReservation'])
     ->name('user.reservation')
     ->middleware('auth');
+
+Route::get("/delete", [ForfaitController::class, 'delete'])
+    ->name('forfaits.delete')
+    ->middleware('auth');
