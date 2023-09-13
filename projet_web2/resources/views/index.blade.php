@@ -4,4 +4,5 @@
     <a href="{{ route('logout') }}">Déconnexion</a>
     <a href="{{ route('forfaits.show') }}">Voir les forfaits</a>
     <a href="{{ route('activites.show') }}">Voir nos activites</a>
+    <a href="{{ route('actualites.show') }}">Voir toutes les actualités</a>
 </x-layout>

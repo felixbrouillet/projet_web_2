@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForfaitController;
 use App\Http\Controllers\ActiviteController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ActualiteController;
 
 // Affichage de la page d'accueil
 Route::get("/", [IndexController::class, 'index'])
@@ -53,6 +54,9 @@ Route::post("/forfaits/update/{id}", [ForfaitController::class, 'updateForfaits'
 
 Route::get("/activites", [ActiviteController::class, 'show'])
     ->name('activites.show');
+
+Route::get("/actualites", [ActualiteController::class, 'show'])
+    ->name('actualites.show');
 
 Route::get("/user", [UserController::class, 'showReservation'])
     ->name('user.reservation')
