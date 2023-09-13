@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForfaitController;
+use App\Http\Controllers\ActiviteController;
 
 // Affichage de la page d'accueil
 Route::get("/", [IndexController::class, 'index'])
@@ -48,3 +49,6 @@ Route::get("/forfaits/{id}", [ForfaitController::class, 'reservation'])
 Route::post("/forfaits/update/{id}", [ForfaitController::class, 'updateForfaits'])
     ->name('forfaits.update')
     ->middleware('auth');
+
+Route::get("/activites", [ActiviteController::class, 'show'])
+    ->name('activites.show');
