@@ -5,6 +5,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ForfaitController;
 
 // Affichage de la page d'accueil
 Route::get("/", [IndexController::class, 'index'])
@@ -34,3 +35,8 @@ Route::get("/dashboard", [DashboardController::class, 'index'])
 Route::post("/employes", [DashboardController::class, 'store'])
     ->name('employes.store')
     ->middleware('auth'); 
+
+// Affichage du formulaire de connexion si non connnecté ou affichage de la page des forfaits
+Route::get("/forfaits", [ForfaitController::class, 'show'])
+    ->name('forfaits.show')
+    ->middleware('auth');
