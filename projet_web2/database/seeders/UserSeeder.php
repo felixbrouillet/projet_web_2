@@ -47,6 +47,15 @@ class UserSeeder extends Seeder
             'date_arrivee' => '2023-09-07',
             'date_depart' => '2023-09-14',
         ]);
+        User::create([
+            'prenom' => 'Clien',
+            'nom' => 'Nom',
+            'email' => 'test@test.com',
+            'password' => Hash::make('test'),
+            'role_id' => 3, 
+            'date_arrivee' => '2023-09-07',
+            'date_depart' => '2023-09-14',
+        ]);
         // Ajouter d'autres utilisateurs avec des données différentes ici...
     }
 }

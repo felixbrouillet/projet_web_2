@@ -50,7 +50,7 @@ class ForfaitController extends Controller
         if ($action === 'confirmer') {
             $user->forfait_id = $forfait_id;
             $user->save();
-            return redirect()->route('forfaits.show')->with('success', 'Forfait de l\'utilisateur mis à jour avec succès.');
+            return redirect()->route('index')->with('success', 'Forfait de l\'utilisateur mis à jour avec succès.');
 
         // Si l'utilisateur clique sur non, il est redirigé vers la page des forfaits avec un message 
         } elseif ($action === 'annuler') {
