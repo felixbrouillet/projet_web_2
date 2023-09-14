@@ -66,6 +66,7 @@ class ForfaitController extends Controller
         $user = Auth::user();
     
         // Mettre à jour forfait_id à null
+        $user->date_achat_forfait = null;
         $user->forfait_id = null;
         $user->save();
     

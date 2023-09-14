@@ -12,7 +12,10 @@ class DashboardController extends Controller
      * @return View
      */
     public function index() {
-        return view('dashboard.index');
+        // Récupère la liste des administrateurs depuis la base de données et la renvoyer au dashboard
+        $admins = User::where('role_id', 1)->get(); 
+    
+        return view('dashboard.index', ['admins' => $admins]);
     }
 
     public function store(Request $request)
@@ -41,4 +44,5 @@ class DashboardController extends Controller
         // Redirection vers le dashboard avec le message de succès 
         return redirect()->route('dashboard.index')->with('success', 'Employé ajouté avec succès');
     }
+
 }

@@ -1,6 +1,5 @@
-<x-layout titre="Accueil">
-    <h2>Ajouter un employé</h2>
-    <form action="{{ route('employes.store') }}" method="POST">
+<h2>Ajouter un administrateur</h2>
+    <form action="{{ route('admin.store') }}" method="POST">
         @csrf
     
         <!-- Champ Prénom -->
@@ -28,9 +27,8 @@
         </div>
     
         <!-- Champ role_id (fixé à 2) -->
-        <input type="hidden" name="role_id" value="2">
+        <input type="hidden" name="role_id" value="1">
     
         <!-- Bouton de soumission -->
-        <button type="submit" class="btn btn-primary">Ajouter Employé</button>
+        <button type="submit" class="btn btn-primary">Ajouter un administrateur</button>
     </form>
-</x-layout>

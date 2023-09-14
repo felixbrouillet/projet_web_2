@@ -29,14 +29,14 @@ Route::get("/logout", [LogoutController::class, 'logout'])
     ->name('logout')
     ->middleware('auth'); 
 
-// Affichage du dashboard pour les employés et admin
+// Affichage du dashboard pour les admins 
 Route::get("/dashboard", [DashboardController::class, 'index'])
     ->name('dashboard.index')
-    ->middleware('auth'); 
+    ->middleware('auth', 'isClient'); 
 
-// Enregistre l'ajout d'un employé
-Route::post("/employes", [DashboardController::class, 'store'])
-    ->name('employes.store')
+// Enregistre l'ajout d'un admin
+Route::post("/admin", [DashboardController::class, 'store'])
+    ->name('admin.store')
     ->middleware('auth'); 
 
 // Affichage du formulaire de connexion si non connnecté ou affichage de la page des forfaits
