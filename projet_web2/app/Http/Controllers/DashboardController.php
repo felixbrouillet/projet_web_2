@@ -7,42 +7,20 @@ use App\Models\User;
 class DashboardController extends Controller
 {
     /**
-     * Affiche le dashboard pour les employés et les admins
+     * Affiche le dashboard pour les admins
      *
      * @return View
      */
-    public function index() {
-        // Récupère la liste des administrateurs depuis la base de données et la renvoyer au dashboard
+    public function index()
+    {
+        // Récupère la liste des administrateurs depuis la base de données
         $admins = User::where('role_id', 1)->get(); 
-    
-        return view('dashboard.index', ['admins' => $admins]);
+        
+        // Récupère l'utilisateur connecté
+        $user = auth()->user();
+
+        return view('dashboard.index', ['admins' => $admins, 'user' => $user]);
     }
 
-    public function store(Request $request)
-    {
-        // Valider les données du formulaire
-        $validatedData = $request->validate([
-            'prenom' => 'required|string|max:255',
-            'nom' => 'required|string|max:255',
-            'email' => 'required|email',
-            'password' => 'required|string',
-            'role_id' => 'required|numeric',
-        ]);
-    
-        // Créer un nouvel employé
-        $employe = new User([
-            'prenom' => $validatedData['prenom'],
-            'nom' => $validatedData['nom'],
-            'email' => $validatedData['email'],
-            'password' => bcrypt($validatedData['password']), // Assurez-vous de hacher le mot de passe
-            'role_id' => $validatedData['role_id'],
-        ]);
-    
-        // Enregistrer l'employé dans la base de données
-        $employe->save();
-    
-        // Redirection vers le dashboard avec le message de succès 
-        return redirect()->route('dashboard.index')->with('success', 'Employé ajouté avec succès');
-    }
 
 }

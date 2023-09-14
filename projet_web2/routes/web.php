@@ -9,6 +9,7 @@ use App\Http\Controllers\ForfaitController;
 use App\Http\Controllers\ActiviteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ActualiteController;
+use App\Http\Controllers\AdminController;
 
 // Affichage de la page d'accueil
 Route::get("/", [IndexController::class, 'index'])
@@ -35,8 +36,23 @@ Route::get("/dashboard", [DashboardController::class, 'index'])
     ->middleware('auth', 'isClient'); 
 
 // Enregistre l'ajout d'un admin
-Route::post("/admin", [DashboardController::class, 'store'])
+Route::post("/admin", [AdminController::class, 'store'])
     ->name('admin.store')
+    ->middleware('auth'); 
+    
+// Amène au formulaire de modification
+Route::get("/admin/{id}/edit", [AdminController::class, 'edit'])
+    ->name('admin.edit')
+    ->middleware('auth'); 
+
+// Met à jour l'admin
+Route::get("/admin/{id}", [AdminController::class, 'update'])
+    ->name('admin.update')
+    ->middleware('auth'); 
+    
+// Supprime l'admin voulu
+Route::get("/admin/{id}/delete", [AdminController::class, 'delete'])
+    ->name('admin.delete')
     ->middleware('auth'); 
 
 // Affichage du formulaire de connexion si non connnecté ou affichage de la page des forfaits
@@ -48,7 +64,7 @@ Route::get("/forfaits/{id}", [ForfaitController::class, 'reservation'])
     ->name('forfaits.reservation')
     ->middleware('auth');
 
-Route::post("/forfaits/update/{id}", [ForfaitController::class, 'updateForfaits'])
+Route::post("/forfaits/update/{id}", [ForfaitController::class, 'update'])
     ->name('forfaits.update')
     ->middleware('auth');
 

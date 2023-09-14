@@ -30,7 +30,7 @@ class ForfaitController extends Controller
         return view('forfaits.validation', ['forfait' => $forfait]);
     }
 
-    public function updateForfaits(Request $request, $id)
+    public function update(Request $request, $id)
     {
         // Récupérez l'ID du forfait à partir de la requête
         $forfait_id = $request->input('forfait_id');
@@ -61,6 +61,7 @@ class ForfaitController extends Controller
             return redirect()->route('forfaits.show')->with('error', 'Action non reconnue.');
         }
     }
+    
     public function delete() {
         // Récupère l'utilisateur connecté
         $user = Auth::user();
