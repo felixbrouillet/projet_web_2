@@ -46,7 +46,7 @@ Route::get("/admin/{id}/edit", [AdminController::class, 'edit'])
     ->middleware('auth'); 
 
 // Met à jour l'admin
-Route::get("/admin/{id}", [AdminController::class, 'update'])
+Route::post("/admin/{id}/update", [AdminController::class, 'update'])
     ->name('admin.update')
     ->middleware('auth'); 
     

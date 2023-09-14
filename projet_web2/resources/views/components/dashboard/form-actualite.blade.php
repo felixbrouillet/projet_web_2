@@ -28,9 +28,6 @@
         <input type="password" class="form-control" id="password" name="password" @if ($isEdit) value="{{ old('password', $user->password) }}" @endif required>
     </div>
 
-    <!-- Champ caché pour role_id -->
-    <input type="hidden" name="role_id" value="1">
-
     <!-- Bouton de soumission -->
     <button type="submit">{{ $isEdit ? 'Enregistrer les modifications' : 'Ajouter un administrateur' }}</button>
 </form>

@@ -41,7 +41,7 @@ class UserSeeder extends Seeder
             'nom' => 'Nom2',
             'email' => 'user2@example.com',
             'password' => Hash::make('password'),
-            'role_id' => 3, 
+            'role_id' => 2, 
             'date_achat_forfait' => '2023-09-07',
         ]);
         User::create([
@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
             'nom' => 'Nom',
             'email' => 'test@test.com',
             'password' => Hash::make('test'),
-            'role_id' => 3, 
+            'role_id' => 2, 
             'date_achat_forfait' => '2023-09-07',
         ]);
         // Ajouter d'autres utilisateurs avec des données différentes ici...

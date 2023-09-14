@@ -19,7 +19,7 @@ class AdminController extends Controller
         ]);
     
         // Créer un nouvel employé
-        $employe = new User([
+        $admin = new User([
             'prenom' => $validatedData['prenom'],
             'nom' => $validatedData['nom'],
             'email' => $validatedData['email'],
@@ -28,10 +28,10 @@ class AdminController extends Controller
         ]);
     
         // Enregistrer l'employé dans la base de données
-        $employe->save();
+        $admin->save();
     
         // Redirection vers le dashboard avec le message de succès 
-        return redirect()->route('dashboard.index')->with('success', 'Employé ajouté avec succès');
+        return redirect()->route('dashboard.index')->with('success', 'Admin ajouté avec succès');
     }
 
     public function edit($id)
@@ -45,15 +45,38 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-
+    
         if ($user) {
-            $user->update($request->all());
-            return redirect()->route('admin.users')->with('success', 'Utilisateur mis à jour avec succès');
+            // Valider les données du formulaire (vous pouvez les personnaliser)
+            $validatedData = $request->validate([
+                'prenom' => 'required|string|max:255',
+                'nom' => 'required|string|max:255',
+                'email' => 'required|email',
+                'password' => 'required|string', 
+                'role_id' => 'required|numeric',
+            ]);
+    
+            // Mettre à jour les autres champs de l'utilisateur
+            $user->prenom = $validatedData['prenom'];
+            $user->nom = $validatedData['nom'];
+            $user->email = $validatedData['email'];
+            $user->role_id = $validatedData['role_id'];
+    
+            // Vérifier si un nouveau mot de passe a été fourni
+            if ($request->filled('password')) {
+                // Hacher le nouveau mot de passe
+                $user->password = bcrypt($validatedData['password']);
+            }
+            
+            // Enregistrer les modifications
+            $user->save();
+    
+            return redirect()->route('dashboard.index')->with('success', 'Utilisateur mis à jour avec succès');
         }
-
-        return redirect()->route('admin.users')->with('error', 'Utilisateur non trouvé');
+    
+        return redirect()->route('dashboard.index')->with('error', 'Utilisateur non trouvé');
     }
-
+    
     public function delete($id)
     {
         $user = User::find($id);
