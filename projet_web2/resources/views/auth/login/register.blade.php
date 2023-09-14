@@ -14,5 +14,7 @@
         <button type="submit">
             Connexion !
         </button>
+
+        <a href="{{ route('user.create') }}">Pas de compte ?</a>
     </form>
 </x-layout>

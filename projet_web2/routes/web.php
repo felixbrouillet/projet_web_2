@@ -81,3 +81,11 @@ Route::get("/user", [UserController::class, 'showReservation'])
 Route::get("/delete", [ForfaitController::class, 'delete'])
     ->name('forfaits.delete')
     ->middleware('auth');
+
+Route::get("/create", [UserController::class, 'create'])
+    ->name('user.create')
+    ->middleware('guest');
+
+Route::post("/store", [UserController::class, 'store'])
+    ->name('user.store')
+    ->middleware('guest');
