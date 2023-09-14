@@ -87,6 +87,7 @@ video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -106,6 +107,9 @@ section {
 
 body {
     line-height: 1;
+
+    // enlève le scrollbar horizontal
+    // overflow-x: hidden; 
 }
 
 ol,
@@ -131,22 +135,72 @@ table {
     border-spacing: 0;
 }
 
-/* mon style plus bas -------------------------------------------------------------------------- */
+/* mon style ========================================================= -------------------------------------------------------------------------- */
 
 
 
-/* Styles généraux et composants ------------------------------------------------------------ */
+/* Styles généraux et composants ======================================================== ------------------------------------------------------------ */
 /* Backgroud gradient linéaire qui fait toute la page */
-html {
-    height: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background: linear-gradient(#8C58F5 0%, #F564A7 100%);
+
+body {
+    
+    background: -webkit-gradient(linear, left top, left bottom, from(#8C58F5), to(#F564A7)) fixed;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "ohm-bold", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    font-size: 3vw;
+    max-width: 35vw;
+
+    // à voir pour le placer relativement à son parent.
+    position: absolute;
+    top: 5vh;
+    left: 62vw;
+    text-align: end;
+}
+
+h2 {
+    font-family: "halogen", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+
+// Bouton -----------------------------------------------------------------------
+
+a.bouton {
+    color: white;
+    font-size: 3vw;
+    font-family: "forma-djr-banner", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    width: 35vw;
+    height: 12vh;
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+    background: rgba(0, 0, 0, 0.438);
+    text-decoration: none;
+    text-align: center;
+    line-height: 12vh;
+
+}
+
+p {
+    font-family: "forma-djr-banner", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 main {
+    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -158,6 +212,8 @@ div.conteneur_ligne_separation {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
 }
 
 div.ligne_separation {
@@ -165,6 +221,7 @@ div.ligne_separation {
     height: 3px;
     background-color: white;
 }
+
 
 
 /*  header -----------------------------------------------------------------------------------------*/
@@ -175,16 +232,19 @@ header {
     flex-direction: row;
     justify-content: space-between;
     height: 15vh;
-    width: 100%;
     background: linear-gradient(#D651F5, #F564A7);
 
+    .logo {
+        width: 13vw;
+        height: 13vh;
+    }
 
     .conteneur_compte_menu {
         display: flex;
         flex-direction: row;
         justify-content: center;
 
-        .contenu_compte_menu{
+        .contenu_compte_menu {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -195,19 +255,19 @@ header {
         }
     }
 
-    .image_menu_hamburger{
+    .image_menu_hamburger {
         object-fit: cover;
         // height: 5vw;
         width: 5vw;
     }
 
-    .image_compte{
+    .image_compte {
         object-fit: cover;
         width: 5vw;
     }
-
-
 }
+
+// Section vidéo d'accueil -------------------------------------------------------------------------------
 
 div.conteneur_video_presentation {
     display: flex;
@@ -216,15 +276,233 @@ div.conteneur_video_presentation {
 }
 
 div.video_presentation {
-    width: 100%;
-    height: 75vh;
+    width: 100vw;
+    height: 90vh;
     background-color: black;
+}
+
+
+a.bouton_video_accueil {
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    color: white;
+    font-size: 3vw;
+    font-family: "forma-djr-banner", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    width: 35vw;
+    height: 12vh;
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+    background: rgba(0, 0, 0, 0.438);
+    text-decoration: none;
+    text-align: center;
+    line-height: 12vh;
 }
 
 /* Section programmation ------------------------------------------------------------- */
 
-div.programmation {
-    width: 70%;
-    height: 75vh;
+div.conteneur_programmation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.contenu_programmation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.fiche_programmation {
+    height: 110vh;
+    width: 70vw;
+    background: linear-gradient(#58CFA8 0%, #7855ED 50%, #F363A8 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .logo_fiche{
+        width: 20vw;
+        height: 20vh;
+    }
+
+    .contenu_fiche_programmation{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        // padding-bottom: 20px;
+
+        p{
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 2vw;
+        }
+
+        p.fiche_programmation_date{
+            font-family: "ohm-bold", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 4vw;
+        }
+
+        p.fiche_programmation_emplacement{
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: black;
+        }
+
+        p.premiere_rangee {
+            font-size: 3vw;
+        }
+
+        p.deuxieme_rangee {
+            font-size: 2.5vw;
+        }
+    }
+}
+
+// Section carte intéractive et coordonnées -------------------------------------------------------------------------------------------------------------------
+
+div.section_carte_directions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 65vh;
+
+    div.conteneur_carte {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    div.conteneur_carte_directions{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    div.conteneur_directions {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    div.directions {
+        width: 30vw;
+        height: 40vh;
+        background: linear-gradient(#71D6B5 0%, #F6B99E 50%, #F564A7 100%);
+
+        .directions_sous_conteneur{
+            display: flex;
+            flex-direction: row;
+            padding-top: 4vh;
+
+            .directions_sous_conteneur_texte{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                p{
+                    font-size: 1.2vw;
+                    margin-left: 2vw;
+                    max-width: 15vw;
+                }
+            }
+        }
+        img {
+            // margin-top: 2vh;
+            margin-left: 2vw;
+            height: 100px;
+            width: 100px;
+        }
+    }
+
+    iframe.carte {
+        width: 30vw;
+        height: 40vh;
+    }
+}
+
+
+// Section actualitées ------------------------------------------------------------------------------------------------------
+
+div.conteneur_actualites {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    h3{
+        font-size: 2vw;
+        font-family: "franklin-gothic-atf", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    p {
+        font-size: 1.3vw;
+        font-family: "franklin-gothic-atf", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    img {
+        width: 20vw;
+        height: 30vh;
+    }
+
+    div.sous_conteneur_actualites{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 50vh;
+            width: 80vw;
+            background: linear-gradient(#71D6B5, #D4DAFF);
+
+        .contenu_actualites{
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+}
+
+a.bouton_actualites{
+    // position: absolute;
+    // top: 15%;
+    // left: 30%;
+    color: white;
+    font-size: 2vw;
+    font-family: "forma-djr-banner", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    width: 35vw;
+    height: 12vh;
+    border: solid;
+    border-width: 5px;
+    border-color: white;
+    background: rgba(0, 0, 0, 0.438);
+    text-decoration: none;
+    text-align: center;
+    line-height: 12vh;
+}
+
+// Footer -------------------------------------------------------------------------
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    height: 20vh;
 }
