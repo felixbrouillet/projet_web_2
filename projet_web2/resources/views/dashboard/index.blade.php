@@ -1,4 +1,5 @@
-<x-layout titre="Dashboard">
+<x-layout titre="Dashboard-Admin">
+    <x-dashboard.liens-dashboard />
     <h1>Tableau de bord</h1>
 
     <p>Connecté en tant que: {{ Auth::user()->prenom }} {{ Auth::user()->nom }}</p>

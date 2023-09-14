@@ -39,7 +39,7 @@ class AdminController extends Controller
         $user = User::find($id);
 
         $isEdit = true;
-        return view('dashboard.edit-admin', ['user' => $user]);
+        return view('dashboard.edit.edit-admin', ['user' => $user]);
     }
 
     public function update(Request $request, $id)

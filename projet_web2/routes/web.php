@@ -30,10 +30,25 @@ Route::get("/logout", [LogoutController::class, 'logout'])
     ->name('logout')
     ->middleware('auth'); 
 
-// Affichage du dashboard pour les admins 
+// Affichage de la page admin du dashboard 
 Route::get("/dashboard", [DashboardController::class, 'index'])
     ->name('dashboard.index')
     ->middleware('auth', 'isClient'); 
+
+// Affichage de la page actualités dans le dashboard 
+Route::get("/dashboard/actualites", [DashboardController::class, 'showActus'])
+    ->name('dashboard.actualites')
+    ->middleware('auth'); 
+
+// Affichage de la page activités dans le dashboard
+Route::get("/dashboard/activites", [DashboardController::class, 'showActivites'])
+    ->name('dashboard.activites')
+    ->middleware('auth'); 
+
+// Affichage de la page des clients dans le dashboard
+Route::get("/dashboard/clients", [DashboardController::class, 'showClients'])
+    ->name('dashboard.clients')
+    ->middleware('auth'); 
 
 // Enregistre l'ajout d'un admin
 Route::post("/admin", [AdminController::class, 'store'])
@@ -45,14 +60,28 @@ Route::get("/admin/{id}/edit", [AdminController::class, 'edit'])
     ->name('admin.edit')
     ->middleware('auth'); 
 
+Route::get("/admin/{id}/edit", [AdminController::class, 'edit'])
+    ->name('admin.edit')
+    ->middleware('auth'); 
+
 // Met à jour l'admin
-Route::post("/admin/{id}/update", [AdminController::class, 'update'])
-    ->name('admin.update')
+Route::post("/activites/{id}/update", [ActiviteController::class, 'update'])
+    ->name('activites.update')
+    ->middleware('auth'); 
+
+// Met à jour l'admin
+Route::post("/activites/{id}/update", [ActiviteController::class, 'update'])
+    ->name('activites.update')
     ->middleware('auth'); 
     
 // Supprime l'admin voulu
 Route::get("/admin/{id}/delete", [AdminController::class, 'delete'])
     ->name('admin.delete')
+    ->middleware('auth');
+
+// Supprime l'admin voulu
+Route::get("/activites/{id}/delete", [ActiviteController::class, 'delete'])
+    ->name('activites.delete')
     ->middleware('auth'); 
 
 // Affichage du formulaire de connexion si non connnecté ou affichage de la page des forfaits
