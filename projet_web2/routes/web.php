@@ -23,9 +23,9 @@ Route::post("/login", [LoginController::class, 'authentifier'])
 // Déconnexion de l'utilisateur (nécessite que l'utilisateur soit connecté)
 Route::get("/logout", [LogoutController::class, 'logout'])
     ->name('logout')
-    ->middleware('auth'); 
+    ->middleware('auth');
 
 // Affichage du dashboard pour les employés et admin
 Route::get("/dashboard", [DashboardController::class, 'index'])
     ->name('dashboard.index')
-    ->middleware('auth'); 
+    ->middleware('auth');

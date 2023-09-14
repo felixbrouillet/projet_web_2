@@ -1,3 +1,2 @@
-<x-layout titre="Accueil">
-    <a href="{{ route('login.show') }}">Connexion</a>
-</x-layout>
+<x-layout titre="Accueil"></x-layout>
+<x-nav></x-nav>

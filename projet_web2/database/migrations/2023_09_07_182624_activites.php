@@ -16,7 +16,7 @@ class Activites extends Migration
         Schema::create('activites', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('description');
+            $table->text('description');
             $table->string('image');
             $table->timestamps();
         });

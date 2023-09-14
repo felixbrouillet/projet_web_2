@@ -18,12 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('prenom');
             $table->string('nom');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('forfait_id')->nullable();
             $table->integer('role_id');
-            $table->string('date_arrivee');
-            $table->string('date_depart');    
+            $table->timestamp('date_achat_forfait')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

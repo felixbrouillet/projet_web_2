@@ -22,8 +22,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@example.com',
             'password' => Hash::make('password'),
             'role_id' => 1, 
-            'date_arrivee' => now(),
-            'date_depart' => now(),
+            'date_achat_forfait' => null,
         ]);
 
         // Créer des employés
@@ -33,8 +32,7 @@ class UserSeeder extends Seeder
             'email' => 'user1@example.com',
             'password' => Hash::make('password'),
             'role_id' => 2, 
-            'date_arrivee' => '2023-09-07',
-            'date_depart' => '2023-09-14',
+            'date_achat_forfait' => null,
         ]);
         
         // Créer des utilisateurs réguliers
@@ -44,8 +42,15 @@ class UserSeeder extends Seeder
             'email' => 'user2@example.com',
             'password' => Hash::make('password'),
             'role_id' => 3, 
-            'date_arrivee' => '2023-09-07',
-            'date_depart' => '2023-09-14',
+            'date_achat_forfait' => '2023-09-07',
+        ]);
+        User::create([
+            'prenom' => 'Clien',
+            'nom' => 'Nom',
+            'email' => 'test@test.com',
+            'password' => Hash::make('test'),
+            'role_id' => 3, 
+            'date_achat_forfait' => '2023-09-07',
         ]);
         // Ajouter d'autres utilisateurs avec des données différentes ici...
     }
