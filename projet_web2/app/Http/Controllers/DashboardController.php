@@ -43,7 +43,7 @@ class DashboardController extends Controller
      */
     public function showActivites()
     {
-        // Récupère la liste des activites depuis la base de données
+        // Récupère la liste des activités depuis la base de données
         $activites = Activite::all();
         
         return view('dashboard.activites', ['activites' => $activites]);
@@ -60,9 +60,11 @@ class DashboardController extends Controller
         $clients = DB::table('users')
             ->join('forfaits', 'users.forfait_id', '=', 'forfaits.id')
             ->select('users.*', 'forfaits.nom as forfait_nom')
+            ->where('users.role_id', 2)
             ->orderBy('users.date_achat_forfait', 'asc')
             ->get();
     
+            dd($clients);
         return view('dashboard.clients', ['clients' => $clients]);
     }
 

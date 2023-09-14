@@ -10,6 +10,7 @@ use App\Http\Controllers\ActiviteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClientController;
 
 // Affichage de la page d'accueil
 Route::get("/", [IndexController::class, 'index'])
@@ -54,14 +55,22 @@ Route::get("/dashboard/clients", [DashboardController::class, 'showClients'])
 Route::post("/admin", [AdminController::class, 'store'])
     ->name('admin.store')
     ->middleware('auth'); 
+
+Route::post("/activites", [ActiviteController::class, 'activites'])
+    ->name('activites.store')
+    ->middleware('auth'); 
     
 // Amène au formulaire de modification
 Route::get("/admin/{id}/edit", [AdminController::class, 'edit'])
     ->name('admin.edit')
     ->middleware('auth'); 
 
-Route::get("/admin/{id}/edit", [AdminController::class, 'edit'])
-    ->name('admin.edit')
+Route::get("/clients/{id}/edit", [ClientController::class, 'edit'])
+    ->name('clients.edit')
+    ->middleware('auth'); 
+
+Route::get("/activites/{id}/edit", [ActiviteController::class, 'edit'])
+    ->name('activites.edit')
     ->middleware('auth'); 
 
 // Met à jour l'admin
@@ -79,6 +88,10 @@ Route::get("/admin/{id}/delete", [AdminController::class, 'delete'])
     ->name('admin.delete')
     ->middleware('auth');
 
+    Route::get("/clients/{id}/delete", [ClientController::class, 'delete'])
+        ->name('clients.delete')
+        ->middleware('auth');
+    
 // Supprime l'admin voulu
 Route::get("/activites/{id}/delete", [ActiviteController::class, 'delete'])
     ->name('activites.delete')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Activite;
+use Illuminate\Support\Facades\Storage;
 
 class ActiviteController extends Controller
 {
@@ -18,72 +19,75 @@ class ActiviteController extends Controller
     {
         // Valider les données du formulaire
         $validatedData = $request->validate([
-            'prenom' => 'required|string|max:255',
             'nom' => 'required|string|max:255',
-            'email' => 'required|email',
-            'password' => 'required|string',
-            'role_id' => 'required|numeric',
+            'description' => 'required|string',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
         ]);
     
-        // Créer un nouvel employé
-        $admin = new User([
-            'prenom' => $validatedData['prenom'],
+        // Créer une nouvelle activité
+        $activite = new Activite([
             'nom' => $validatedData['nom'],
-            'email' => $validatedData['email'],
-            'password' => bcrypt($validatedData['password']), // Assurez-vous de hacher le mot de passe
-            'role_id' => $validatedData['role_id'],
+            'description' => $validatedData['description'],
         ]);
     
-        // Enregistrer l'employé dans la base de données
-        $admin->save();
+        // Gestion de l'image s'il y en a une
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('activite_images'); // Enregistrez l'image dans le dossier "activite_images"
+            $activite->image = $imagePath;
+        }
     
-        // Redirection vers le dashboard avec le message de succès 
-        return redirect()->route('dashboard.index')->with('success', 'Admin ajouté avec succès');
+        // Enregistrez l'activité dans la base de données
+        $activite->save();
+    
+        // Redirection vers la page des activités avec un message de succès
+        return redirect()->route('activites.index')->with('success', 'Activité ajoutée avec succès');
     }
 
     public function edit($id)
     {
-        $activite = Activite::find($id);
+        $activites = Activite::find($id);
 
         $isEdit = true;
-        return view('dashboard.edit.edit-activites', ['activite' => $activite]);
+        return view('dashboard.edit.edit-activites', ['activites' => $activites]);
     }
 
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
-    
-        if ($user) {
+        $activite = Activite::find($id);
+        
+        if ($activite) {
             // Valider les données du formulaire (vous pouvez les personnaliser)
             $validatedData = $request->validate([
-                'prenom' => 'required|string|max:255',
                 'nom' => 'required|string|max:255',
-                'email' => 'required|email',
-                'password' => 'required|string', 
-                'role_id' => 'required|numeric',
+                'description' => 'required|string',
+                'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
             ]);
-    
-            // Mettre à jour les autres champs de l'utilisateur
-            $user->prenom = $validatedData['prenom'];
-            $user->nom = $validatedData['nom'];
-            $user->email = $validatedData['email'];
-            $user->role_id = $validatedData['role_id'];
-    
-            // Vérifier si un nouveau mot de passe a été fourni
-            if ($request->filled('password')) {
-                // Hacher le nouveau mot de passe
-                $user->password = bcrypt($validatedData['password']);
+
+            // Mettre à jour les champs de l'activité
+            $activite->nom = $validatedData['nom'];
+            $activite->description = $validatedData['description'];
+
+            // Gestion de la nouvelle image si elle est présente
+            if ($request->hasFile('image')) {
+                // Supprime l'ancienne image si elle existe
+                if ($activite->image) {
+                    Storage::delete($activite->image);
+                }
+
+                // Enregistrez la nouvelle image
+                $imagePath = $request->file('image')->store('activite_images');
+                $activite->image = $imagePath;
             }
-            
+
             // Enregistrer les modifications
-            $user->save();
-    
-            return redirect()->route('dashboard.index')->with('success', 'Utilisateur mis à jour avec succès');
+            $activite->save();
+
+            return redirect()->route('dashboard.activites')->with('success', 'Activité mise à jour avec succès');
         }
-    
-        return redirect()->route('dashboard.index')->with('error', 'Utilisateur non trouvé');
-    }
-    
+
+        return redirect()->route('dashboard.activites')->with('error', 'Activité non trouvée');
+    }    
+
     public function delete($id)
     {
         $activite = Activite::find($id);
