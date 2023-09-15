@@ -121,8 +121,48 @@ nav .icones .image_compte:hover {
   background-color: rgba(255, 255, 255, 0.3882352941);
 }
 
-h1 {
+/* Styles pour le héros (hero) */
+header h1 {
   font-family: "halogen", sans-serif;
   font-weight: 900;
   font-style: normal;
+}
+
+.hero_activites {
+  background-image: url("/img/images/stage_nuit_3.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  height: 40vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_activites h1 {
+  font-size: 3rem;
+}
+
+/* Styles pour chaque activité */
+.activite {
+  display: flex;
+  margin: 20px;
+}
+
+.activite h2 {
+  font-size: 2rem;
+  flex: 1;
+}
+
+.activite-content {
+  display: flex;
+  align-items: center;
+}
+
+.activite-image {
+  width: 300px;
+  height: 200px;
+  border-radius: 50%;
+  margin-right: 20px;
 }/*# sourceMappingURL=style.css.map */
