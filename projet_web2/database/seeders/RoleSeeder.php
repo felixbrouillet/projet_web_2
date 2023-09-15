@@ -18,7 +18,6 @@ class RoleSeeder extends Seeder
         // Insérez les rôles par défaut dans la table "roles"
         DB::table('roles')->insert([
             ['nom' => 'admin'],
-            ['nom' => 'employé'],
             ['nom' => 'client'],
         ]);
     }

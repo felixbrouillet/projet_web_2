@@ -17,7 +17,11 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class, 'role_id', 'id')->withDefault();
     }
-        
+
+    public function isClient()
+    {
+        return $this->role->nom === 'admin';
+    } 
 
     /**
      * The attributes that are mass assignable.
@@ -25,9 +29,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'prenom',
+        'nom',
         'email',
         'password',
+        'forfait_id',
+        'role_id',
     ];
 
     /**

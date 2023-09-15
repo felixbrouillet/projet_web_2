@@ -36,19 +36,19 @@ class LoginController extends Controller
         // On "essaie" de connecter l'utilisateur
         if (Auth::attempt($valides)) {
             $request->session()->regenerate();
-    
+        
             // Obtenir le rôle de l'utilisateur connecté
             $role = Auth::user()->role->nom;
-    
+                
             if ($role === 'client') {
                 // Redirection pour les clients (page d'accueil)
                 return redirect()->intended(route('index'));
             } else {
-                // Redirection pour les administrateurs et les employés (tableau de bord commun)
+                // Redirection pour les administrateurs au dashboard
                 return redirect()->intended(route('dashboard.index'));
             }
         }
-    
+            
         // L'utilisateur n'a pu être connecté: on le ramène au formulaire avec une erreur
         return back()
                 ->withErrors([
