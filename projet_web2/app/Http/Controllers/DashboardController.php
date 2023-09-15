@@ -58,13 +58,13 @@ class DashboardController extends Controller
     {
         // Récupère la liste des clients avec leurs forfaits triés par date d'achat de forfait
         $clients = DB::table('users')
-            ->join('forfaits', 'users.forfait_id', '=', 'forfaits.id')
-            ->select('users.*', 'forfaits.nom as forfait_nom')
-            ->where('users.role_id', 2)
-            ->orderBy('users.date_achat_forfait', 'asc')
-            ->get();
-    
+        ->join('forfaits', 'users.forfait_id', '=', 'forfaits.id')
+        ->select('users.*', 'forfaits.nom as forfait_nom')
+        ->where('users.role_id', 2)
+        ->orderBy('users.date_achat_forfait', 'asc')
+        ->get();
             dd($clients);
+    
         return view('dashboard.clients', ['clients' => $clients]);
     }
 
