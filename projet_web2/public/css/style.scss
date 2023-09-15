@@ -1,6 +1,43 @@
 // ******************************************************************************************************************
 // DEBUT NAV
 // ******************************************************************************************************************
+nav {
+    font-family: "halogen", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    width: 100%;
+    background: linear-gradient(#D651F5, #F564A7);
+
+    .logo {
+        min-width: 13vw;
+        height: 13vh;
+        margin-right: 3vw;
+    }
+
+    .icones {
+        display: flex;
+        align-items: center;
+        margin-left: 3vw;
+
+        .menu_hamburger,
+        .image_compte {
+            object-fit: cover;
+            height: 7vh;
+            margin-right: 1vw;
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
 .menu-toggle .hamburger-icon:hover {
     cursor: pointer;
 }
@@ -14,7 +51,7 @@
     position: fixed;
     top: 0;
     left: -100%;
-    width: 12.5vw;
+    width: 15vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.664);
     transition: left 0.5s ease-in-out;
@@ -47,11 +84,10 @@
     color: #fff;
     font-size: 2rem;
     transition: color 0.3s, font-size 0.3s;
-}
 
-.menu-links a:hover {
-    color: #F564A7;
-    font-size: 2.5rem;
+    &:hover {
+        color: #F564A7;
+    }
 }
 
 /* Style de l'icône de fermeture */
@@ -64,45 +100,38 @@
     font-size: 3rem;
     z-index: 1;
     transition: color 0.3s;
+
+    &:hover {
+        color: #F564A7;
+    }
 }
 
-.menu-toggle .close-icon:hover {
-    color: #F564A7;
+/* Style du bouton de déconnexion */
+.logout {
+    text-decoration: none;
+    color: #0f0f0f;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    border: solid 3px #0f0f0f;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+
+    a {
+        text-decoration: none;
+    }
+
+    &:hover {
+        font-size: 1.5rem;
+        border: solid 4px #0f0f0f;
+        background-color: #ffffff63;
+    }
 }
 
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 15vh;
-    width: 100%;
-    background: linear-gradient(#D651F5, #F564A7);
-}
 
-.logo {
-    width: 13vw;
-    height: 13vh;
-    margin-right: 3vw;
-}
-
-.icones {
-    display: flex;
-    align-items: center;
-    margin-left: 3vw;
-}
-
-.menu_hamburger,
-.image_compte {
-    object-fit: cover;
-    height: 7vh;
-    margin-right: 1vw;
-}
 // ******************************************************************************************************************
 // FIN NAV
 // ******************************************************************************************************************
-
-
 
 
 @import "_reset.css";
