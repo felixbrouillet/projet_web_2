@@ -15,8 +15,39 @@
 
 <body>
 
+    <nav>
+        <div class="icones">
+            <div class="menu-toggle">
+                <div class="hamburger-icon">
+                    <img src="images/icones/menu_hamburger.png" class="menu_hamburger" alt="Menu">
+                </div>
+                
+                <ul class="menu-links">
+                    <div class="close-icon" id="closeIcon">X</div>
+                    <div class="liens">
+                        <li><a href="{{ route('index') }}">Accueil</a></li>
+                        <li><a href="{{ route('forfaits.show') }}">Billetterie</a></li>
+                        <li><a href="{{ route('activites.show') }}">Activités</a></li>
+                        <li><a href="{{ route('actualites.show') }}">Actualités</a></li>
+                        <li><a href="{{ route('user.reservation') }}">Mon compte</a></li>
+                        <li><a href="{{ route('user.create') }}">Créer un compte</a></li>
+                    </div>
+                </ul>
+            </div>
+            <a href="{{ route('login.show') }}">
+                <img src="images/icones/compte.png" class="image_compte" alt="Connexion">
+            </a>
+            <!-- @if(auth()->check()) -->
+                <a href="{{ route('logout') }}" class="logout">Déconnexion</a>
+            <!-- @endif -->
+        </div>
+        <a href="{{ route('index') }}">
+            <img src="images/logos/logo_blanc_transparent.png" class="logo" alt="Logo de MFMF Music Festival">
+        </a>
+    </nav>
+
     <!-- section Header ------------------------------------------------------------------------------------------------------------------------>
-    <header>
+    <!-- <header>
 
         <div class="conteneur_compte_menu">
 
@@ -50,7 +81,7 @@
         </a>
 
 
-    </header>
+    </header> -->
 
 
     <!-- section Main  ---------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -64,7 +95,9 @@
         
 
         <div class="conteneur_video_presentation">
-            <div class="video_presentation"></div>
+            <div class="video_presentation">
+                <video autoplay muted src="images/mfmf_hero_video.mp4"> </video>
+            </div>
 
         </div>
 
@@ -182,7 +215,7 @@
         <div class="section_carte_directions">
             
             <div class="conteneur_directions">
-                <h2>directions</h2>
+                <h2>Directions</h2>
             </div>
 
             <div class="conteneur_carte_directions">
@@ -234,7 +267,7 @@
         <!-- section pour les actualités --------------------------------------------------------------------------------------------------------- -->
 
         <div class="conteneur_actualites">       
-            <h2>actualites</h2>    
+            <h2>Actualites</h2>    
         </div>
 
         <div class="conteneur_actualites">
@@ -255,13 +288,16 @@
                 </div>
             </div>
         </div>
+
+        <!-- Section des actualitées ---------------------------------------------------------------------------------- -->
+        <!-- à dynamiser ----------------------------------------- -->
         <div class="conteneur_actualites">
             <div class="sous_conteneur_actualites">
                 <h3>Préparez-vous pour un festival de musique inoubliable! 🎶🎉</h3>
 
 
                 <div class="contenu_actualites">
-                    <img src="" alt="">
+                    <img src="images/dj.jpg" alt="">
                     <p>🚀 Le compte à rebours est lancé ! 🚀
     
                         Le MFMF est à nos portes, et l'excitation est à son comble ! Préparez-vous à une aventure musicale épique qui vous transportera dans un univers de sons envoûtants et de vibes incroyables. Les artistes se préparent, les scènes se montent, et tout est en place pour un week-end de pure magie musicale.
@@ -279,8 +315,29 @@
 
     <!-- section Footer ---------------------------------------------------------------------------------------------------------------------------------- -->
     <footer>
+        <div class="conteneur_footer">
+            <a href="">Accueil</a>
+            <a href="">Billeterie</a>
+            <a href="">Activités</a>
+            <a href="">Connexion</a>
+
+        </div>
+        
+        <div class="conteneur_footer">
+            <a href=""><img src="images/icones/facebook.png" alt=""></a>
+            <a href=""><img src="images/icones/instagram.png" alt=""></a>
+            <a href=""><img src="images/icones/tik-tok.png" alt=""></a>
+        </div>
+
+        <div class="conteneur_footer">
+            <p> &#169 2023 MFMF Music Festival</p>
+        </div>
+
+        
 
     </footer>
 </body>
 
 </html>
+
+<script src="js/main.js"></script>

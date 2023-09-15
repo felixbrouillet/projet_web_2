@@ -139,6 +139,8 @@ table {
 
 
 
+// DESKTOP ---------------------------------------------------------------------------------------------------------------------------------------------
+
 /* Styles généraux et composants ======================================================== ------------------------------------------------------------ */
 /* Backgroud gradient linéaire qui fait toute la page */
 
@@ -153,14 +155,16 @@ h1 {
     font-weight: 700;
     font-style: normal;
     color: white;
-    font-size: 3vw;
-    max-width: 35vw;
+    font-size: 3.5vw;
+    max-width: 45vw;
+    min-width: 20vw;
 
     // à voir pour le placer relativement à son parent.
     position: absolute;
     top: 5vh;
-    left: 62vw;
+    left: 50vw;
     text-align: end;
+    z-index: 3;
 }
 
 h2 {
@@ -178,24 +182,24 @@ h2 {
 a.bouton {
     color: white;
     font-size: 3vw;
-    font-family: "forma-djr-banner", sans-serif;
-    font-weight: 600;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 500;
     font-style: normal;
     width: 35vw;
     height: 12vh;
     border: solid;
-    border-width: 5px;
+    border-width: 7px;
     border-color: white;
     background: rgba(0, 0, 0, 0.438);
     text-decoration: none;
     text-align: center;
-    line-height: 12vh;
+    line-height: 10.5vh;
 
 }
 
 p {
-    font-family: "forma-djr-banner", sans-serif;
-    font-weight: 600;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -224,48 +228,189 @@ div.ligne_separation {
 
 
 
-/*  header -----------------------------------------------------------------------------------------*/
 
-header {
-
+// ******************************************************************************************************************
+// DEBUT NAV
+// ******************************************************************************************************************
+nav {
+    font-family: "halogen", sans-serif;
+    font-weight: 900;
+    font-style: normal;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     height: 15vh;
+    width: 100%;
     background: linear-gradient(#D651F5, #F564A7);
-
+ 
     .logo {
-        width: 13vw;
+        min-width: 13vw;
         height: 13vh;
+        margin-right: 3vw;
     }
-
-    .conteneur_compte_menu {
+ 
+    .icones {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-
-        .contenu_compte_menu {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            img {
-                padding: 5px;
+        align-items: center;
+        margin-left: 3vw;
+ 
+        .menu_hamburger,
+        .image_compte {
+            object-fit: cover;
+            height: 7vh;
+            margin-right: 1vw;
+            transition: transform 0.3s;
+ 
+            &:hover {
+                transform: scale(1.2);
             }
         }
     }
-
-    .image_menu_hamburger {
-        object-fit: cover;
-        // height: 5vw;
-        width: 5vw;
-    }
-
-    .image_compte {
-        object-fit: cover;
-        width: 5vw;
+}
+ 
+.menu-toggle .hamburger-icon:hover {
+    cursor: pointer;
+}
+ 
+.liens {
+    margin-top: 15vh;
+}
+ 
+/* Masquer initialement les liens */
+.menu-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 15vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.664);
+    transition: left 0.5s ease-in-out;
+}
+ 
+/* Afficher les liens lorsque la classe "show" est ajoutée */
+.menu-links.show {
+    left: 0;
+    z-index: 2;
+}
+ 
+/* Style des liens */
+.menu-links ul {
+    margin-top: 2vh;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+ 
+.menu-links li {
+    margin: 5vh;
+    text-align: center;
+}
+ 
+.menu-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+    transition: color 0.3s, font-size 0.3s;
+    z-index: 2;
+ 
+    &:hover {
+        color: #F564A7;
     }
 }
+ 
+/* Style de l'icône de fermeture */
+.menu-toggle .close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 3rem;
+    z-index: 1;
+    transition: color 0.3s;
+ 
+    &:hover {
+        color: #F564A7;
+    }
+}
+ 
+/* Style du bouton de déconnexion */
+.logout {
+    text-decoration: none;
+    color: #0f0f0f;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    border: solid 3px #0f0f0f;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+ 
+    a {
+        text-decoration: none;
+    }
+ 
+    &:hover {
+        font-size: 1.5rem;
+        border: solid 4px #0f0f0f;
+        background-color: #ffffff63;
+    }
+}
+ 
+// ******************************************************************************************************************
+// FIN NAV
+// ******************************************************************************************************************
+ 
+
+
+
+/*  header -----------------------------------------------------------------------------------------*/
+
+// header {
+
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     height: 15vh;
+//     background: linear-gradient(#D651F5, #F564A7);
+
+//     .logo {
+//         width: 13vw;
+//         height: 13vh;
+//     }
+
+//     .conteneur_compte_menu {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: center;
+
+//         .contenu_compte_menu {
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+
+//             img {
+//                 padding: 5px;
+//             }
+//         }
+//     }
+
+//     .image_menu_hamburger {
+//         object-fit: cover;
+//         // height: 5vw;
+//         width: 5vw;
+//     }
+
+//     .image_compte {
+//         object-fit: cover;
+//         width: 5vw;
+//     }
+// }
 
 // Section vidéo d'accueil -------------------------------------------------------------------------------
 
@@ -279,6 +424,12 @@ div.video_presentation {
     width: 100vw;
     height: 90vh;
     background-color: black;
+
+    video {
+        width: 100%;
+        object-fit: cover;
+       
+    }
 }
 
 
@@ -288,18 +439,18 @@ a.bouton_video_accueil {
     left: 30%;
     color: white;
     font-size: 3vw;
-    font-family: "forma-djr-banner", sans-serif;
-    font-weight: 600;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 500;
     font-style: normal;
     width: 35vw;
     height: 12vh;
     border: solid;
-    border-width: 5px;
+    border-width: 7px;
     border-color: white;
     background: rgba(0, 0, 0, 0.438);
     text-decoration: none;
     text-align: center;
-    line-height: 12vh;
+    line-height: 10.5vh;
 }
 
 /* Section programmation ------------------------------------------------------------- */
@@ -308,6 +459,7 @@ div.conteneur_programmation {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 30vh;
 }
 
 .contenu_programmation {
@@ -440,12 +592,14 @@ div.conteneur_actualites {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 5vh;
     
     h3{
         font-size: 2vw;
         font-family: "franklin-gothic-atf", sans-serif;
-        font-weight: 400;
+        font-weight: 600;
         font-style: normal;
+        padding-left: 30px;
     }
 
     p {
@@ -453,11 +607,14 @@ div.conteneur_actualites {
         font-family: "franklin-gothic-atf", sans-serif;
         font-weight: 400;
         font-style: normal;
+        padding: 2vw;
     }
 
     img {
-        width: 20vw;
-        height: 30vh;
+        width: auto;
+        height: auto;
+        max-width: 25vw;
+        max-height: 40vh;
     }
 
     div.sous_conteneur_actualites{
@@ -473,6 +630,8 @@ div.conteneur_actualites {
             display: flex;
             flex-direction: row;
             justify-content: center;
+            padding-left: 30px;
+            padding-right: 30px;
         }
     }
 }
@@ -483,18 +642,20 @@ a.bouton_actualites{
     // left: 30%;
     color: white;
     font-size: 2vw;
-    font-family: "forma-djr-banner", sans-serif;
-    font-weight: 600;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 500;
     font-style: normal;
     width: 35vw;
     height: 12vh;
     border: solid;
-    border-width: 5px;
+    border-width: 7px;
     border-color: white;
-    background: rgba(0, 0, 0, 0.438);
+    background: rgba(0, 0, 0, 0);
     text-decoration: none;
     text-align: center;
-    line-height: 12vh;
+    line-height: 10.5vh;
+    margin-bottom: 10vh;
+    margin-top: 7vh;
 }
 
 // Footer -------------------------------------------------------------------------
@@ -504,5 +665,80 @@ footer {
     flex-direction: column;
     justify-content: center;
     background-color: black;
-    height: 20vh;
+    height: 30vh;
+    color: white;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    
+
+    img {
+        width: 5vw;
+        height: 5vw;
+        border-radius: 100%;
+    }
+
+    p {
+        padding-top: 10px;
+        font-size: 0.7vw;
+        color: #ABABAB;
+    }
+
+    a {
+        font-size: 2vw;
+        text-decoration: none;
+        color: #D4DAFF;
+        padding: 1vw;
+    }
+
+    .conteneur_footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+}
+
+// Tablette -----------------------------------------------------------------------------------------------------------------------------------------
+
+@media (max-width: 1023px) {
+
+    body{
+        background-color: red;
+        background: none;
+    }
+
+    h1{
+        font-size: 4.5vw;
+        max-width: 60vw;
+        min-width: 30vw;
+
+        // à voir pour le placer relativement à son parent.
+        position: absolute;
+        top: 5vh;
+        left: 35vw;
+        text-align: end;
+    }
+    
+}
+
+// Cellulaires / appareil Mobiles -------------------------------------------------------------------------------------------------------------------=--
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 5.5vw;
+        max-width: 60vw;
+        min-width: 30vw;
+
+        // à voir pour le placer relativement à son parent.
+        position: absolute;
+        top: 5vh;
+        left: 35vw;
+        text-align: end;
+    }
+
+    body{
+        background: blue;
+    }
 }

@@ -145,12 +145,14 @@ h1 {
   font-weight: 700;
   font-style: normal;
   color: white;
-  font-size: 3vw;
-  max-width: 35vw;
+  font-size: 3.5vw;
+  max-width: 45vw;
+  min-width: 20vw;
   position: absolute;
   top: 5vh;
-  left: 62vw;
+  left: 50vw;
   text-align: end;
+  z-index: 3;
 }
 
 h2 {
@@ -165,23 +167,23 @@ h2 {
 a.bouton {
   color: white;
   font-size: 3vw;
-  font-family: "forma-djr-banner", sans-serif;
-  font-weight: 600;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 500;
   font-style: normal;
   width: 35vw;
   height: 12vh;
   border: solid;
-  border-width: 5px;
+  border-width: 7px;
   border-color: white;
   background: rgba(0, 0, 0, 0.438);
   text-decoration: none;
   text-align: center;
-  line-height: 12vh;
+  line-height: 10.5vh;
 }
 
 p {
-  font-family: "forma-djr-banner", sans-serif;
-  font-weight: 600;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -206,42 +208,131 @@ div.ligne_separation {
   background-color: white;
 }
 
-/*  header -----------------------------------------------------------------------------------------*/
-header {
+nav {
+  font-family: "halogen", sans-serif;
+  font-weight: 900;
+  font-style: normal;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   height: 15vh;
+  width: 100%;
   background: linear-gradient(#D651F5, #F564A7);
 }
-header .logo {
-  width: 13vw;
+nav .logo {
+  min-width: 13vw;
   height: 13vh;
+  margin-right: 3vw;
 }
-header .conteneur_compte_menu {
+nav .icones {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  align-items: center;
+  margin-left: 3vw;
 }
-header .conteneur_compte_menu .contenu_compte_menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-header .conteneur_compte_menu .contenu_compte_menu img {
-  padding: 5px;
-}
-header .image_menu_hamburger {
+nav .icones .menu_hamburger,
+nav .icones .image_compte {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 5vw;
+  height: 7vh;
+  margin-right: 1vw;
+  transition: transform 0.3s;
 }
-header .image_compte {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 5vw;
+nav .icones .menu_hamburger:hover,
+nav .icones .image_compte:hover {
+  transform: scale(1.2);
 }
 
+.menu-toggle .hamburger-icon:hover {
+  cursor: pointer;
+}
+
+.liens {
+  margin-top: 15vh;
+}
+
+/* Masquer initialement les liens */
+.menu-links {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 15vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.664);
+  transition: left 0.5s ease-in-out;
+}
+
+/* Afficher les liens lorsque la classe "show" est ajoutée */
+.menu-links.show {
+  left: 0;
+  z-index: 2;
+}
+
+/* Style des liens */
+.menu-links ul {
+  margin-top: 2vh;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.menu-links li {
+  margin: 5vh;
+  text-align: center;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2rem;
+  transition: color 0.3s, font-size 0.3s;
+  z-index: 2;
+}
+.menu-links a:hover {
+  color: #F564A7;
+}
+
+/* Style de l'icône de fermeture */
+.menu-toggle .close-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 3rem;
+  z-index: 1;
+  transition: color 0.3s;
+}
+.menu-toggle .close-icon:hover {
+  color: #F564A7;
+}
+
+/* Style du bouton de déconnexion */
+.logout {
+  text-decoration: none;
+  color: #0f0f0f;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  border: solid 3px #0f0f0f;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+}
+.logout a {
+  text-decoration: none;
+}
+.logout:hover {
+  font-size: 1.5rem;
+  border: solid 4px #0f0f0f;
+  background-color: rgba(255, 255, 255, 0.3882352941);
+}
+
+/*  header -----------------------------------------------------------------------------------------*/
 div.conteneur_video_presentation {
   display: flex;
   justify-content: center;
@@ -252,6 +343,11 @@ div.video_presentation {
   height: 90vh;
   background-color: black;
 }
+div.video_presentation video {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 a.bouton_video_accueil {
   position: absolute;
@@ -259,18 +355,18 @@ a.bouton_video_accueil {
   left: 30%;
   color: white;
   font-size: 3vw;
-  font-family: "forma-djr-banner", sans-serif;
-  font-weight: 600;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 500;
   font-style: normal;
   width: 35vw;
   height: 12vh;
   border: solid;
-  border-width: 5px;
+  border-width: 7px;
   border-color: white;
   background: rgba(0, 0, 0, 0.438);
   text-decoration: none;
   text-align: center;
-  line-height: 12vh;
+  line-height: 10.5vh;
 }
 
 /* Section programmation ------------------------------------------------------------- */
@@ -278,6 +374,7 @@ div.conteneur_programmation {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 30vh;
 }
 
 .contenu_programmation {
@@ -388,22 +485,27 @@ div.conteneur_actualites {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-top: 5vh;
 }
 div.conteneur_actualites h3 {
   font-size: 2vw;
   font-family: "franklin-gothic-atf", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
+  padding-left: 30px;
 }
 div.conteneur_actualites p {
   font-size: 1.3vw;
   font-family: "franklin-gothic-atf", sans-serif;
   font-weight: 400;
   font-style: normal;
+  padding: 2vw;
 }
 div.conteneur_actualites img {
-  width: 20vw;
-  height: 30vh;
+  width: auto;
+  height: auto;
+  max-width: 25vw;
+  max-height: 40vh;
 }
 div.conteneur_actualites div.sous_conteneur_actualites {
   display: flex;
@@ -417,23 +519,27 @@ div.conteneur_actualites div.sous_conteneur_actualites .contenu_actualites {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 a.bouton_actualites {
   color: white;
   font-size: 2vw;
-  font-family: "forma-djr-banner", sans-serif;
-  font-weight: 600;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 500;
   font-style: normal;
   width: 35vw;
   height: 12vh;
   border: solid;
-  border-width: 5px;
+  border-width: 7px;
   border-color: white;
-  background: rgba(0, 0, 0, 0.438);
+  background: rgba(0, 0, 0, 0);
   text-decoration: none;
   text-align: center;
-  line-height: 12vh;
+  line-height: 10.5vh;
+  margin-bottom: 10vh;
+  margin-top: 7vh;
 }
 
 footer {
@@ -441,5 +547,60 @@ footer {
   flex-direction: column;
   justify-content: center;
   background-color: black;
-  height: 20vh;
+  height: 30vh;
+  color: white;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+footer img {
+  width: 5vw;
+  height: 5vw;
+  border-radius: 100%;
+}
+footer p {
+  padding-top: 10px;
+  font-size: 0.7vw;
+  color: #ABABAB;
+}
+footer a {
+  font-size: 2vw;
+  text-decoration: none;
+  color: #D4DAFF;
+  padding: 1vw;
+}
+footer .conteneur_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media (max-width: 1023px) {
+  body {
+    background-color: red;
+    background: none;
+  }
+  h1 {
+    font-size: 4.5vw;
+    max-width: 60vw;
+    min-width: 30vw;
+    position: absolute;
+    top: 5vh;
+    left: 35vw;
+    text-align: end;
+  }
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 5.5vw;
+    max-width: 60vw;
+    min-width: 30vw;
+    position: absolute;
+    top: 5vh;
+    left: 35vw;
+    text-align: end;
+  }
+  body {
+    background: blue;
+  }
 }/*# sourceMappingURL=style.css.map */
