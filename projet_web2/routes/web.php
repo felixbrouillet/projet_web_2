@@ -12,6 +12,9 @@ use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 
+Route::get("/", [IndexController::class, 'index'])
+    ->name('index');
+
 // ROUTES D'AUTHENTIFICATION
 
 // Affichage du formulaire de connexion (pour les utilisateurs non connectés)
