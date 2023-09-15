@@ -40,7 +40,7 @@ class ActiviteController extends Controller
         $activite->save();
     
         // Redirection vers la page des activités avec un message de succès
-        return redirect()->route('activites.index')->with('success', 'Activité ajoutée avec succès');
+        return redirect()->route('dashboard.activites')->with('success', 'Activité ajoutée avec succès');
     }
 
     public function edit($id)

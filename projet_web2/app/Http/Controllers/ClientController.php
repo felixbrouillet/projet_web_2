@@ -9,7 +9,7 @@ class ClientController extends Controller
 {
     public function edit($id)
     {
-        $clients = Client::find($id);
+        $clients = User::find($id);
 
         $isEdit = true;
         return view('dashboard.edit.edit-clients', ['clients' => $clients]);

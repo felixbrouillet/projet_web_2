@@ -63,7 +63,6 @@ class DashboardController extends Controller
         ->where('users.role_id', 2)
         ->orderBy('users.date_achat_forfait', 'asc')
         ->get();
-            dd($clients);
     
         return view('dashboard.clients', ['clients' => $clients]);
     }
