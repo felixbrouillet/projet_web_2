@@ -35,6 +35,7 @@ nav .icones .image_compte:hover {
   transform: scale(1.2);
 }
 
+.compte-toggle .image_compte:hover,
 .menu-toggle .hamburger-icon:hover {
   cursor: pointer;
 }
@@ -48,7 +49,7 @@ nav .icones .image_compte:hover {
   position: fixed;
   top: 0;
   left: -100%;
-  width: 15vw;
+  width: 350px;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.664);
   transition: left 0.5s ease-in-out;
@@ -101,24 +102,19 @@ nav .icones .image_compte:hover {
   color: #F564A7;
 }
 
-/* Style du bouton de déconnexion */
-.logout {
-  text-decoration: none;
-  color: #0f0f0f;
-  font-size: 1.2rem;
-  font-weight: bolder;
-  border: solid 3px #0f0f0f;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+/* Style de l'icône de fermeture du sous-menu utilisateur */
+.compte-toggle .close-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 3rem;
+  z-index: 1;
+  transition: color 0.3s;
 }
-.logout a {
-  text-decoration: none;
-}
-.logout:hover {
-  font-size: 1.5rem;
-  border: solid 4px #0f0f0f;
-  background-color: rgba(255, 255, 255, 0.3882352941);
+.compte-toggle .close-icon:hover {
+  color: #F564A7;
 }
 
 /* Styles pour le héros (hero) */
@@ -126,43 +122,66 @@ header h1 {
   font-family: "halogen", sans-serif;
   font-weight: 900;
   font-style: normal;
+  text-shadow: 0px 6px 8px rgb(0, 0, 0);
 }
-
-.hero_activites {
+header .hero_activites {
   background-image: url("/img/images/stage_nuit_3.jpg");
   background-size: cover;
   background-position: center;
   text-align: center;
-  height: 40vh;
+  height: 45vh;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.hero_activites h1 {
+header .hero_activites h1 {
   font-size: 3rem;
+}
+
+.activites {
+  padding-top: 12vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  background: linear-gradient(0deg, rgb(245, 100, 167) 0%, rgb(140, 88, 245) 100%);
+  color: #F3F3F3;
 }
 
 /* Styles pour chaque activité */
 .activite {
   display: flex;
-  margin: 20px;
-}
-
-.activite h2 {
-  font-size: 2rem;
-  flex: 1;
-}
-
-.activite-content {
-  display: flex;
   align-items: center;
+  padding-bottom: 12vh;
 }
-
-.activite-image {
-  width: 300px;
-  height: 200px;
+.activite .activite-image {
+  width: 15vw;
+  height: 15vw;
+  min-width: 100px;
+  min-height: 100px;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-right: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.activite .activite-content {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 2vh;
+}
+.activite .activite-content h2 {
+  font-size: 2vw;
+  font-family: "halogen", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  text-align: left;
+  margin-bottom: 3vh;
+}
+.activite .activite-content p {
+  font-size: 1.2vw;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  width: 60vw;
 }/*# sourceMappingURL=style.css.map */
