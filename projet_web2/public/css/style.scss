@@ -159,37 +159,127 @@ header {
     }
 }
 
+/* Styles pour le main */
 .activites {
     padding-top: 12vh;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    background: linear-gradient(0deg, rgba(245,100,167,1) 0%, rgba(140,88,245,1) 100%);
+    padding-left: 15vw;
+    padding-right: 15vw;
+    background: linear-gradient(0deg, rgba(245, 100, 167, 1) 0%, rgba(140, 88, 245, 1) 100%);
     color: #F3F3F3;
-}
 
+    /* Styles pour chaque activité */
+    .activite {
+        display: flex;
+        align-items: center;
+        padding-bottom: 12vh;
 
-/* Styles pour chaque activité */
-.activite {
-    display: flex;
-    align-items: center;
-    padding-bottom: 12vh;
+        .activite-image {
+            width: 15vw;
+            height: 15vw;
+            min-width: 150px;
+            min-height: 150px;
+            border-radius: 50%;
+            margin-right: 40px;
+            object-fit: cover;
+        }
 
-    .activite-image {
-        width: 15vw;
-        height: 15vw;
-        min-width: 100px;
-        min-height: 100px;
-        border-radius: 50%;
-        margin-right: 30px;
-        object-fit: cover;
+        .activite-content {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-bottom: 2vh;
+
+            h2 {
+                font-size: 2vw;
+                font-family: "halogen", sans-serif;
+                font-weight: 900;
+                font-style: normal;
+                text-align: left;
+                margin-bottom: 3vh;
+            }
+
+            p {
+                font-size: 1.2vw;
+                font-family: "franklin-gothic-atf", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                width: 35vw;
+            }
+        }
     }
 
-    .activite-content {
+    /* Style différent pour les activités paires */
+    .activite-pair {
+        flex-direction: row-reverse;
+
+        .activite-image {
+            margin-right: 0;
+            margin-left: 40px;
+        }
+
+        .activite-content {
+            align-items: flex-end;
+
+            p {
+                text-align: right;
+            }
+        }
+    }
+}
+
+// ******************************************************************************************************************
+// FIN PAGE ACTIVITÉS
+// ******************************************************************************************************************
+
+// ******************************************************************************************************************
+// DÉBUT PAGE BILLETTERIE
+// ******************************************************************************************************************
+
+/* Styles pour le main */
+.forfaits {
+    padding-top: 12vh;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    background-image: url('/img/images/stage_nuit.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    color: #F3F3F3;
+    color: #F3F3F3;
+
+    .header {
+        h1 {
+            font-family: "halogen", sans-serif;
+            font-weight: 900;
+            font-size: 60px;
+            font-style: normal;
+            text-shadow: 6px 6px 8px rgb(0, 0, 0);
+            text-align: center;
+            margin-bottom: 10vh;
+        }
+
+        p {
+            font-size: 1.5vw;
+            font-family: "halogen", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            text-shadow: 6px 6px 8px rgb(0, 0, 0);
+            text-align: center;
+            margin-bottom: 10vh;
+            margin-left: 17vw;
+            margin-right: 17vw;
+        }
+    }
+
+    /* Styles pour chaque forfait */
+    .forfait {
         display: flex;
-        flex-grow: 1;
         flex-direction: column;
         align-items: flex-start;
-        padding-bottom: 2vh;
+        padding: 40px 40px;
+        margin-top: 10vh;
+        background: linear-gradient(0deg, rgba(214,81,245,1) 0%, rgba(113,214,181,1) 100%);
 
         h2 {
             font-size: 2vw;
@@ -200,18 +290,43 @@ header {
             margin-bottom: 3vh;
         }
 
+        .forfait-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
         p {
             font-size: 1.2vw;
             font-family: "franklin-gothic-atf", sans-serif;
             font-weight: 400;
             font-style: normal;
-            width: 60vw;
+            width: 70%;
+            white-space: pre-line;
+            line-height: 2;
+        }
+
+        .prix-et-reservation {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        a.btn_reservation {
+            text-decoration: none;
+            border: solid 2px white;
+            margin-top: 1rem;
         }
     }
 }
 
+/* Style différent pour les forfaits pairs */
+.forfait-pair {
+    flex-direction: row-reverse;
+}
 
 // ******************************************************************************************************************
-// FIN PAGE ACTIVITÉS
+// FIN PAGE BILLETTERIE
 // ******************************************************************************************************************
 @import "_reset.css";

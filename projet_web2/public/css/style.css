@@ -139,38 +139,39 @@ header .hero_activites h1 {
   font-size: 3rem;
 }
 
+/* Styles pour le main */
 .activites {
   padding-top: 12vh;
-  padding-left: 10vw;
-  padding-right: 10vw;
+  padding-left: 15vw;
+  padding-right: 15vw;
   background: linear-gradient(0deg, rgb(245, 100, 167) 0%, rgb(140, 88, 245) 100%);
   color: #F3F3F3;
+  /* Styles pour chaque activité */
+  /* Style différent pour les activités paires */
 }
-
-/* Styles pour chaque activité */
-.activite {
+.activites .activite {
   display: flex;
   align-items: center;
   padding-bottom: 12vh;
 }
-.activite .activite-image {
+.activites .activite .activite-image {
   width: 15vw;
   height: 15vw;
-  min-width: 100px;
-  min-height: 100px;
+  min-width: 150px;
+  min-height: 150px;
   border-radius: 50%;
-  margin-right: 30px;
+  margin-right: 40px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.activite .activite-content {
+.activites .activite .activite-content {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
   align-items: flex-start;
   padding-bottom: 2vh;
 }
-.activite .activite-content h2 {
+.activites .activite .activite-content h2 {
   font-size: 2vw;
   font-family: "halogen", sans-serif;
   font-weight: 900;
@@ -178,10 +179,103 @@ header .hero_activites h1 {
   text-align: left;
   margin-bottom: 3vh;
 }
-.activite .activite-content p {
+.activites .activite .activite-content p {
   font-size: 1.2vw;
   font-family: "franklin-gothic-atf", sans-serif;
   font-weight: 400;
   font-style: normal;
-  width: 60vw;
+  width: 35vw;
+}
+.activites .activite-pair {
+  flex-direction: row-reverse;
+}
+.activites .activite-pair .activite-image {
+  margin-right: 0;
+  margin-left: 40px;
+}
+.activites .activite-pair .activite-content {
+  align-items: flex-end;
+}
+.activites .activite-pair .activite-content p {
+  text-align: right;
+}
+
+/* Styles pour le main */
+.forfaits {
+  padding-top: 12vh;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  background-image: url("/img/images/stage_nuit.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  color: #F3F3F3;
+  color: #F3F3F3;
+  /* Styles pour chaque forfait */
+}
+.forfaits .header h1 {
+  font-family: "halogen", sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  font-style: normal;
+  text-shadow: 6px 6px 8px rgb(0, 0, 0);
+  text-align: center;
+  margin-bottom: 10vh;
+}
+.forfaits .header p {
+  font-size: 1.5vw;
+  font-family: "halogen", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-shadow: 6px 6px 8px rgb(0, 0, 0);
+  text-align: center;
+  margin-bottom: 10vh;
+  margin-left: 17vw;
+  margin-right: 17vw;
+}
+.forfaits .forfait {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 40px;
+  margin-top: 10vh;
+  background: linear-gradient(0deg, rgb(214, 81, 245) 0%, rgb(113, 214, 181) 100%);
+}
+.forfaits .forfait h2 {
+  font-size: 2vw;
+  font-family: "halogen", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  text-align: left;
+  margin-bottom: 3vh;
+}
+.forfaits .forfait .forfait-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.forfaits .forfait p {
+  font-size: 1.2vw;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  width: 70%;
+  white-space: pre-line;
+  line-height: 2;
+}
+.forfaits .forfait .prix-et-reservation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.forfaits .forfait a.btn_reservation {
+  text-decoration: none;
+  border: solid 2px white;
+  margin-top: 1rem;
+}
+
+/* Style différent pour les forfaits pairs */
+.forfait-pair {
+  flex-direction: row-reverse;
 }/*# sourceMappingURL=style.css.map */

@@ -99,8 +99,7 @@ Route::get("/activites/{id}/delete", [ActiviteController::class, 'delete'])
 
 // Affichage du formulaire de connexion si non connnecté ou affichage de la page des forfaits
 Route::get("/forfaits", [ForfaitController::class, 'show'])
-    ->name('forfaits.show')
-    ->middleware('guest');
+    ->name('forfaits.show');
 
 Route::get("/forfaits/{id}", [ForfaitController::class, 'reservation'])
     ->name('forfaits.reservation')

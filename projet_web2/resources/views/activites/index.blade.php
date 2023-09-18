@@ -6,7 +6,7 @@
     </header>
     <main class="activites">
         @foreach ($activites as $activite)
-        <div class="activite">
+        <div class="activite @if ($activite->id % 2 == 0) activite-pair @endif">
             <img src="{{ asset('img/images/' . $activite->image) }}" alt="{{ $activite->nom }}" class="activite-image">
             <div class="activite-content">
                 <h2>{{ $activite->nom }}</h2>
