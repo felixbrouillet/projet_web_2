@@ -1,6 +1,5 @@
 <x-layout titre="Activités">
     <header>
-        <x-nav></x-nav>
         <div class="hero_activites">
             <h1>Activités</h1>
         </div>
