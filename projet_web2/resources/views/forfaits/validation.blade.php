@@ -4,7 +4,7 @@
     <p>Détails: {{ $forfait->details }}</p>
     <p>Prix: {{ $forfait->prix }}$</p>
     <div>Êtes-vous sûr de vouloir réserver ce forfait ?</div>
-    
+
     <form method="POST" action="{{ route('forfaits.update', ['id' => $forfait->id]) }}">
         @csrf
         <input type="hidden" name="forfait_id" value="{{ $forfait->id }}">
