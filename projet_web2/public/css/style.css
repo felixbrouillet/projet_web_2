@@ -349,9 +349,7 @@ form.formulaire button{
   width: 25vw; 
   padding: 15px 0 15px 10px; 
   box-sizing: border-box; 
-  border-color: white;
-  border-style: solid;
-  border-width: 5px;
+  border: white 5px solid;
   font-family: "franklin-gothic-atf", sans-serif;
 }
 
@@ -395,3 +393,37 @@ div.create {
   height: 100%;
 }
 
+/* Style pour les formulaires du dashboard */
+
+/* Activités */
+.container-activites h2{
+  color: black;
+}
+
+.form-activites{
+  display: flex;
+  justify-content: center;
+}
+
+input[type="file"]{
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  font-family: "franklin-gothic-atf", sans-serif;
+}
+
+input[type="file"]:hover{
+  color: #000;
+  border-color: #000;
+}
+
+textarea{
+  width: 25vw;
+  height: 35vh;
+  font-size: 2em;
+}
+
+/* Cacher le bouton "Choisir un fichier" */
+input[type="file"]::-webkit-file-upload-button {
+  display: none;
+}

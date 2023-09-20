@@ -16,9 +16,9 @@ class ActiviteController extends Controller
     public function show()
     {
         // Récupère toutes les activités
-        $activites = Activite::all();
+        $activite = Activite::all();
         
-        return view('activites.index', ['activites' => $activites]);
+        return view('activites.index', ['activite' => $activite]);
     }
 
     /**
@@ -103,7 +103,7 @@ class ActiviteController extends Controller
                 }
 
                 // Enregistrez la nouvelle image
-                $imagePath = $request->file('image')->store('activite_images');
+                $imagePath = $request->file('image')->store('img/images');
                 $activite->image = $imagePath;
             }
 
