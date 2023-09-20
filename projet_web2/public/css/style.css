@@ -48,7 +48,7 @@ nav .icones .image_compte:hover {
 .menu-links {
   position: fixed;
   top: 0;
-  left: -100%;
+  left: -500%;
   width: 350px;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.664);
@@ -205,6 +205,7 @@ header .hero_activites h1 {
   padding-top: 12vh;
   padding-left: 15vw;
   padding-right: 15vw;
+  padding-bottom: 10vh;
   background-image: url("/img/images/stage_nuit.jpg");
   background-size: cover;
   background-position: center bottom;
@@ -237,7 +238,10 @@ header .hero_activites h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 40px 40px;
+  max-width: 900px;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 50px 50px;
   margin-top: 10vh;
   background: linear-gradient(0deg, rgb(214, 81, 245) 0%, rgb(113, 214, 181) 100%);
 }
@@ -253,8 +257,8 @@ header .hero_activites h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  width: 70%;
+  margin-top: 5vh;
+  width: 100%;
 }
 .forfaits .forfait .prix-et-reservation .prix {
   display: flex;
