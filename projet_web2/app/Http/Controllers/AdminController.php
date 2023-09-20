@@ -23,7 +23,7 @@ class AdminController extends Controller
             'password' => 'required|string',
             'role_id' => 'required|numeric',
         ]);
-    
+
         // Créer un nouvel administrateur
         $admin = new User([
             'prenom' => $validatedData['prenom'],
@@ -32,12 +32,12 @@ class AdminController extends Controller
             'password' => bcrypt($validatedData['password']), // Assurez-vous de hacher le mot de passe
             'role_id' => $validatedData['role_id'],
         ]);
-    
+
         // Enregistrer l'administrateur dans la base de données
         $admin->save();
-    
-        // Redirection vers le dashboard avec le message de succès 
-        return redirect()->route('dashboard.index')->with('success', 'Admin ajouté avec succès');
+
+        // Redirection vers le dashboard avec le message de succès
+        return redirect()->route('dashboard.index')->with('succes', 'Admin ajouté avec succès');
     }
 
     /**
@@ -64,38 +64,38 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-    
+
         if ($user) {
             // Valider les données du formulaire (vous pouvez les personnaliser)
             $validatedData = $request->validate([
                 'prenom' => 'required|string|max:255',
                 'nom' => 'required|string|max:255',
                 'email' => 'required|email',
-                'password' => 'required|string', 
+                'password' => 'required|string',
                 'role_id' => 'required|numeric',
             ]);
-    
+
             // Mettre à jour les autres champs de l'utilisateur
             $user->prenom = $validatedData['prenom'];
             $user->nom = $validatedData['nom'];
             $user->email = $validatedData['email'];
             $user->role_id = $validatedData['role_id'];
-    
+
             // Vérifier si un nouveau mot de passe a été fourni
             if ($request->filled('password')) {
                 // Hacher le nouveau mot de passe
                 $user->password = bcrypt($validatedData['password']);
             }
-            
+
             // Enregistrer les modifications
             $user->save();
-    
-            return redirect()->route('dashboard.index')->with('success', 'Utilisateur mis à jour avec succès');
+
+            return redirect()->route('dashboard.index')->with('succes', 'Utilisateur mis à jour avec succès');
         }
-    
-        return redirect()->route('dashboard.index')->with('error', 'Utilisateur non trouvé');
+
+        return redirect()->route('dashboard.index')->with('erreur', 'Utilisateur introuvable');
     }
-    
+
     /**
      * Supprime un administrateur
      *
@@ -108,9 +108,9 @@ class AdminController extends Controller
 
         if ($user) {
             $user->delete();
-            return redirect()->route('dashboard.index')->with('success', 'Utilisateur supprimé avec succès');
+            return redirect()->route('dashboard.index')->with('succes', 'Utilisateur supprimé avec succès');
         }
 
-        return redirect()->route('dashboard.index')->with('error', 'Utilisateur non trouvé');
+        return redirect()->route('dashboard.index')->with('erreur', 'Utilisateur introuvable');
     }
 }

@@ -76,6 +76,29 @@ div.ligne_separation {
   background-color: white;
 }
 
+.succes {
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  background: linear-gradient(#008848, #8aa897);
+  font-size: clamp(16px, 2vw, 18px);
+  z-index: 80;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.erreur {
+  top: 2vh;
+  left: 2vw;
+  background: linear-gradient(#bb0101, #cf6969);
+  font-size: clamp(16px, 2vw, 18px);
+  z-index: 80;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+}
+
 nav {
   font-family: "halogen", sans-serif;
   font-weight: 900;
@@ -675,6 +698,50 @@ footer .conteneur_footer {
     font-size: 7vw;
     padding-top: 5vh;
     padding-bottom: 5vh;
+  }
+  nav {
+    font-family: "halogen", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    width: 100%;
+    background: linear-gradient(#D651F5, #F564A7);
+  }
+  nav .logo {
+    min-width: 8vw;
+    height: 13vh;
+    margin-right: 3vw;
+  }
+  nav .icones {
+    display: flex;
+    align-items: center;
+    margin-left: 3vw;
+  }
+  nav .icones .menu_hamburger,
+  nav .icones .image_compte {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 5vh;
+    margin-right: 1vw;
+    transition: transform 0.3s;
+  }
+  nav .icones .menu_hamburger:hover,
+  nav .icones .image_compte:hover {
+    transform: scale(1.2);
+  }
+  .menu-links {
+    position: fixed;
+    top: 0;
+    left: -500%;
+    width: 320px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.664);
+    transition: left 0.5s ease-in-out;
+    z-index: 60;
   }
   main.accueil {
     background: blue;

@@ -1,4 +1,9 @@
 <x-layout titre="Forfaits">
+
+    {{-- Messages d'alertes succes ou erreur --}}
+    <x-alertes.alerte cle="succes" />
+    <x-alertes.alerte cle="erreur" />
+
     <h1>Validation du Forfait</h1>
     <p>Nom du Forfait: {{ $forfait->nom }}</p>
     <p>Détails: {{ $forfait->details }}</p>

@@ -1,6 +1,10 @@
 <x-layout titre="Accueil">
     <main class="accueil">
 
+        {{-- Messages d'alertes succes ou erreur --}}
+        <x-alertes.alerte cle="succes" />
+        <x-alertes.alerte cle="erreur" />
+
         <!-- Section de la vidéo sur la page d'accueil  ------------------------------------------------------------------------------->
         <h1>Festival de musique électronique à Montréal</h1>
 

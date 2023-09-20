@@ -17,7 +17,7 @@ class ActualiteController extends Controller
     {
         // Récupère toutes les actualités
         $actualites = Actualite::all();
-        
+
         return view('actualites.index', ['actualites' => $actualites]);
     }
 
@@ -35,24 +35,24 @@ class ActualiteController extends Controller
             'contenu' => 'required|string',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
         ]);
-    
+
         // Créer une nouvelle actualité
         $actualite = new Actualite([
             'nom' => $validatedData['nom'],
             'contenu' => $validatedData['contenu'],
         ]);
-    
+
         // Gestion de l'image s'il y en a une
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('actualite_images'); // Enregistrez l'image dans le dossier "actualite_images"
             $actualite->image = $imagePath;
         }
-    
+
         // Enregistrez l'actualité dans la base de données
         $actualite->save();
-    
+
         // Redirection vers la page des actualités avec un message de succès
-        return redirect()->route('dashboard.actualites')->with('success', 'Actualité ajoutée avec succès');
+        return redirect()->route('dashboard.actualites')->with('succes', 'Actualité ajoutée avec succès');
     }
 
     /**
@@ -69,7 +69,7 @@ class ActualiteController extends Controller
             return view('dashboard.edit.edit-actualites', ['actualite' => $actualite, 'isEdit' => true]);
         }
 
-        return redirect()->route('dashboard.actualites')->with('error', 'Actualité non trouvée');
+        return redirect()->route('dashboard.actualites')->with('erreur', 'Actualité introuvable');
     }
 
     /**
@@ -82,7 +82,7 @@ class ActualiteController extends Controller
     public function update(Request $request, $id)
     {
         $actualite = Actualite::find($id);
-        
+
         if ($actualite) {
             // Valider les données du formulaire (vous pouvez les personnaliser)
             $validatedData = $request->validate([
@@ -110,10 +110,10 @@ class ActualiteController extends Controller
             // Enregistrer les modifications
             $actualite->save();
 
-            return redirect()->route('dashboard.actualites')->with('success', 'Actualité mise à jour avec succès');
+            return redirect()->route('dashboard.actualites')->with('succes', 'Actualité mise à jour avec succès');
         }
 
-        return redirect()->route('dashboard.actualites')->with('error', 'Actualité non trouvée');
+        return redirect()->route('dashboard.actualites')->with('erreur', 'Actualité introuvable');
     }
 
     /**
@@ -128,9 +128,9 @@ class ActualiteController extends Controller
 
         if ($actualite) {
             $actualite->delete();
-            return redirect()->route('dashboard.actualites')->with('success', 'Actualité supprimée avec succès');
+            return redirect()->route('dashboard.actualites')->with('succes', 'Actualité supprimée avec succès');
         }
 
-        return redirect()->route('dashboard.actualites')->with('error', 'Actualité non trouvée');
-    } 
+        return redirect()->route('dashboard.actualites')->with('erreur', 'Actualité introuvable');
+    }
 }

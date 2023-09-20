@@ -1,5 +1,5 @@
 // ******************************************************************************************************************
-// FIN STYLES GÉNÉRAUX
+// DEBUT STYLES GÉNÉRAUX
 // ******************************************************************************************************************
 
 body {
@@ -93,6 +93,29 @@ div.ligne_separation {
     width: 50vw;
     height: 3px;
     background-color: white;
+}
+
+.succes {
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+    background: linear-gradient(#008848, #8aa897);
+    font-size: clamp(16px, 2vw, 18px);
+    z-index: 80;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.erreur {
+    top: 2vh;
+    left: 2vw;
+    background: linear-gradient(#bb0101, #cf6969);
+    font-size: clamp(16px, 2vw, 18px);
+    z-index: 80;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
 }
 
 // ******************************************************************************************************************
@@ -850,6 +873,60 @@ footer {
         padding-bottom: 5vh;
     }
 
+    // Nav Header mobile -------------------------------------------------------------
+
+    nav {
+        font-family: "halogen", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 15vh;
+        width: 100%;
+        background: linear-gradient(#D651F5, #F564A7);
+
+        .logo {
+            min-width: 8vw;
+            height: 13vh;
+            margin-right: 3vw;
+        }
+
+        .icones {
+            display: flex;
+            align-items: center;
+            margin-left: 3vw;
+
+            .menu_hamburger,
+            .image_compte {
+                object-fit: cover;
+                height: 5vh;
+                margin-right: 1vw;
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    .menu-links {
+        position: fixed;
+        top: 0;
+        left: -500%;
+        width: 320px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.664);
+        transition: left 0.5s ease-in-out;
+        z-index: 60;
+    }
+
+
+
+    // main mobile -----------------------------------------------------------------------------------------------
+
     main.accueil {
         background: blue;
     }
@@ -884,7 +961,6 @@ footer {
     }
 
 
-    // Section fiche de programmation ------------------------------------------------
 
     // section fiche de programmation ----------------------------------------------------
     .contenu_fiche_programmation {

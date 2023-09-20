@@ -1,5 +1,10 @@
 <x-layout titre="Votre réservation">
     <h1>Réservation du Forfait</h1>
+
+    {{-- Messages d'alertes succes ou erreur --}}
+    <x-alertes.alerte cle="succes" />
+    <x-alertes.alerte cle="erreur" />
+
     @if ($forfait)
         <p>Nom du Forfait : {{ $forfait->nom }}</p>
         <p>Détails : {{ $forfait->details }}</p>
