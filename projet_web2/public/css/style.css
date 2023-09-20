@@ -369,10 +369,11 @@ form.formulaire button:hover {
   font-size: 1.5em;
 }
 
-body.auth {
+div.auth {
   background-image: url('../img/images/stage_nuit4.jpg');
   background-size: cover; 
   background-position: center;
+  height: 100%;
 }
 
 .user-create{
@@ -387,9 +388,10 @@ body.auth {
 }
 
 /* Page de création de compte */
-body.create {
+div.create {
   background-image: url('../img/images/stage_nuit1.jpg');
   background-size: cover; 
   background-position: center;
+  height: 100%;
 }
 
