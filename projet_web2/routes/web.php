@@ -125,8 +125,6 @@ Route::get("/activites/{id}/delete", [ActiviteController::class, 'delete'])
     ->name('activites.delete')
     ->middleware('auth');
 
-// ... (autres routes)
-
 // ROUTES DE GESTION DES FORFAITS
 
 // Affichage de la page des forfaits publiquement (sans authentification requise)
@@ -180,8 +178,6 @@ Route::post("/actualites/{id}/update", [ActualiteController::class, 'update'])
 Route::get("/actualites/{id}/delete", [ActualiteController::class, 'delete'])
     ->name('actualites.delete')
     ->middleware('auth');
-
-// ... (autres routes)
 
 // ROUTES DE GESTION DES UTILISATEURS
 
