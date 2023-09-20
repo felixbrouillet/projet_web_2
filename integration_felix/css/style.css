@@ -136,6 +136,7 @@ table {
 /* Styles généraux et composants ======================================================== ------------------------------------------------------------ */
 /* Backgroud gradient linéaire qui fait toute la page */
 body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#8C58F5), to(#F564A7)) fixed;
   box-sizing: border-box;
 }
 
@@ -179,9 +180,6 @@ a.bouton {
   text-align: center;
   line-height: 10.5vh;
 }
-a.bouton :hover {
-  transform: scale(1.2);
-}
 
 p {
   font-family: "franklin-gothic-atf", sans-serif;
@@ -193,10 +191,6 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-}
-
-main.accueil {
-  background: linear-gradient(#8C58F5, #F564A7);
 }
 
 /* ligne de séparation --------------------------------------------------------------------------- */
@@ -263,16 +257,15 @@ nav .icones .image_compte:hover {
   top: 0;
   left: -100%;
   width: 15vw;
-  min-width: 300px;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.664);
   transition: left 0.5s ease-in-out;
-  overflow: hidden;
 }
+
 /* Afficher les liens lorsque la classe "show" est ajoutée */
 .menu-links.show {
   left: 0;
-  z-index: 4;
+  z-index: 2;
 }
 
 /* Style des liens */
@@ -285,11 +278,11 @@ nav .icones .image_compte:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 4;
+  z-index: 2;
 }
 
 .menu-links li {
-  padding: 3vh;
+  margin: 5vh;
   text-align: center;
 }
 
@@ -298,7 +291,7 @@ nav .icones .image_compte:hover {
   color: #fff;
   font-size: 2rem;
   transition: color 0.3s, font-size 0.3s;
-  z-index: 4;
+  z-index: 2;
 }
 .menu-links a:hover {
   color: #F564A7;
@@ -347,18 +340,18 @@ div.conteneur_video_presentation {
 
 div.video_presentation {
   width: 100vw;
+  height: 90vh;
   background-color: black;
 }
 div.video_presentation video {
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 a.bouton_video_accueil {
   position: absolute;
-  top: 40vw;
+  top: 15%;
   left: 30%;
   color: white;
   font-size: 3vw;
@@ -366,23 +359,22 @@ a.bouton_video_accueil {
   font-weight: 500;
   font-style: normal;
   width: 35vw;
-  height: 15vh;
-  max-height: 10vh;
+  height: 12vh;
   border: solid;
   border-width: 7px;
   border-color: white;
   background: rgba(0, 0, 0, 0.438);
   text-decoration: none;
   text-align: center;
-  line-height: 75px;
-  z-index: 3;
+  line-height: 10.5vh;
 }
+
 /* Section programmation ------------------------------------------------------------- */
 div.conteneur_programmation {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 15vh;
+  margin-top: 30vh;
 }
 
 .contenu_programmation {
@@ -392,7 +384,7 @@ div.conteneur_programmation {
 }
 
 .fiche_programmation {
-  height: 120vh;
+  height: 110vh;
   width: 70vw;
   background: linear-gradient(#58CFA8 0%, #7855ED 50%, #F363A8 100%);
   display: flex;
@@ -401,9 +393,7 @@ div.conteneur_programmation {
 }
 .fiche_programmation .logo_fiche {
   width: 20vw;
-  height: auto;
-  min-width: 200px;
-  padding-top: 50px;
+  height: 20vh;
 }
 .fiche_programmation .contenu_fiche_programmation {
   display: flex;
@@ -425,7 +415,7 @@ div.conteneur_programmation {
   font-family: "ohm-bold", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: max(3em, 20px);
+  font-size: 4vw;
 }
 .fiche_programmation .contenu_fiche_programmation p.fiche_programmation_emplacement {
   font-family: "franklin-gothic-atf", sans-serif;
@@ -463,7 +453,7 @@ div.section_carte_directions div.conteneur_directions {
 }
 div.section_carte_directions div.directions {
   width: 30vw;
-  height: 50vh;
+  height: 40vh;
   background: linear-gradient(#71D6B5 0%, #F6B99E 50%, #F564A7 100%);
 }
 div.section_carte_directions div.directions .directions_sous_conteneur {
@@ -488,7 +478,7 @@ div.section_carte_directions div.directions img {
 }
 div.section_carte_directions iframe.carte {
   width: 30vw;
-  height: 50vh;
+  height: 40vh;
 }
 
 div.conteneur_actualites {
@@ -586,8 +576,9 @@ footer .conteneur_footer {
 }
 
 @media (max-width: 1023px) {
-  main.accueil {
-    background: red;
+  body {
+    background-color: red;
+    background: none;
   }
   h1 {
     font-size: 4.5vw;
@@ -597,180 +588,6 @@ footer .conteneur_footer {
     top: 5vh;
     left: 35vw;
     text-align: end;
-  }
-  h2 {
-    font-family: "halogen", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 5vw;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-  }
-  a.bouton_video_accueil {
-    position: absolute;
-    top: 35vw;
-    left: 30%;
-    color: white;
-    font-size: 3vw;
-    font-family: "franklin-gothic-atf", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    width: 35vw;
-    height: 8vh;
-    max-height: 8vh;
-    border: solid;
-    border-width: 6px;
-    border-color: white;
-    background: rgba(0, 0, 0, 0.438);
-    text-decoration: none;
-    text-align: center;
-    line-height: 60px;
-    z-index: 3;
-  }
-  div.conteneur_programmation {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 8vh;
-  }
-  .fiche_programmation {
-    height: 110vh;
-    width: 90vw;
-    background: linear-gradient(#58CFA8 0%, #7855ED 50%, #F363A8 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .fiche_programmation .logo_fiche {
-    width: 20vw;
-    height: auto;
-  }
-  .fiche_programmation .contenu_fiche_programmation {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .fiche_programmation .contenu_fiche_programmation p {
-    font-family: "franklin-gothic-atf", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: white;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 16px;
-  }
-  .fiche_programmation .contenu_fiche_programmation p p.premiere_rangee {
-    font-size: 16px;
-  }
-  .fiche_programmation .contenu_fiche_programmation p p.deuxieme_rangee {
-    font-size: 16px;
-  }
-  .fiche_programmation .contenu_fiche_programmation p.fiche_programmation_date {
-    font-family: "ohm-bold", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: max(1.5em, 30px);
-  }
-  .fiche_programmation .contenu_fiche_programmation p.premiere_rangee {
-    font-size: 16px;
-  }
-  .fiche_programmation .contenu_fiche_programmation p.deuxieme_rangee {
-    font-size: 16px;
-  }
-  div.section_carte_directions {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 65vh;
-  }
-  div.section_carte_directions div.conteneur_carte {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  div.section_carte_directions div.conteneur_carte_directions {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  div.section_carte_directions div.conteneur_directions {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  div.section_carte_directions div.directions {
-    width: 45vw;
-    height: 45vh;
-    background: linear-gradient(#71D6B5 0%, #F6B99E 50%, #F564A7 100%);
-  }
-  div.section_carte_directions div.directions .directions_sous_conteneur {
-    display: flex;
-    flex-direction: row;
-    padding-top: 4vh;
-  }
-  div.section_carte_directions div.directions .directions_sous_conteneur .directions_sous_conteneur_texte {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  div.section_carte_directions div.directions .directions_sous_conteneur .directions_sous_conteneur_texte p {
-    font-size: 2.5vw;
-    margin-left: 2vw;
-    max-width: 20vw;
-  }
-  div.section_carte_directions div.directions img {
-    margin-left: 2vw;
-    height: 60px;
-    width: 60px;
-  }
-  div.section_carte_directions iframe.carte {
-    width: 45vw;
-    height: 45vh;
-  }
-  div.conteneur_actualites {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 5vh;
-    overflow: hidden;
-  }
-  div.conteneur_actualites h3 {
-    font-size: 3.5vw;
-    font-family: "franklin-gothic-atf", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    padding-left: 30px;
-  }
-  div.conteneur_actualites p {
-    font-size: clamp(16px, 2vw, 22px);
-    margin-top: 2vh;
-    font-family: "franklin-gothic-atf", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    padding: 2vw;
-  }
-  div.conteneur_actualites img {
-    width: auto;
-    height: auto;
-    max-width: 35vw;
-    margin-left: 22vw;
-  }
-  div.conteneur_actualites div.sous_conteneur_actualites {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 60vh;
-    width: 90vw;
-    background: linear-gradient(#71D6B5, #D4DAFF);
-  }
-  div.conteneur_actualites div.sous_conteneur_actualites .contenu_actualites {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 30px;
-    padding-right: 30px;
   }
 }
 @media (max-width: 480px) {
@@ -783,165 +600,7 @@ footer .conteneur_footer {
     left: 35vw;
     text-align: end;
   }
-  h2 {
-    font-family: "halogen", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 7vw;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-  }
-  main.accueil {
+  body {
     background: blue;
-  }
-  a.bouton_video_accueil {
-    position: absolute;
-    top: 38vw;
-    left: 30%;
-    color: white;
-    font-size: 3vw;
-    font-family: "franklin-gothic-atf", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    width: 35vw;
-    height: 180px;
-    max-height: 6vh;
-    border: solid;
-    border-width: 5px;
-    border-color: white;
-    background: rgba(0, 0, 0, 0.438);
-    text-decoration: none;
-    text-align: center;
-    line-height: 50px;
-    z-index: 3;
-  }
-  .contenu_fiche_programmation {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .contenu_fiche_programmation p.fiche_programmation_date {
-    font-family: "ohm-bold", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  .contenu_fiche_programmation p {
-    font-family: "franklin-gothic-atf", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: white;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 13px;
-  }
-  .contenu_fiche_programmation p p.premiere_rangee {
-    font-size: 13px;
-  }
-  .contenu_fiche_programmation p p.deuxieme_rangee {
-    font-size: 13px;
-  }
-  .contenu_fiche_programmation p.premiere_rangee {
-    font-size: 13px;
-  }
-  .contenu_fiche_programmation p.deuxieme_rangee {
-    font-size: 13px;
-  }
-  div.section_carte_directions {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 65vh;
-    margin-bottom: 35vh;
-  }
-  div.section_carte_directions div.conteneur_carte {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  div.section_carte_directions div.conteneur_carte_directions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  div.section_carte_directions div.conteneur_directions {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  div.section_carte_directions div.directions {
-    width: 80vw;
-    height: 45vh;
-    background: linear-gradient(#71D6B5 0%, #F6B99E 50%, #F564A7 100%);
-  }
-  div.section_carte_directions div.directions .directions_sous_conteneur {
-    display: flex;
-    flex-direction: row;
-    padding-top: 4vh;
-    padding-left: 7vw;
-  }
-  div.section_carte_directions div.directions .directions_sous_conteneur .directions_sous_conteneur_texte {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  div.section_carte_directions div.directions .directions_sous_conteneur .directions_sous_conteneur_texte p {
-    font-size: 3.5vw;
-    margin-left: 4vw;
-    max-width: 40vw;
-  }
-  div.section_carte_directions div.directions img {
-    margin-left: 2vw;
-    height: 60px;
-    width: 60px;
-  }
-  div.section_carte_directions iframe.carte {
-    width: 80vw;
-    height: 45vh;
-  }
-  div.conteneur_actualites {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 5vh;
-    overflow: hidden;
-  }
-  div.conteneur_actualites h3 {
-    font-size: 3.5vw;
-    font-family: "franklin-gothic-atf", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    padding-left: 30px;
-  }
-  div.conteneur_actualites p {
-    font-size: clamp(16px, 2vw, 22px);
-    margin-top: 2vh;
-    font-family: "franklin-gothic-atf", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    padding: 2vw;
-  }
-  div.conteneur_actualites img {
-    width: auto;
-    height: auto;
-    max-width: 35vw;
-    margin-left: 22vw;
-  }
-  div.conteneur_actualites div.sous_conteneur_actualites {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 80vh;
-    width: 90vw;
-    background: linear-gradient(#71D6B5, #D4DAFF);
-  }
-  div.conteneur_actualites div.sous_conteneur_actualites .contenu_actualites {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 30px;
-    padding-right: 30px;
   }
 }/*# sourceMappingURL=style.css.map */

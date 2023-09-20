@@ -145,6 +145,8 @@ table {
 /* Backgroud gradient linéaire qui fait toute la page */
 
 body {
+    
+    background: -webkit-gradient(linear, left top, left bottom, from(#8C58F5), to(#F564A7)) fixed;
     box-sizing: border-box;
 }
 
@@ -193,10 +195,6 @@ a.bouton {
     text-align: center;
     line-height: 10.5vh;
 
-    :hover {
-        transform: scale(1.2);
-    }
-
 }
 
 p {
@@ -209,17 +207,8 @@ main {
     position: relative;
     display: flex;
     flex-direction: column;
-    // background: linear-gradient(#8C58F5, #F564A7);
-
 }
 
-main.accueil {
-    // autre code qui fonctionne pour le body au besoin :
-    // background: -webkit-gradient(linear, left top, left bottom, from(#8C58F5), to(#F564A7)) fixed;
-
-    background: linear-gradient(#8C58F5, #F564A7);
-
-}
 
 /* ligne de séparation --------------------------------------------------------------------------- */
 
@@ -254,61 +243,57 @@ nav {
     height: 15vh;
     width: 100%;
     background: linear-gradient(#D651F5, #F564A7);
-
+ 
     .logo {
         min-width: 13vw;
         height: 13vh;
         margin-right: 3vw;
     }
-
+ 
     .icones {
         display: flex;
         align-items: center;
         margin-left: 3vw;
-
+ 
         .menu_hamburger,
         .image_compte {
             object-fit: cover;
             height: 7vh;
             margin-right: 1vw;
             transition: transform 0.3s;
-
+ 
             &:hover {
                 transform: scale(1.2);
             }
         }
     }
 }
-
+ 
 .menu-toggle .hamburger-icon:hover {
     cursor: pointer;
 }
-
+ 
 .liens {
     margin-top: 15vh;
 }
-
+ 
 /* Masquer initialement les liens */
 .menu-links {
     position: fixed;
     top: 0;
     left: -100%;
     width: 15vw;
-    min-width: 300px;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.664);
     transition: left 0.5s ease-in-out;
-    overflow: hidden;
-
-    li {}
 }
-
+ 
 /* Afficher les liens lorsque la classe "show" est ajoutée */
 .menu-links.show {
     left: 0;
-    z-index: 4;
+    z-index: 2;
 }
-
+ 
 /* Style des liens */
 .menu-links ul {
     margin-top: 2vh;
@@ -319,26 +304,26 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 4;
+    z-index: 2;
 }
-
+ 
 .menu-links li {
-    padding: 3vh;
+    margin: 5vh;
     text-align: center;
 }
-
+ 
 .menu-links a {
     text-decoration: none;
     color: #fff;
     font-size: 2rem;
     transition: color 0.3s, font-size 0.3s;
-    z-index: 4;
-
+    z-index: 2;
+ 
     &:hover {
         color: #F564A7;
     }
 }
-
+ 
 /* Style de l'icône de fermeture */
 .menu-toggle .close-icon {
     position: absolute;
@@ -349,12 +334,12 @@ nav {
     font-size: 3rem;
     z-index: 1;
     transition: color 0.3s;
-
+ 
     &:hover {
         color: #F564A7;
     }
 }
-
+ 
 /* Style du bouton de déconnexion */
 .logout {
     text-decoration: none;
@@ -365,22 +350,22 @@ nav {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s, font-size 0.3s;
-
+ 
     a {
         text-decoration: none;
     }
-
+ 
     &:hover {
         font-size: 1.5rem;
         border: solid 4px #0f0f0f;
         background-color: #ffffff63;
     }
 }
-
+ 
 // ******************************************************************************************************************
 // FIN NAV
 // ******************************************************************************************************************
-
+ 
 
 
 
@@ -437,20 +422,20 @@ div.conteneur_video_presentation {
 
 div.video_presentation {
     width: 100vw;
+    height: 90vh;
     background-color: black;
 
     video {
         width: 100%;
-        height: 100%;
         object-fit: cover;
-
+       
     }
 }
 
 
 a.bouton_video_accueil {
     position: absolute;
-    top: 40vw;
+    top: 15%;
     left: 30%;
     color: white;
     font-size: 3vw;
@@ -458,23 +443,14 @@ a.bouton_video_accueil {
     font-weight: 500;
     font-style: normal;
     width: 35vw;
-    height: 15vh;
-    max-height: 10vh;
+    height: 12vh;
     border: solid;
     border-width: 7px;
     border-color: white;
     background: rgba(0, 0, 0, 0.438);
     text-decoration: none;
     text-align: center;
-    line-height: 75px;
-    z-index: 3;
-
-    &:hover {
-        // transform: scale(1.2);
-        // background-color: red;
-
-    }
-
+    line-height: 10.5vh;
 }
 
 /* Section programmation ------------------------------------------------------------- */
@@ -483,7 +459,7 @@ div.conteneur_programmation {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 15vh;
+    margin-top: 30vh;
 }
 
 .contenu_programmation {
@@ -493,27 +469,25 @@ div.conteneur_programmation {
 }
 
 .fiche_programmation {
-    height: 120vh;
+    height: 110vh;
     width: 70vw;
     background: linear-gradient(#58CFA8 0%, #7855ED 50%, #F363A8 100%);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
-    .logo_fiche {
+    .logo_fiche{
         width: 20vw;
-        height: auto;
-        min-width: 200px;
-        padding-top: 50px;
+        height: 20vh;
     }
 
-    .contenu_fiche_programmation {
+    .contenu_fiche_programmation{
         display: flex;
         flex-direction: row;
         justify-content: center;
         // padding-bottom: 20px;
 
-        p {
+        p{
             font-family: "franklin-gothic-atf", sans-serif;
             font-weight: 400;
             font-style: normal;
@@ -523,17 +497,16 @@ div.conteneur_programmation {
             padding-top: 10px;
             padding-bottom: 10px;
             font-size: 2vw;
-
         }
 
-        p.fiche_programmation_date {
+        p.fiche_programmation_date{
             font-family: "ohm-bold", sans-serif;
             font-weight: 700;
             font-style: normal;
-            font-size: max(3em, 20px);
+            font-size: 4vw;
         }
 
-        p.fiche_programmation_emplacement {
+        p.fiche_programmation_emplacement{
             font-family: "franklin-gothic-atf", sans-serif;
             font-weight: 400;
             font-style: normal;
@@ -564,11 +537,10 @@ div.section_carte_directions {
         justify-content: center;
     }
 
-    div.conteneur_carte_directions {
+    div.conteneur_carte_directions{
         display: flex;
         flex-direction: row;
         justify-content: center;
-
     }
 
     div.conteneur_directions {
@@ -579,27 +551,26 @@ div.section_carte_directions {
 
     div.directions {
         width: 30vw;
-        height: 50vh;
+        height: 40vh;
         background: linear-gradient(#71D6B5 0%, #F6B99E 50%, #F564A7 100%);
 
-        .directions_sous_conteneur {
+        .directions_sous_conteneur{
             display: flex;
             flex-direction: row;
             padding-top: 4vh;
 
-            .directions_sous_conteneur_texte {
+            .directions_sous_conteneur_texte{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
 
-                p {
+                p{
                     font-size: 1.2vw;
                     margin-left: 2vw;
                     max-width: 15vw;
                 }
             }
         }
-
         img {
             // margin-top: 2vh;
             margin-left: 2vw;
@@ -610,7 +581,7 @@ div.section_carte_directions {
 
     iframe.carte {
         width: 30vw;
-        height: 50vh;
+        height: 40vh;
     }
 }
 
@@ -622,8 +593,8 @@ div.conteneur_actualites {
     flex-direction: row;
     justify-content: center;
     padding-top: 5vh;
-
-    h3 {
+    
+    h3{
         font-size: 2vw;
         font-family: "franklin-gothic-atf", sans-serif;
         font-weight: 600;
@@ -646,16 +617,16 @@ div.conteneur_actualites {
         max-height: 40vh;
     }
 
-    div.sous_conteneur_actualites {
+    div.sous_conteneur_actualites{
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         height: 50vh;
-        width: 80vw;
-        background: linear-gradient(#71D6B5, #D4DAFF);
+            width: 80vw;
+            background: linear-gradient(#71D6B5, #D4DAFF);
 
-        .contenu_actualites {
-
+        .contenu_actualites{
+            
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -665,7 +636,7 @@ div.conteneur_actualites {
     }
 }
 
-a.bouton_actualites {
+a.bouton_actualites{
     // position: absolute;
     // top: 15%;
     // left: 30%;
@@ -699,7 +670,7 @@ footer {
     font-family: "franklin-gothic-atf", sans-serif;
     font-weight: 500;
     font-style: normal;
-
+    
 
     img {
         width: 5vw;
@@ -720,7 +691,7 @@ footer {
         padding: 1vw;
     }
 
-    .conteneur_footer {
+    .conteneur_footer{
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -732,13 +703,12 @@ footer {
 
 @media (max-width: 1023px) {
 
-
-    //  styles généraux ---------------------------------------------------------------
-    main.accueil {
-        background: red;
+    body{
+        background-color: red;
+        background: none;
     }
 
-    h1 {
+    h1{
         font-size: 4.5vw;
         max-width: 60vw;
         min-width: 30vw;
@@ -749,238 +719,13 @@ footer {
         left: 35vw;
         text-align: end;
     }
-
-    h2 {
-        font-family: "halogen", sans-serif;
-        font-weight: 900;
-        font-style: normal;
-        font-size: 5vw;
-        padding-top: 5vh;
-        padding-bottom: 5vh;
-    }
-
-    a.bouton_video_accueil {
-        position: absolute;
-        top: 35vw;
-        left: 30%;
-        color: white;
-        font-size: 3vw;
-        font-family: "franklin-gothic-atf", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-        width: 35vw;
-        height: 8vh;
-        max-height: 8vh;
-        border: solid;
-        border-width: 6px;
-        border-color: white;
-        background: rgba(0, 0, 0, 0.438);
-        text-decoration: none;
-        text-align: center;
-        line-height: 60px;
-        z-index: 3;
-
-        &:hover {
-            // transform: scale(1.2);
-            // background-color: red;
-
-        }
-
-    }
-
-    // Fiche de présentation -----------------------------------------------------
-
-    div.conteneur_programmation {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-top: 8vh;
-    }
-
-    .fiche_programmation {
-        height: 110vh;
-        width: 90vw;
-        background: linear-gradient(#58CFA8 0%, #7855ED 50%, #F363A8 100%);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-
-        .logo_fiche {
-            width: 20vw;
-            height: auto;
-        }
-
-
-        // section fiche de programmation ----------------------------------------------------
-        .contenu_fiche_programmation {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            // padding-bottom: 20px;
-
-            p {
-                font-family: "franklin-gothic-atf", sans-serif;
-                font-weight: 400;
-                font-style: normal;
-                color: white;
-                padding-left: 2vw;
-                padding-right: 2vw;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                font-size: 16px;
-
-                p.premiere_rangee {
-                    font-size: 16px;
-                }
-
-                p.deuxieme_rangee {
-                    font-size: 16px;
-                }
-            }
-
-            p.fiche_programmation_date {
-                font-family: "ohm-bold", sans-serif;
-                font-weight: 700;
-                font-style: normal;
-                font-size: max(1.5em, 30px);
-            }
-
-            p.premiere_rangee {
-                font-size: 16px;
-            }
-
-            p.deuxieme_rangee {
-                font-size: 16px;
-            }
-        }
-    }
-
-    // Section carte intéractive et coordonnées -------------------------------------------------------------------------------------------------------------------
-
-    div.section_carte_directions {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 65vh;
-
-        div.conteneur_carte {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        div.conteneur_carte_directions {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-
-        }
-
-        div.conteneur_directions {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        div.directions {
-            width: 45vw;
-            height: 45vh;
-            background: linear-gradient(#71D6B5 0%, #F6B99E 50%, #F564A7 100%);
-
-            .directions_sous_conteneur {
-                display: flex;
-                flex-direction: row;
-                padding-top: 4vh;
-
-                .directions_sous_conteneur_texte {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-
-                    p {
-                        font-size: 2.5vw;
-                        margin-left: 2vw;
-                        max-width: 20vw;
-                    }
-                }
-            }
-
-            img {
-                // margin-top: 2vh;
-                margin-left: 2vw;
-                height: 60px;
-                width: 60px;
-            }
-        }
-
-        iframe.carte {
-            width: 45vw;
-            height: 45vh;
-        }
-    }
-
-
-
-
-    // Section actualitées ------------------------------------------------------------------------------------------------------
-
-    div.conteneur_actualites {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding-top: 5vh;
-        overflow: hidden;
-
-        h3 {
-            font-size: 3.5vw;
-            font-family: "franklin-gothic-atf", sans-serif;
-            font-weight: 600;
-            font-style: normal;
-            padding-left: 30px;
-        }
-
-        p {
-            font-size: clamp(16px, 2vw, 22px);
-            margin-top: 2vh;
-            font-family: "franklin-gothic-atf", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            padding: 2vw;
-        }
-
-        img {
-            width: auto;
-            height: auto;
-            max-width: 35vw;
-            margin-left: 22vw;
-            // max-height: 40vh;
-        }
-
-        div.sous_conteneur_actualites {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            height: 60vh;
-            width: 90vw;
-            background: linear-gradient(#71D6B5, #D4DAFF);
-
-            .contenu_actualites {
-
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding-left: 30px;
-                padding-right: 30px;
-            }
-        }
-    }
+    
 }
 
 // Cellulaires / appareil Mobiles -------------------------------------------------------------------------------------------------------------------=--
 
 @media (max-width: 480px) {
 
-    // styles généraux ---------------------------------------
     h1 {
         font-size: 5.5vw;
         max-width: 60vw;
@@ -993,213 +738,7 @@ footer {
         text-align: end;
     }
 
-    h2 {
-        font-family: "halogen", sans-serif;
-        font-weight: 900;
-        font-style: normal;
-        font-size: 7vw;
-        padding-top: 5vh;
-        padding-bottom: 5vh;
-    }
-
-    main.accueil {
+    body{
         background: blue;
-    }
-
-    a.bouton_video_accueil {
-        position: absolute;
-        top: 38vw;
-        left: 30%;
-        color: white;
-        font-size: 3vw;
-        font-family: "franklin-gothic-atf", sans-serif;
-        font-weight: 500;
-        font-style: normal;
-        width: 35vw;
-        height: 180px;
-        max-height: 6vh;
-        border: solid;
-        border-width: 5px;
-        border-color: white;
-        background: rgba(0, 0, 0, 0.438);
-        text-decoration: none;
-        text-align: center;
-        line-height: 50px;
-        z-index: 3;
-
-        &:hover {
-            // transform: scale(1.2);
-            // background-color: red;
-
-        }
-
-    }
-
-
-    // Section fiche de programmation ------------------------------------------------
-
-    // section fiche de programmation ----------------------------------------------------
-    .contenu_fiche_programmation {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        // padding-bottom: 20px;
-
-        p.fiche_programmation_date {
-            font-family: "ohm-bold", sans-serif;
-            font-weight: 700;
-            font-style: normal;
-
-        }
-
-        p {
-            font-family: "franklin-gothic-atf", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            color: white;
-            padding-left: 2vw;
-            padding-right: 2vw;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            font-size: 13px;
-
-            p.premiere_rangee {
-                font-size: 13px;
-            }
-
-            p.deuxieme_rangee {
-                font-size: 13px;
-            }
-        }
-
-
-
-        p.premiere_rangee {
-            font-size: 13px;
-        }
-
-        p.deuxieme_rangee {
-            font-size: 13px;
-        }
-    }
-
-    // Section carte et directions -------------------------------------------------------------------------
-    div.section_carte_directions {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 65vh;
-        margin-bottom: 35vh;
-
-
-        div.conteneur_carte {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        div.conteneur_carte_directions {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-        }
-
-        div.conteneur_directions {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        div.directions {
-            width: 80vw;
-            height: 45vh;
-            background: linear-gradient(#71D6B5 0%, #F6B99E 50%, #F564A7 100%);
-
-            .directions_sous_conteneur {
-                display: flex;
-                flex-direction: row;
-                padding-top: 4vh;
-                padding-left: 7vw;
-
-                .directions_sous_conteneur_texte {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-
-                    p {
-                        font-size: 3.5vw;
-                        margin-left: 4vw;
-                        max-width: 40vw;
-                    }
-                }
-            }
-
-            img {
-                // margin-top: 2vh;
-                margin-left: 2vw;
-                height: 60px;
-                width: 60px;
-            }
-        }
-
-        iframe.carte {
-            width: 80vw;
-            height: 45vh;
-        }
-    }
-
-    // Section actualitées ------------------------------------------------------------------------------------------------------
-
-    div.conteneur_actualites {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding-top: 5vh;
-        overflow: hidden;
-
-        h3 {
-            font-size: 3.5vw;
-            font-family: "franklin-gothic-atf", sans-serif;
-            font-weight: 600;
-            font-style: normal;
-            padding-left: 30px;
-        }
-
-        p {
-            font-size: clamp(16px, 2vw, 22px);
-            margin-top: 2vh;
-            font-family: "franklin-gothic-atf", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            padding: 2vw;
-        }
-
-        img {
-            width: auto;
-            height: auto;
-            max-width: 35vw;
-            margin-left: 22vw;
-            // max-height: 40vh;
-        }
-
-        div.sous_conteneur_actualites {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            height: 80vh;
-            width: 90vw;
-            background: linear-gradient(#71D6B5, #D4DAFF);
-
-            .contenu_actualites {
-
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding-left: 30px;
-                padding-right: 30px;
-            }
-        }
     }
 }
