@@ -5,4 +5,4 @@
         <p>{{ $actualite->contenu }}</p>
         <p>{{ $actualite->image }}</p>
     @endforeach
-</x-layout> 
+</x-layout>

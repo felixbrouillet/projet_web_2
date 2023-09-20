@@ -1,3 +1,4 @@
+
 <body class="create">
     <x-layout titre="Créer un compte">
         <div class="container">
