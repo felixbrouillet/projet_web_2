@@ -44,7 +44,7 @@ class ActualiteController extends Controller
     
         // Gestion de l'image s'il y en a une
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('actualite_images'); // Enregistrez l'image dans le dossier "actualite_images"
+            $imagePath = $request->file('image')->store('img/images'); // Enregistrez l'image dans le dossier d'images
             $actualite->image = $imagePath;
         }
     
