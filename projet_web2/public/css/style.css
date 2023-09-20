@@ -405,7 +405,7 @@ div.create {
   justify-content: center;
 }
 
-input[type="file"]::content {
+input[type="file"]{
   color: white;
   font-size: 1.5em;
   text-align: center;
