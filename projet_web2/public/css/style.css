@@ -1,0 +1,239 @@
+@charset "UTF-8";
+@import "_reset.css";
+nav {
+  font-family: "halogen", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+  width: 100%;
+  background: linear-gradient(#D651F5, #F564A7);
+}
+nav .logo {
+  min-width: 13vw;
+  height: 13vh;
+  margin-right: 3vw;
+}
+nav .icones {
+  display: flex;
+  align-items: center;
+  margin-left: 3vw;
+}
+nav .icones .menu_hamburger,
+nav .icones .image_compte {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 7vh;
+  margin-right: 1vw;
+  transition: transform 0.3s;
+}
+nav .icones .menu_hamburger:hover,
+nav .icones .image_compte:hover {
+  transform: scale(1.2);
+}
+
+.menu-toggle .hamburger-icon:hover {
+  cursor: pointer;
+}
+
+.liens {
+  margin-top: 15vh;
+}
+
+/* Masquer initialement les liens */
+.menu-links {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 15vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.664);
+  transition: left 0.5s ease-in-out;
+}
+
+/* Afficher les liens lorsque la classe "show" est ajoutée */
+.menu-links.show {
+  left: 0;
+}
+
+/* Style des liens */
+.menu-links ul {
+  margin-top: 2vh;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-links li {
+  margin: 5vh;
+  text-align: center;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2rem;
+  transition: color 0.3s, font-size 0.3s;
+}
+.menu-links a:hover {
+  color: #F564A7;
+}
+
+/* Style de l'icône de fermeture */
+.menu-toggle .close-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 3rem;
+  z-index: 1;
+  transition: color 0.3s;
+}
+.menu-toggle .close-icon:hover {
+  color: #F564A7;
+}
+
+/* Style du bouton de déconnexion */
+.logout {
+  text-decoration: none;
+  color: #0f0f0f;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  border: solid 3px #0f0f0f;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+}
+.logout a {
+  text-decoration: none;
+}
+.logout:hover {
+  font-size: 1.5rem;
+  border: solid 4px #0f0f0f;
+  background-color: rgba(255, 255, 255, 0.3882352941);
+}
+
+/* Styles pour le héros (hero) */
+header h1 {
+  font-family: "halogen", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.hero_activites {
+  background-image: url("/img/images/stage_nuit_3.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  height: 40vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_activites h1 {
+  font-size: 3rem;
+}
+
+/* Styles pour chaque activité */
+.activite {
+  display: flex;
+  margin: 20px;
+}
+
+.activite h2 {
+  font-size: 2rem;
+  flex: 1;
+}
+
+.activite-content {
+  display: flex;
+  align-items: center;
+}
+
+.activite-image {
+  width: 300px;
+  height: 200px;
+  border-radius: 50%;
+  margin-right: 20px;
+}/*# sourceMappingURL=style.css.map */
+
+/* CSS pour la page de connexion */
+h2{
+  font-size: 5em;
+  color: white;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  margin-top: 2em;
+}
+
+form.formulaire {
+  padding: 10vh;
+  width: 40vw;
+  background: linear-gradient(to bottom, #76CEB8, #D355F3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: center;
+  margin: auto;
+}
+
+form.formulaire input,
+form.formulaire button{
+  width: 25vw; 
+  padding: 15px 0 15px 10px; 
+  box-sizing: border-box; 
+  border-color: white;
+  border-style: solid;
+  border-width: 5px;
+}
+
+form.formulaire button {
+  color: white;
+  background-color: transparent;
+  font-size: 1.5em;
+  padding-left: 0px;
+}
+
+form.formulaire button:hover {
+  border-color: #8C58F5;
+  color: #8C58F5;
+  cursor: pointer;
+}
+
+body.auth {
+  background-image: url('../img/images/stage_nuit4.jpg');
+  background-size: cover; 
+  background-position: center;
+}
+
+.user-create{
+  margin-top: 1.5em;
+  color: white;
+}
+
+.user-create:hover{
+  color: #8C58F5;
+}
+
+/* Page de création de compte */
+body.create {
+  background-image: url('../img/images/stage_nuit1.jpg');
+  background-size: cover; 
+  background-position: center;
+}
