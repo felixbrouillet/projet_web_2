@@ -1,6 +1,6 @@
 <x-layout titre="Dashboard-Admin">
     <x-dashboard.liens-dashboard />
-    <h1>Tableau de bord</h1>
+    <h2>Tableau de bord</h2>
 
     <p>Connecté en tant que: {{ Auth::user()->prenom }} {{ Auth::user()->nom }}</p>
 

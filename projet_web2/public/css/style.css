@@ -318,7 +318,7 @@ header .hero_activites h1 {
 }/*# sourceMappingURL=style.css.map */
 
 /* CSS pour la page de connexion */
-h2{
+div h2{
   font-size: 4em;
   color: white;
   font-family: "halogen", sans-serif;
