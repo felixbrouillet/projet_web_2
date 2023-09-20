@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     /**
-     * Affiche la connexion
+     * Affiche la page de connexion
      *
      * @return View
      */
@@ -17,13 +17,13 @@ class LoginController extends Controller
     }
 
     /**
-     * Traite la connexion et connecte l'utilisateur
+     * Traite la demande de connexion et authentifie l'utilisateur
      *
      * @param Request $request
      * @return RedirectResponse
      */
     public function authentifier(Request $request) {
-        // Valider
+        // Valider les données du formulaire
         $valides = $request->validate([
             "email" => "required|email",
             "password" => "required"
@@ -33,7 +33,7 @@ class LoginController extends Controller
             "password.required" => "Le mot de passe est requis"
         ]);
     
-        // On "essaie" de connecter l'utilisateur
+        // Tenter de connecter l'utilisateur
         if (Auth::attempt($valides)) {
             $request->session()->regenerate();
         
@@ -41,15 +41,15 @@ class LoginController extends Controller
             $role = Auth::user()->role->nom;
                 
             if ($role === 'client') {
-                // Redirection pour les clients (page d'accueil)
+                // Redirection vers la page d'accueil pour les clients
                 return redirect()->intended(route('index'));
             } else {
-                // Redirection pour les administrateurs au dashboard
+                // Redirection vers le dashboard pour les administrateurs
                 return redirect()->intended(route('dashboard.index'));
             }
         }
             
-        // L'utilisateur n'a pu être connecté: on le ramène au formulaire avec une erreur
+        // L'utilisateur n'a pu être connecté: redirection vers le formulaire avec un message d'erreur
         return back()
                 ->withErrors([
                     "email" => "Les informations fournies ne sont pas valides"

@@ -8,13 +8,25 @@ use Illuminate\Support\Facades\Storage;
 
 class ActiviteController extends Controller
 {
-    public function show() {
-        // Récupère toutes les activites 
+    /**
+     * Affiche toutes les activités.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function show()
+    {
+        // Récupère toutes les activités
         $activites = Activite::all();
         
         return view('activites.index', ['activites' => $activites]);
     }
 
+    /**
+     * Enregistre une nouvelle activité.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         // Valider les données du formulaire
@@ -40,17 +52,33 @@ class ActiviteController extends Controller
         $activite->save();
     
         // Redirection vers la page des activités avec un message de succès
-        return redirect()->route('activites.index')->with('success', 'Activité ajoutée avec succès');
+        return redirect()->route('dashboard.activites')->with('success', 'Activité ajoutée avec succès');
     }
 
+    /**
+     * Affiche le formulaire pour modifier une activité.
+     *
+     * @param  int  $id
+     * @return \Illuminate\View\View
+     */
     public function edit($id)
     {
-        $activites = Activite::find($id);
+        $activite = Activite::find($id);
 
-        $isEdit = true;
-        return view('dashboard.edit.edit-activites', ['activites' => $activites]);
+        if ($activite) {
+            return view('dashboard.edit.edit-activites', ['activite' => $activite, 'isEdit' => true]);
+        }
+
+        return redirect()->route('dashboard.activites')->with('error', 'Activité non trouvée');
     }
 
+    /**
+     * Met à jour une activité.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(Request $request, $id)
     {
         $activite = Activite::find($id);
@@ -86,20 +114,23 @@ class ActiviteController extends Controller
         }
 
         return redirect()->route('dashboard.activites')->with('error', 'Activité non trouvée');
-    }    
+    }
 
+    /**
+     * Supprime une activité.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function delete($id)
     {
         $activite = Activite::find($id);
 
         if ($activite) {
             $activite->delete();
-            return redirect()->route('dashboard.activites')->with('success', 'Utilisateur supprimé avec succès');
+            return redirect()->route('dashboard.activites')->with('success', 'Activité supprimée avec succès');
         }
 
-        return redirect()->route('dashboard.activites')->with('error', 'Utilisateur non trouvé');
+        return redirect()->route('dashboard.activites')->with('error', 'Activité non trouvée');
     }
-
 }
-
-

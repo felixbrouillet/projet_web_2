@@ -1,20 +1,18 @@
-<x-layout titre="Connexion">
-    <form action="{{ route('login.authentifier') }}" method="POST">
-        @csrf
-        <div>
-            <label for="email">Courriel</label>
-            <input type="email" name="email" autocomplete="email" value="{{ old('email') }}">
+<body class="auth">
+    <x-layout titre="Connexion">
+        <div class="container">
+        <h2>Connexion</h2>
+            <form class="formulaire auth" action="{{ route('login.authentifier') }}" method="POST">
+                @csrf
+                <div>
+                    <input type="email" name="email" autocomplete="email" value="{{ old('email') }}" placeholder="Email">
+                </div>
+                <div>
+                    <input type="password" name="password" autocomplete="current-password" placeholder="Mot de passe">
+                </div>
+                <button type="submit">Connexion</button>
+                <a class="user-create" href="{{ route('user.create') }}">Pas de compte ?</a>
+            </form>
         </div>
-
-        <div>
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password" autocomplete="current-password">
-        </div>
-        
-        <button type="submit">
-            Connexion !
-        </button>
-
-        <a href="{{ route('user.create') }}">Pas de compte ?</a>
-    </form>
-</x-layout>
+    </x-layout>
+</body>

@@ -17,7 +17,11 @@ class Activites extends Migration
             $table->id();
             $table->string('nom');
             $table->text('description');
+<<<<<<< HEAD
+            $table->string('image')->nullable();
+=======
             $table->string('image');
+>>>>>>> e8c14ba7028c9ef7c4deb040c579a27496e62df6
             $table->timestamps();
         });
     }

@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Actualite extends Model
 {
     use HasFactory;
+
+    protected $table = 'actualites';
+
+    protected $fillable = [
+        'nom', 
+        'contenu', 
+        'image'
+    ];
 }

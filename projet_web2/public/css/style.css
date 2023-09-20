@@ -304,7 +304,87 @@ header .hero_activites h1 {
   line-height: 2;
 }
 
+
 /* Style différent pour les forfaits pairs */
 .forfait-pair {
   flex-direction: row-reverse;
 }/*# sourceMappingURL=style.css.map */
+
+.activite-image {
+  width: 300px;
+  height: 200px;
+  border-radius: 50%;
+  margin-right: 20px;
+}/*# sourceMappingURL=style.css.map */
+
+/* CSS pour la page de connexion */
+h2{
+  font-size: 5em;
+  color: white;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  margin-top: 2em;
+}
+
+form.formulaire {
+  padding: 10vh;
+  width: 40vw;
+  background: linear-gradient(to bottom, #76CEB8, #D355F3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: center;
+  margin: auto;
+}
+
+form.formulaire input,
+form.formulaire button{
+  width: 25vw; 
+  padding: 15px 0 15px 10px; 
+  box-sizing: border-box; 
+  border-color: white;
+  border-style: solid;
+  border-width: 5px;
+}
+
+form.formulaire button {
+  color: white;
+  background-color: transparent;
+  font-size: 1.5em;
+  padding-left: 0px;
+}
+
+form.formulaire button:hover {
+  border-color: #8C58F5;
+  color: #8C58F5;
+  cursor: pointer;
+}
+
+body.auth {
+  background-image: url('../img/images/stage_nuit4.jpg');
+  background-size: cover; 
+  background-position: center;
+}
+
+.user-create{
+  margin-top: 1.5em;
+  color: white;
+}
+
+.user-create:hover{
+  color: #8C58F5;
+}
+
+/* Page de création de compte */
+body.create {
+  background-image: url('../img/images/stage_nuit1.jpg');
+  background-size: cover; 
+  background-position: center;
+}
+
