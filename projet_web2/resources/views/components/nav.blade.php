@@ -34,16 +34,12 @@
                 <ul class="menu-links" id="compteMenu">
                     <div class="close-icon" id="closeCompteMenuIcon">X</div>
                     <div class="liens">
-<<<<<<< HEAD
-                        <li><a href="{{ route('user.reservation') }}">Mon compte</a></li>
-=======
                         @if (auth()->user()->role_id === 1)
                             <!-- L'utilisateur a un rôle avec role_id égal à 1 -->
                         @elseif (auth()->user()->role_id === 2)
                             <!-- L'utilisateur a un rôle avec role_id égal à 2 -->
                             <li><a href="{{ route('user.reservation') }}">Mon compte</a></li>
                         @endif
->>>>>>> 09e577958bbf374351f9bc4e44372d47fb7df2f0
                         <li><a href="{{ route('logout') }}">Déconnexion</a></li>
                     </div>
                 </ul>
