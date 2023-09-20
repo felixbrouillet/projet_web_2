@@ -18,21 +18,16 @@
         <!-- Icône du compte utilisateur -->
         <div class="compte-toggle" id="compteToggle">
             @if (auth()->check())
+                <!-- Si l'utilisateur est connecté, affichez le sous-menu -->
                 <img src="/img/icones/compte.png" class="image_compte" alt="Compte" id="compteIcon">
                 <ul class="menu-links" id="compteMenu">
                     <div class="close-icon" id="closeCompteMenuIcon">X</div>
                     <div class="liens">
-                        @if (auth()->user()->role_id === 1)
-                            <!-- L'utilisateur a un rôle avec role_id égal à 1 -->
-                            <li><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
-                        @elseif (auth()->user()->role_id === 2)
-                            <!-- L'utilisateur a un rôle avec role_id égal à 2 -->
-                            <li><a href="{{ route('user.reservation') }}">Mon compte</a></li>
-                        @endif
+                        <li><a href="{{ route('user.reservation') }}">Mon compte</a></li>
                         <li><a href="{{ route('logout') }}">Déconnexion</a></li>
                     </div>
                 </ul>
-            @else                
+            @else
                 <!-- Si l'utilisateur n'est pas connecté, affichez simplement le lien de connexion -->
                 <a href="{{ route('login.show') }}">
                     <img src="/img/icones/compte.png" class="image_compte" alt="Connexion" id="compteIcon">
