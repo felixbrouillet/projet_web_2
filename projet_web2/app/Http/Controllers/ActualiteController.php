@@ -4,16 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Actualite;
+use Illuminate\Support\Facades\Storage; // Ajout pour utiliser la classe Storage
 
 class ActualiteController extends Controller
 {
-    public function show() {
-        // Récupère toutes les actualites 
+    /**
+     * Affiche toutes les actualités.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function show()
+    {
+        // Récupère toutes les actualités
         $actualites = Actualite::all();
         
         return view('actualites.index', ['actualites' => $actualites]);
     }
 
+    /**
+     * Enregistre une nouvelle actualité.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         // Valider les données du formulaire
@@ -23,7 +36,7 @@ class ActualiteController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
         ]);
     
-        // Créer une nouvelle activité
+        // Créer une nouvelle actualité
         $actualite = new Actualite([
             'nom' => $validatedData['nom'],
             'contenu' => $validatedData['contenu'],
@@ -35,21 +48,37 @@ class ActualiteController extends Controller
             $actualite->image = $imagePath;
         }
     
-        // Enregistrez l'activité dans la base de données
+        // Enregistrez l'actualité dans la base de données
         $actualite->save();
     
-        // Redirection vers la page des activités avec un message de succès
+        // Redirection vers la page des actualités avec un message de succès
         return redirect()->route('dashboard.actualites')->with('success', 'Actualité ajoutée avec succès');
     }
 
+    /**
+     * Affiche le formulaire pour modifier une actualité.
+     *
+     * @param  int  $id
+     * @return \Illuminate\View\View
+     */
     public function edit($id)
     {
-        $actualites = Actualite::find($id);
+        $actualite = Actualite::find($id);
 
-        $isEdit = true;
-        return view('dashboard.edit.edit-actualites', ['actualites' => $actualites]);
+        if ($actualite) {
+            return view('dashboard.edit.edit-actualites', ['actualite' => $actualite, 'isEdit' => true]);
+        }
+
+        return redirect()->route('dashboard.actualites')->with('error', 'Actualité non trouvée');
     }
 
+    /**
+     * Met à jour une actualité.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(Request $request, $id)
     {
         $actualite = Actualite::find($id);
@@ -62,7 +91,7 @@ class ActualiteController extends Controller
                 'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
             ]);
 
-            // Mettre à jour les champs de l'activité
+            // Mettre à jour les champs de l'actualité
             $actualite->nom = $validatedData['nom'];
             $actualite->contenu = $validatedData['contenu'];
 
@@ -85,8 +114,14 @@ class ActualiteController extends Controller
         }
 
         return redirect()->route('dashboard.actualites')->with('error', 'Actualité non trouvée');
-    }    
+    }
 
+    /**
+     * Supprime une actualité.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function delete($id)
     {
         $actualite = Actualite::find($id);
@@ -98,5 +133,4 @@ class ActualiteController extends Controller
 
         return redirect()->route('dashboard.actualites')->with('error', 'Actualité non trouvée');
     } 
-
 }

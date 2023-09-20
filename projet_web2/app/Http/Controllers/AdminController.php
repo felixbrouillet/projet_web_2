@@ -7,6 +7,12 @@ use App\Models\User;
 
 class AdminController extends Controller
 {
+    /**
+     * Stocke un nouvel administrateur dans la base de données
+     *
+     * @param Request $request
+     * @return RedirectResponse
+     */
     public function store(Request $request)
     {
         // Valider les données du formulaire
@@ -18,7 +24,7 @@ class AdminController extends Controller
             'role_id' => 'required|numeric',
         ]);
     
-        // Créer un nouvel employé
+        // Créer un nouvel administrateur
         $admin = new User([
             'prenom' => $validatedData['prenom'],
             'nom' => $validatedData['nom'],
@@ -27,13 +33,19 @@ class AdminController extends Controller
             'role_id' => $validatedData['role_id'],
         ]);
     
-        // Enregistrer l'employé dans la base de données
+        // Enregistrer l'administrateur dans la base de données
         $admin->save();
     
         // Redirection vers le dashboard avec le message de succès 
         return redirect()->route('dashboard.index')->with('success', 'Admin ajouté avec succès');
     }
 
+    /**
+     * Affiche le formulaire d'édition pour un administrateur
+     *
+     * @param int $id
+     * @return View
+     */
     public function edit($id)
     {
         $user = User::find($id);
@@ -42,6 +54,13 @@ class AdminController extends Controller
         return view('dashboard.edit.edit-admin', ['user' => $user]);
     }
 
+    /**
+     * Met à jour les informations d'un administrateur
+     *
+     * @param Request $request
+     * @param int $id
+     * @return RedirectResponse
+     */
     public function update(Request $request, $id)
     {
         $user = User::find($id);
@@ -77,6 +96,12 @@ class AdminController extends Controller
         return redirect()->route('dashboard.index')->with('error', 'Utilisateur non trouvé');
     }
     
+    /**
+     * Supprime un administrateur
+     *
+     * @param int $id
+     * @return RedirectResponse
+     */
     public function delete($id)
     {
         $user = User::find($id);
@@ -88,5 +113,4 @@ class AdminController extends Controller
 
         return redirect()->route('dashboard.index')->with('error', 'Utilisateur non trouvé');
     }
-
 }

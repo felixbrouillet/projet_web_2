@@ -9,13 +9,24 @@ use Illuminate\Support\Facades\Auth;
 
 class ForfaitController extends Controller
 {
+    /**
+     * Affiche tous les forfaits disponibles
+     *
+     * @return View
+     */
     public function show() {
-        // Récupère tous les forfaits 
+        // Récupère tous les forfaits
         $forfaits = Forfait::all();
         
         return view('forfaits.index', ['forfaits' => $forfaits]);
     }
 
+    /**
+     * Affiche la page de réservation pour un forfait spécifique
+     *
+     * @param int $id
+     * @return View
+     */
     public function reservation($id)
     {
         // Récupère le forfait en fonction de son id
@@ -30,6 +41,13 @@ class ForfaitController extends Controller
         return view('forfaits.validation', ['forfait' => $forfait]);
     }
 
+    /**
+     * Met à jour les informations sur le forfait de l'utilisateur
+     *
+     * @param Request $request
+     * @param int $id
+     * @return RedirectResponse
+     */
     public function update(Request $request, $id)
     {
         // Récupérez l'ID du forfait à partir de la requête
@@ -38,7 +56,7 @@ class ForfaitController extends Controller
         // Récupère l'utilisateur connecté
         $user = Auth::user();
     
-        // Si l'utilisateur n'est pas reconnu il redirige vers la page de forfaits avec une erreur
+        // Si l'utilisateur n'est pas reconnu, redirige vers la page de forfaits avec une erreur
         if (!$user) {
             return redirect()->route('forfaits.show')->with('error', 'Utilisateur non trouvé.');
         }
@@ -46,7 +64,7 @@ class ForfaitController extends Controller
         // Récupérez la valeur du bouton soumis (confirmer ou annuler)
         $action = $request->input('action');
     
-        // Met à jour le champ 'forfait_id' de l'utilisateur connecté si l'utilisateur à cliqué sur le bouton oui et redirige à l'accueil avec un message de succes
+        // Met à jour le champ 'forfait_id' de l'utilisateur connecté si l'utilisateur a cliqué sur le bouton oui et redirige vers l'accueil avec un message de succès
         if ($action === 'confirmer') {
             $user->forfait_id = $forfait_id;
         
@@ -62,6 +80,11 @@ class ForfaitController extends Controller
         }
     }
     
+    /**
+     * Annule la réservation du forfait de l'utilisateur
+     *
+     * @return RedirectResponse
+     */
     public function delete() {
         // Récupère l'utilisateur connecté
         $user = Auth::user();

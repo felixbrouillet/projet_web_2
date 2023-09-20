@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    /**
+     * Affiche la réservation de l'utilisateur connecté.
+     *
+     * @return \Illuminate\View\View
+     */
     public function showReservation()
     {
         // Récupère le forfait de l'utilisateur connecté
@@ -21,14 +26,26 @@ class UserController extends Controller
             $forfait = Forfait::find($forfait_id);
         }
 
-        // Envoyez toujours la variable $forfait à la vue
+        // Envoyer toujours la variable $forfait à la vue
         return view('user.reservation', ['forfait' => $forfait]);
     }
 
-    public function create(){
+    /**
+     * Affiche le formulaire de création d'un nouvel utilisateur.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function create()
+    {
         return view('user.create');
     }
 
+    /**
+     * Stocke un nouvel utilisateur dans la base de données.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         // Valider les données du formulaire
@@ -36,7 +53,7 @@ class UserController extends Controller
             'prenom' => 'required|string|max:255',
             'nom' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|string|confirmed', 
+            'password' => 'required|string|confirmed',
             'role_id' => 'required'
         ]);
 
@@ -47,7 +64,7 @@ class UserController extends Controller
             'email' => $validatedData['email'],
             'password' => bcrypt($validatedData['password']),
             'role_id' => $validatedData['role_id']
-        ]); 
+        ]);
 
         // Enregistrer l'utilisateur dans la base de données
         $user->save();
