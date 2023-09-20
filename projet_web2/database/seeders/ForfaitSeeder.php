@@ -37,7 +37,7 @@ class ForfaitSeeder extends Seeder
             [
                 'nom' => 'Forfait Premium',
                 'details' => "Accès premium au festival pendant les trois jours.
-                              Accès à toutes les scènes et zones du festival, incluant la zone premium réservée.                              .
+                              Accès à toutes les scènes et zones du festival, incluant la zone premium réservée.
                               Accès à une zone premium avec bar illimité et service de restauration.
                               Accès aux toilettes premium.
                               Panier cadeau comprenant des goodies, un t-shirt exclusif et d'autres surprises.
