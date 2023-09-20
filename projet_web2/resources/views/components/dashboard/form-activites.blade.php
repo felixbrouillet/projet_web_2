@@ -6,14 +6,12 @@
 
     <!-- Champ Nom de l'activité -->
     <div class="form-cell">
-        <label for="nom" class="form-label">Nom de l'activité</label>
-        <input type="text" class="form-control" id="nom" name="nom" @if ($isEdit) value="{{ old('nom', $activites->nom) }}" @endif required>
+        <input type="text" class="form-control" id="nom" name="nom" @if ($isEdit) value="{{ old('nom', $activites->nom) }}" @endif required placeholder="Nom de l'activité">
     </div>
 
     <!-- Champ Description de l'activité -->
     <div class="form-cell">
-        <label for="description" class="form-label">Description de l'activité</label>
-        <textarea class="form-control" id="description" name="description" rows="4" required>@if ($isEdit){{ old('description', $activites->description) }}@endif</textarea>
+        <textarea class="form-control" id="description" name="description" rows="4" required>@if ($isEdit){{ old('description', $activites->description) }}@endif</textarea placeholder="Description de l'activité">
     </div>
 
     <!-- Champ Image de l'activité -->
