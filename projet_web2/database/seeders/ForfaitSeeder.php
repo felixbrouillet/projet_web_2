@@ -33,37 +33,16 @@ class ForfaitSeeder extends Seeder
             ],
             [
                 'nom' => 'Forfait VIP',
-<<<<<<< HEAD
-                'details' => $this->formatDetails('
-                    Accès VIP exclusif au festival pendant les trois jours.
-                    Accès à toutes les scènes et zones du festival, y compris une zone VIP réservée.
-                    Accès à une zone VIP avec bar premium et service de restauration exclusif.
-                    Accès aux toilettes VIP.
-                    Kit de festival VIP comprenant des goodies et des avantages exclusifs.
-                    Possibilité de camper sur le site du festival (emplacement VIP réservé).'),
-=======
                 'details' => 'Accès VIP exclusif au festival pendant les trois jours.
                               Accès à toutes les scènes et zones du festival, y compris une zone VIP réservée.
                               Accès à une zone VIP avec bar premium et service de restauration exclusif.
                               Accès aux toilettes VIP.
                               Kit de festival VIP comprenant des goodies et des avantages exclusifs.
                               Possibilité de camper sur le site du festival (emplacement VIP réservé).',
->>>>>>> e8c14ba7028c9ef7c4deb040c579a27496e62df6
                 'prix' => 349,
             ],
             [
                 'nom' => 'Forfait Premium',
-<<<<<<< HEAD
-                'details' => $this->formatDetails('
-                    Accès premium au festival pendant les trois jours.
-                    Accès à toutes les scènes et zones du festival, y compris une zone premium réservée.
-                    Accès à une zone premium avec bar illimité et service de restauration de qualité supérieure.
-                    Accès aux toilettes premium.
-                    Panier cadeau comprenant des goodies, un t-shirt exclusif et d\'autres surprises.
-                    Accès prioritaire à toutes les activités du festival.
-                    Possibilité de camper sur le site du festival (emplacement premium réservé).
-                    Rencontre exclusive avec un DJ ou un artiste (réservation requise).'),
-=======
                 'details' => "Accès premium au festival pendant les trois jours.
                               Accès à toutes les scènes et zones du festival, incluant la zone premium réservée.
                               Accès à une zone premium avec bar illimité et service de restauration.
@@ -72,7 +51,6 @@ class ForfaitSeeder extends Seeder
                               Accès prioritaire à toutes les activités du festival.
                               Possibilité de camper sur le site du festival (emplacement premium réservé).
                               Rencontre exclusive avec un DJ ou un artiste (réservation requise).",
->>>>>>> e8c14ba7028c9ef7c4deb040c579a27496e62df6
                 'prix' => 599,
             ],
         ];

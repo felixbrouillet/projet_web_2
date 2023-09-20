@@ -319,8 +319,9 @@ header .hero_activites h1 {
 
 /* CSS pour la page de connexion */
 h2{
-  font-size: 5em;
+  font-size: 4em;
   color: white;
+  font-family: "halogen", sans-serif;
 }
 
 .container{
@@ -329,7 +330,7 @@ h2{
   align-items: center;
   flex-direction: column;
   gap: 2em;
-  margin-top: 2em;
+  margin-top: 3em;
 }
 
 form.formulaire {
@@ -351,6 +352,7 @@ form.formulaire button{
   border-color: white;
   border-style: solid;
   border-width: 5px;
+  font-family: "franklin-gothic-atf", sans-serif;
 }
 
 form.formulaire button {
@@ -361,9 +363,10 @@ form.formulaire button {
 }
 
 form.formulaire button:hover {
-  border-color: #8C58F5;
-  color: #8C58F5;
+  border-color: black;
+  color: black;
   cursor: pointer;
+  font-size: 1.5em;
 }
 
 body.auth {
@@ -375,10 +378,12 @@ body.auth {
 .user-create{
   margin-top: 1.5em;
   color: white;
+  text-decoration: none;
+  font-family: "franklin-gothic-atf", sans-serif;
 }
 
 .user-create:hover{
-  color: #8C58F5;
+  color: black;
 }
 
 /* Page de création de compte */

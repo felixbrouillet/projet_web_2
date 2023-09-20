@@ -19,13 +19,6 @@ class UserSeeder extends Seeder
         User::create([
             'prenom' => 'Admin',
             'nom' => 'Admin',
-<<<<<<< HEAD
-            'email' => 'admin@admin.com',
-            'password' => Hash::make('admin'),
-            'role_id' => 1, 
-            'date_achat_forfait' => null,
-        ]);
-=======
             'email' => 'admin@example.com',
             'password' => Hash::make('password'),
             'role_id' => 1,
@@ -60,6 +53,5 @@ class UserSeeder extends Seeder
             'date_achat_forfait' => '2023-09-07',
         ]);
         // Ajouter d'autres utilisateurs avec des données différentes ici...
->>>>>>> e8c14ba7028c9ef7c4deb040c579a27496e62df6
     }
 }
