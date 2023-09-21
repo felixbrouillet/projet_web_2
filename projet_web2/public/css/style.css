@@ -404,7 +404,6 @@ header .hero_activites h1 {
   padding-right: 15vw;
   padding-bottom: 10vh;
   background: linear-gradient(0deg, rgb(245, 100, 167) 0%, rgb(140, 88, 245) 100%);
-  color: #202020;
 }
 .actualites h1 {
   font-family: "halogen", sans-serif;
@@ -433,6 +432,7 @@ header .hero_activites h1 {
   margin-right: 20px;
   margin-bottom: 2vh;
   font-size: 1.2vw;
+  color: #202020;
 }
 .actualites .actualite .contenu {
   display: flex;
@@ -452,6 +452,7 @@ header .hero_activites h1 {
   font-weight: lighter;
   flex: 1;
   white-space: pre-line;
+  color: #202020;
 }
 
 /* SCSS pour la page de connexion */

@@ -484,7 +484,6 @@ header {
     padding-right: 15vw;
     padding-bottom: 10vh;
     background: linear-gradient(0deg, rgba(245, 100, 167, 1) 0%, rgba(140, 88, 245, 1) 100%);
-    color: #202020;
 
     h1 {
         font-family: "halogen", sans-serif;
@@ -514,6 +513,7 @@ header {
             margin-right: 20px;
             margin-bottom: 2vh;
             font-size: 1.2vw;
+            color: #202020;
         }
 
         .contenu {
@@ -535,6 +535,7 @@ header {
             font-weight: lighter;
             flex: 1;
             white-space: pre-line;
+            color: #202020;
         }
     }
 
@@ -552,7 +553,7 @@ div {
       color: white;
       font-family: "halogen", sans-serif;
     }
-  
+
     &.auth {
       background-image: url('../img/images/stage_nuit4.jpg');
       background-size: cover;
@@ -560,7 +561,7 @@ div {
       height: 100%;
     }
   }
-  
+
   .container {
     display: flex;
     justify-content: center;
@@ -568,7 +569,7 @@ div {
     flex-direction: column;
     gap: 2em;
     margin-top: 2em;
-  
+
     form {
       &.formulaire {
         padding: 8vh;
@@ -579,7 +580,7 @@ div {
         gap: 0.5em;
         align-items: center;
         margin: auto;
-  
+
         input, button {
           width: 25vw;
           padding: 15px 0 15px 10px;
@@ -587,13 +588,13 @@ div {
           border: white 5px solid;
           font-family: "franklin-gothic-atf", sans-serif;
         }
-  
+
         button {
           color: white;
           background-color: transparent;
           font-size: 1.5em;
           padding-left: 0px;
-  
+
           &:hover {
             border-color: black;
             color: black;
@@ -603,31 +604,31 @@ div {
         }
       }
     }
-  
+
     .user-create {
       margin-top: 1.5em;
       color: white;
       text-decoration: none;
       font-family: "franklin-gothic-atf", sans-serif;
-  
+
       &:hover {
         color: black;
       }
     }
   }
-    
+
 /* SCSS pour la page de création de compte */
 div {
     &.create {
       background-image: url('../img/images/stage_nuit1.jpg');
-      background-size: cover; 
+      background-size: cover;
       background-position: center;
       height: 100vh;
     }
   }
-   
+
   /* Style pour les formulaires du dashboard */
-  
+
 /* SCSS pour les activités */
 .container {
     .h2-noir{
@@ -641,16 +642,16 @@ div {
       font-size: 1.5em;
       font-family: "franklin-gothic-atf", sans-serif;
     }
-  
+
     input[type="file"] {
       color: white;
-  
+
       &:hover {
         color: #000;
         border-color: #000;
       }
     }
-  
+
     textarea {
       padding-left: 15px;
       width: 24.1vw;
@@ -658,7 +659,7 @@ div {
       font-size: 2em;
       border: none;
     }
-  
+
     input[type="file"]::-webkit-file-upload-button {
       visibility: hidden;
       margin-right: -80px;
@@ -672,43 +673,43 @@ div {
     text-align: center;
     font-family: "halogen", sans-serif;
   }
-  
+
   .list-dashboard {
     background: linear-gradient(to bottom, #76CEB8, #D355F3);
     padding: 5vw;
     width: 40vw;
     margin: 30px auto;
     list-style-type: none;
-  
+
     h2 {
       font-size: 2em;
       color: white;
       font-family: "halogen", sans-serif;
       margin-bottom: 10px;
     }
-  
+
     li {
       color: white;
       font-family: "franklin-gothic-atf", sans-serif;
       font-size: 1.5em;
       margin-bottom: 10px;
-  
+
       a {
         text-decoration: none;
         margin-left: 10px;
-  
+
         &:hover {
           transform: scale(1.2);
         }
       }
     }
-  
+
     span {
       font-size: 1em;
       font-weight: bold;
     }
   }
-  
+
   div {
     select {
       width: 25vw;
@@ -719,7 +720,7 @@ div {
       font-family: "franklin-gothic-atf", sans-serif;
     }
   }
-  
+
   /* Style de la page d'accueil du dashboard */
   .liens-dashboard {
     display: grid;
@@ -728,7 +729,7 @@ div {
     margin: 0 auto;
     max-width: 800px;
     padding: 20px;
-  
+
     a {
       text-decoration: none;
       display: flex;
@@ -739,13 +740,13 @@ div {
       color: black;
       font-size: 1.5em;
       font-family: "franklin-gothic-atf", sans-serif;
-  
+
       &:hover {
         background: linear-gradient(to bottom, #76CEB8, #D355F3);
       }
     }
   }
-  
+
   /* Style du bouton retour */
   .retour {
     text-decoration: none;
@@ -756,7 +757,7 @@ div {
     font-size: 1.5em;
     font-family: "franklin-gothic-atf", sans-serif;
     margin: 10px 0 0 10px;
-  
+
     &:hover {
       background: linear-gradient(to bottom, #D355F3, #76CEB8);
     }
