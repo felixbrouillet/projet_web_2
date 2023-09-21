@@ -40,6 +40,11 @@ Route::get("/dashboard", [DashboardController::class, 'index'])
     ->middleware('auth', 'isClient');
 
 // Affichage de la page actualités dans le dashboard (nécessite une connexion)
+Route::get("/dashboard/admins", [DashboardController::class, 'showAdmin'])
+    ->name('dashboard.admins')
+    ->middleware('auth');
+
+// Affichage de la page actualités dans le dashboard (nécessite une connexion)
 Route::get("/dashboard/actualites", [DashboardController::class, 'showActus'])
     ->name('dashboard.actualites')
     ->middleware('auth');

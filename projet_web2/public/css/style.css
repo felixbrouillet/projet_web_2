@@ -396,24 +396,21 @@ div.create {
 /* Style pour les formulaires du dashboard */
 
 /* Activités */
-.container-activites h2{
+.container h2{
   color: black;
 }
 
-.form-activites{
-  display: flex;
-  justify-content: center;
-}
-
 input[type="file"],
-input[type="text"] {
-  color: white;
+input[type="text"], 
+input[type="password"], 
+input[type="email"] {
+  color: black;
   font-size: 1.5em;
   font-family: "franklin-gothic-atf", sans-serif;
 }
 
-input[type="text"] {
-  color: #000;
+input[type="file"] {
+  color: white;
 }
 
 input[type="file"]:hover{
@@ -433,4 +430,101 @@ textarea{
 input[type="file"]::-webkit-file-upload-button {
   visibility: hidden;
   margin-right: -80px;
+}
+
+/* body{
+  background: linear-gradient(0deg, rgb(245, 100, 167) 0%, rgb(140, 88, 245) 100%);
+} */
+
+/* Style des listes */
+.list-h2{
+  margin-top: 0.8em;
+  font-size: 4em;
+  text-align: center;
+  font-family: "halogen", sans-serif;
+}
+
+.list-dashboard {
+  background: linear-gradient(to bottom, #76CEB8, #D355F3);
+  padding: 5vw;
+  width: 40vw;
+  margin: 30px auto;
+  list-style-type: none;
+}
+
+.list-dashboard h2 {
+  font-size: 2em;
+  color: white;
+  font-family: "halogen", sans-serif;
+  margin-bottom: 10px;
+}
+
+.list-dashboard li {
+  color: white;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.list-dashboard li a {
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.list-dashboard li a:hover {
+  transform: scale(1.2); 
+}
+
+.list-dashboard span{
+  font-size: 1em;
+  font-weight: bold;
+}
+
+div select {
+  width: 25vw;
+  padding: 15px 10px;
+  font-size: 1.5em;
+  border: 5px solid white;
+  color: black;
+  font-family: "franklin-gothic-atf", sans-serif;
+}
+
+.liens-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Crée une grille 2 colonnes égales */
+  gap: 20px; /* Espace entre les éléments */
+  margin: 0 auto; /* Centrage horizontal */
+  max-width: 800px; /* Limite la largeur pour éviter l'étirement sur les grands écrans */
+  padding: 20px; /* Ajout de marge intérieure */
+}
+
+.liens-dashboard a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 5px solid black;
+  color: black;
+  font-size: 1.5em;
+  font-family: "franklin-gothic-atf", sans-serif;
+}
+
+.liens-dashboard a:hover {
+  background: linear-gradient(to bottom, #D355F3, #76CEB8);
+}
+
+a.retour {
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 20px;
+  background: linear-gradient(to bottom, #76CEB8, #D355F3);
+  color: white;
+  font-size: 1.5em;
+  font-family: "franklin-gothic-atf", sans-serif;
+  margin: 10px 0 0 10px;
+}
+
+a.retour:hover {
+  background: linear-gradient(to bottom, #D355F3, #76CEB8);
 }

@@ -8,22 +8,16 @@
             <ul class="menu-links">
                 <div class="close-icon" id="closeIcon">X</div>
                 <div class="liens">
-                    @if (auth()->check())
-                        @if (auth()->user()->role_id === 1)
-                            <!-- L'utilisateur a un rôle avec role_id égal à 1 -->
-                            <li><a href="{{ route('index') }}">Accueil</a></li>
-                            <li><a href="{{ route('dashboard.index') }}">Admins</a></li>
-                            <li><a href="{{ route('dashboard.actualites') }}">Actualités</a></li>
-                            <li><a href="{{ route('dashboard.activites') }}">Activités</a></li>
-                            <li><a href="{{ route('dashboard.clients') }}">Clients</a></li>
-                        @elseif (auth()->user()->role_id === 2)
-                            <!-- L'utilisateur a un rôle avec role_id égal à 2 -->
-                            <li><a href="{{ route('index') }}">Accueil</a></li>
-                            <li><a href="{{ route('forfaits.show') }}">Billetterie</a></li>
-                            <li><a href="{{ route('activites.show') }}">Activités</a></li>
-                            <li><a href="{{ route('actualites.show') }}">Actualités</a></li>
-                        @endif                 
-                    @endif                 
+                    <!-- Liens communs pour tous les utilisateurs -->
+                    <li><a href="{{ route('index') }}">Accueil</a></li>
+                    <li><a href="{{ route('activites.show') }}">Activités</a></li>
+                    <li><a href="{{ route('actualites.show') }}">Actualités</a></li>                                   
+                    <li><a href="{{ route('forfaits.show') }}">Billetterie</a></li>
+
+                    @if (auth()->check() && auth()->user()->role_id === 1)
+                        <!-- L'utilisateur a un rôle avec role_id égal à 1 -->
+                        <li><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
+                    @endif   
                 </div>
             </ul>
         </div>

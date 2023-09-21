@@ -1,9 +1,8 @@
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 @props(['activite', 'route', 'isEdit'])
 
-<div class="container container-activites">
+<div class="container">
     <h2>{{ $isEdit ? 'Éditer' : 'Ajouter' }} une activité</h2>
-    <form class="formulaire form-activites" action="{{ $route }}" method="POST" enctype="multipart/form-data">
+    <form class="formulaire" action="{{ $route }}" method="POST" enctype="multipart/form-data">
         @csrf
     
         <!-- Champ Nom de l'activité -->

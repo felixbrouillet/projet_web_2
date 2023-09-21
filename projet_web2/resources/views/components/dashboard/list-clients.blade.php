@@ -1,4 +1,5 @@
-<ul>
+<h2 class="list-h2">Liste des clients</h2>
+<ul class="list-dashboard">
     @if ($clients->isEmpty())
         <p>Aucun client n'a fait de réservation</p>
     @else
