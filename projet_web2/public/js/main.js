@@ -53,6 +53,29 @@ closeCompteMenuIcon.addEventListener("click", function() {
 
 
 
+const cursor = document.getElementById('cursor');
 
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
 
+document.addEventListener('scroll', () => {
+  const { clientX, clientY } = getLastCursorPosition();
+  updateCursorPosition(clientX, clientY);
+});
 
+function getLastCursorPosition() {
+  return {
+    clientX: parseFloat(cursor.style.left) || 0,
+    clientY: parseFloat(cursor.style.top) || 0,
+  };
+}
+
+function updateCursorPosition(x, y) {
+  const scrollX = window.scrollX || window.pageXOffset;
+  const scrollY = window.scrollY || window.pageYOffset;
+
+  cursor.style.left = x + scrollX + 'px';
+  cursor.style.top = y + scrollY + 'px';
+}

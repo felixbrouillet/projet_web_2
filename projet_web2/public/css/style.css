@@ -35,10 +35,7 @@ nav .icones .image_compte:hover {
   transform: scale(1.2);
 }
 
-.compte-toggle .image_compte:hover,
-.menu-toggle .hamburger-icon:hover {
-  cursor: pointer;
-}
+
 
 .liens {
   margin-top: 15vh;
@@ -92,7 +89,6 @@ nav .icones .image_compte:hover {
   position: absolute;
   top: 20px;
   right: 20px;
-  cursor: pointer;
   color: #fff;
   font-size: 3rem;
   z-index: 1;
@@ -107,7 +103,6 @@ nav .icones .image_compte:hover {
   position: absolute;
   top: 20px;
   right: 20px;
-  cursor: pointer;
   color: #fff;
   font-size: 3rem;
   z-index: 1;
@@ -373,7 +368,6 @@ header .hero_activites h1 {
   color: #fff;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   transition: background-color 0.3s;
 }
 .validation .validation-forfait .confirmation-form .btn-confirmer:hover {
@@ -389,7 +383,6 @@ header .hero_activites h1 {
   color: #F564A7;
   border: 2px solid #F564A7;
   border-radius: 5px;
-  cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
 .validation .validation-forfait .confirmation-form .btn-annuler:hover {
@@ -501,7 +494,6 @@ div.auth {
 .container form.formulaire button:hover {
   border-color: black;
   color: black;
-  cursor: pointer;
   font-size: 1.5em;
 }
 .container .user-create {
@@ -607,7 +599,7 @@ div select {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  margin: 0 auto;
+  margin: 5% auto;
   max-width: 800px;
   padding: 20px;
 }
@@ -639,4 +631,38 @@ div select {
 }
 .retour:hover {
   background: linear-gradient(to bottom, #D355F3, #76CEB8);
+}
+
+::-moz-selection {
+  background-color: rgb(245, 100, 167);
+  color: rgb(113, 214, 181);
+}
+
+::selection {
+  background-color: rgb(245, 100, 167);
+  color: rgb(113, 214, 181);
+}
+
+body {
+  cursor: none;
+}
+
+#cursor {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  transition: width 0.3s, height 0.3s;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+#cursor.active {
+  width: 20px;
+  height: 20px;
+}
+
+nav, a, input, div, img, textarea, button {
+  cursor: none;
 }/*# sourceMappingURL=style.css.map */

@@ -27,6 +27,7 @@
 <body>
     <x-nav></x-nav>
     {{ $slot }}
+    <div id="cursor"></div>
     <script src="{{ asset('js/main.js') }}" type="module"></script>
 </body>
 </html>

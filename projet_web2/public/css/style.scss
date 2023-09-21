@@ -127,7 +127,6 @@ nav {
 // FIN NAV
 // ******************************************************************************************************************
 
-
 // ******************************************************************************************************************
 // DÉBUT PAGE ACTIVITÉS
 // ******************************************************************************************************************
@@ -725,7 +724,7 @@ div {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin: 0 auto;
+    margin: 5% auto;
     max-width: 800px;
     padding: 20px;
   
@@ -760,4 +759,32 @@ div {
     &:hover {
       background: linear-gradient(to bottom, #D355F3, #76CEB8);
     }
+  }
+
+  ::selection {
+    background-color: rgba(245, 100, 167, 1); 
+    color: rgba(113, 214, 181, 1);
+  }
+  
+  body {
+    cursor: none;
+  }
+  
+  #cursor {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    transition: width 0.3s, height 0.3s;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+  }
+  #cursor.active {
+    width: 20px;
+    height: 20px;
+  }
+    
+  nav, a, input, div, img, textarea, button {
+    cursor: none;
   }
