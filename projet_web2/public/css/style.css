@@ -455,7 +455,6 @@ header .hero_activites h1 {
   color: #202020;
 }
 
-/* SCSS pour la page de connexion */
 div h2 {
   font-size: 4em;
   color: white;
@@ -515,7 +514,6 @@ div.auth {
   color: black;
 }
 
-/* SCSS pour la page de création de compte */
 div.create {
   background-image: url("../img/images/stage_nuit1.jpg");
   background-size: cover;
@@ -523,7 +521,6 @@ div.create {
   height: 100vh;
 }
 
-/* Style pour les formulaires du dashboard */
 /* SCSS pour les activités */
 .container .h2-noir {
   color: #000;
