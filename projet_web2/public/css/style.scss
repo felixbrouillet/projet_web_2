@@ -468,7 +468,6 @@ header {
     }
 }
 
-
 // ******************************************************************************************************************
 // FIN PAGE DE VALIDATION DU FORFAIT
 // ******************************************************************************************************************
@@ -782,4 +781,89 @@ div {
 
 // ******************************************************************************************************************
 // FIN PAGE DASHBOARD (ADMINS)
+// ******************************************************************************************************************
+
+// ******************************************************************************************************************
+// DÉBUT PAGE DE COMPTE CLIENT
+// ******************************************************************************************************************
+
+/* Styles for the Account Page */
+.account {
+    background-image: url('/img/images/dj.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+
+    .account-info {
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        max-width: 600px;
+        text-align: center;
+
+        h1 {
+            font-family: "halogen", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+            font-size: 2rem;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            color: #F564A7;
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            margin: 1rem 0;
+        }
+
+        .forfait-info {
+            margin-top: 2rem;
+
+            p {
+                font-size: 1.2rem;
+                font-family: "franklin-gothic-atf", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                margin: 1rem 0;
+            }
+        }
+
+        .reservation-actions {
+            margin-top: 2rem;
+
+            a {
+                display: inline-block;
+                font-size: 1.2rem;
+                font-family: "franklin-gothic-atf", sans-serif;
+                font-weight: 600;
+                font-style: normal;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                border: 2px solid #F564A7;
+                color: #F564A7;
+                border-radius: 5px;
+                transition: background-color 0.3s, color 0.3s;
+
+                &:hover {
+                    background-color: #F564A7;
+                    color: #fff;
+                }
+
+                &.cancel-link {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// ******************************************************************************************************************
+// FIN PAGE DE COMPTE CLIENT
 // ******************************************************************************************************************
