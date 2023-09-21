@@ -345,7 +345,7 @@ form.formulaire {
 }
 
 form.formulaire input,
-form.formulaire button{
+form.formulaire button {
   width: 25vw; 
   padding: 15px 0 15px 10px; 
   box-sizing: border-box; 
@@ -405,11 +405,15 @@ div.create {
   justify-content: center;
 }
 
-input[type="file"]{
+input[type="file"],
+input[type="text"] {
   color: white;
   font-size: 1.5em;
-  text-align: center;
   font-family: "franklin-gothic-atf", sans-serif;
+}
+
+input[type="text"] {
+  color: #000;
 }
 
 input[type="file"]:hover{
@@ -418,12 +422,15 @@ input[type="file"]:hover{
 }
 
 textarea{
-  width: 25vw;
+  padding-left: 15px;
+  width: 24.1vw;
   height: 35vh;
   font-size: 2em;
+  border: none;
 }
 
 /* Cacher le bouton "Choisir un fichier" */
 input[type="file"]::-webkit-file-upload-button {
-  display: none;
+  visibility: hidden;
+  margin-right: -80px;
 }

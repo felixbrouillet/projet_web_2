@@ -16,9 +16,9 @@ class ActiviteController extends Controller
     public function show()
     {
         // Récupère toutes les activités
-        $activite = Activite::all();
+        $activites = Activite::all();
         
-        return view('activites.index', ['activite' => $activite]);
+        return view('activites.index', ['activites' => $activites]);
     }
 
     /**
@@ -35,26 +35,34 @@ class ActiviteController extends Controller
             'description' => 'required|string',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
         ]);
-    
+
         // Créer une nouvelle activité
         $activite = new Activite([
             'nom' => $validatedData['nom'],
             'description' => $validatedData['description'],
         ]);
-    
+
         // Gestion de l'image s'il y en a une
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('activite_images'); // Enregistrez l'image dans le dossier "activite_images"
-            $activite->image = $imagePath;
+            // Récupérer le nom du fichier (sans le chemin)
+            $imageName = $request->file('image')->getClientOriginalName();
+
+            // Stocker l'image dans le dossier public/img/images
+            $request->file('image')->move(public_path('img/images'), $imageName);
+
+            // Assigner le nom de l'image à l'activité
+            $activite->image = $imageName;
+        } else {
+            echo 'Aucun fichier image envoyé.';
         }
-    
+
         // Enregistrez l'activité dans la base de données
         $activite->save();
-    
-        // Redirection vers la page des activités avec un message de succès
-        return redirect()->route('dashboard.activites')->with('success', 'Activité ajoutée avec succès');
-    }
 
+        // Redirection vers la page des activités avec un message de succès
+        return redirect()->route('dashboard.activites')->with('succes', 'Activité ajoutée avec succès');
+    }
+    
     /**
      * Affiche le formulaire pour modifier une activité.
      *
