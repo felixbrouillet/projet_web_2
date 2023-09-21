@@ -1,7 +1,7 @@
 @props(['actualite', 'route', 'isEdit'])
 
 <div class="container">
-    <h2>{{ $isEdit ? 'Éditer' : 'Ajouter' }} une actualité</h2>
+    <h2 class="h2-noir">{{ $isEdit ? 'Éditer' : 'Ajouter' }} une actualité</h2>
     <form class="formulaire form-actualites" action="{{ $route }}" method="POST" enctype="multipart/form-data">
         @csrf
 
