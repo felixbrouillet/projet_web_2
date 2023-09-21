@@ -452,7 +452,6 @@ header .hero_activites h1 {
   font-weight: lighter;
   flex: 1;
   white-space: pre-line;
-<<<<<<< HEAD
 }
 
 /* SCSS pour la page de connexion */
@@ -641,6 +640,3 @@ div select {
 .retour:hover {
   background: linear-gradient(to bottom, #D355F3, #76CEB8);
 }/*# sourceMappingURL=style.css.map */
-=======
-}/*# sourceMappingURL=style.css.map */
->>>>>>> efcb64742401c57909de113736912046530c253c
