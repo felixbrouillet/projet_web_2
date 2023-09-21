@@ -1,5 +1,4 @@
-
-<body class="create">
+<div class="create">
     <x-layout titre="Créer un compte">
         <div class="container">
             <h2>Créer un compte</h2>
@@ -31,4 +30,4 @@
             </form>
         </div>
     </x-layout>
-</body>
+</div>

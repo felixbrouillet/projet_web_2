@@ -1,4 +1,4 @@
-<body class="auth">
+<div class="auth">
     <x-layout titre="Connexion">
         <div class="container">
         <h2>Connexion</h2>
@@ -15,4 +15,4 @@
             </form>
         </div>
     </x-layout>
-</body>
+</div>

@@ -34,7 +34,7 @@ Route::get("/logout", [LogoutController::class, 'logout'])
 
 // ROUTES DE DASHBOARD
 
-// Affichage de la page admin du dashboard (nécessite une connexion et un rôle 'client')
+// Affichage de la page admin du dashboard (nécessite une connexion et un rôle 'admin')
 Route::get("/dashboard", [DashboardController::class, 'index'])
     ->name('dashboard.index')
     ->middleware('auth', 'isClient');
