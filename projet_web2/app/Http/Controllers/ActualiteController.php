@@ -39,7 +39,7 @@ class ActualiteController extends Controller
         // Créer une nouvelle actualité
         $actualite = new Actualite([
             'nom' => $validatedData['nom'],
-            'contenu' => $validatedData['description'],
+            'contenu' => $validatedData['contenu'],
         ]);
 
         // Gestion de l'image s'il y en a une
