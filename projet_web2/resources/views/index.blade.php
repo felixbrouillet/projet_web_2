@@ -192,21 +192,24 @@
             <div class="sous_conteneur_actualites">
                 <h3>Vivez l'expérience ultime au festival de musique MFMF ! 🌟</h3>
 
-                <div class="contenu_actualites">
-                    <img src="img/images/stage_jour.jpg" alt="">
-                    <p>Le MFMF est de retour cette année pour vous offrir une programmation époustouflante qui satisfera
-                        tous les amateurs de musique.
+                <div class="sous_conteneur_actualites">
+                    <div class="contenu_actualites">
+                        <img src="img/images/stage_jour.jpg" alt="">
+                        <p>Le MFMF est de retour cette année pour vous offrir une programmation époustouflante qui satisfera
+                            tous les amateurs de musique.
 
-                        Que pouvez-vous attendre cette année ?
+                            Que pouvez-vous attendre cette année ?
 
-                        🎶 Une programmation diversifiée : Du dubstep au house en passant par la musique EDM, nous avons
-                        rassemblé des artistes de tous les genres pour vous offrir une expérience musicale complète.
+                            🎶 Une programmation diversifiée : Du dubstep au house en passant par la musique EDM, nous avons
+                            rassemblé des artistes de tous les genres pour vous offrir une expérience musicale complète.
 
-                        🎉 Des performances captivantes : Attendez-vous à des shows enflammés et des moments de pure
-                        magie musicale sur scène.
+                            🎉 Des performances captivantes : Attendez-vous à des shows enflammés et des moments de pure
+                            magie musicale sur scène.
 
-                        🍔🍹 Une expérience gastronomique : Notre festival ne se limite pas à la musique. Découvrez une
-                        variété de délices culinaires et de boissons rafraîchissantes pour satisfaire vos papilles.</p>
+                            🍔🍹 Une expérience gastronomique : Notre festival ne se limite pas à la musique. Découvrez une
+                            variété de délices culinaires et de boissons rafraîchissantes pour satisfaire vos papilles.</p>
+                    </div>
+                    <a href="">Lire la suite</a>
                 </div>
             </div>
         </div>
@@ -215,24 +218,45 @@
         <!-- à dynamiser ----------------------------------------- -->
         <div class="conteneur_actualites">
             <div class="sous_conteneur_actualites">
-                <h3>Préparez-vous pour un festival de musique inoubliable! 🎶🎉</h3>
+                <div class="contenu_actualites">
+                    <div class="sous_contenu_actualites">
 
+                        <h3>Préparez-vous pour un festival de musique inoubliable! 🎶🎉</h3>
+                    </div>
+
+                </div>
 
                 <div class="contenu_actualites">
-                    <img src="img/images/dj.jpg" alt="">
-                    <p>🚀 Le compte à rebours est lancé ! 🚀
 
-                        Le MFMF est à nos portes, et l'excitation est à son comble ! Préparez-vous à une aventure
-                        musicale épique qui vous transportera dans un univers de sons envoûtants et de vibes
-                        incroyables. Les artistes se préparent, les scènes se montent, et tout est en place pour un
-                        week-end de pure magie musicale.
+                    <div class="contenu_actualites_breakpoint">
 
-                        🎶 Quels artistes attendez-vous le plus de voir sur scène cette année ? Partagez vos choix dans
-                        les commentaires et préparez-vous à les applaudir en live ! 🙌 #Hâte #LineUpIncroyable
-                        #MusiqueElectronique</p>
+                        <div class="sous_contenu_actualites">
+                            <img src="img/images/dj.jpg" alt="">
+                        </div>
+
+                        <div class="sous_contenu_actualites">
+                            <p>🚀 Le compte à rebours est lancé ! 🚀
+
+                                Le MFMF est à nos portes, et l'excitation est à son comble ! Préparez-vous à une aventure
+                                musicale épique qui vous transportera dans un univers de sons envoûtants et de vibes
+                                incroyables. Les artistes se préparent, les scènes se montent, et tout est en place pour un
+                                week-end de pure magie musicale.</p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="contenu_actualites">
+                    <div class="sous_contenu_actualites">
+                        <a href="">Lire la suite</a>
+                    </div>
                 </div>
             </div>
+
         </div>
+
         <div class="conteneur_actualites">
             <a class="bouton_actualites" href="">Voir toutes les actualités</a>
         </div>

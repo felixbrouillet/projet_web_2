@@ -488,7 +488,14 @@ div.conteneur_actualites {
     justify-content: center;
     padding-top: 5vh;
 
+    div.contenu_actualites_breakpoint {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
     h3 {
+        padding-top: 3vh;
         font-size: 2vw;
         font-family: "franklin-gothic-atf", sans-serif;
         font-weight: 600;
@@ -507,7 +514,7 @@ div.conteneur_actualites {
     img {
         width: auto;
         height: auto;
-        max-width: 25vw;
+        max-width: 40vw;
         max-height: 40vh;
     }
 
@@ -522,11 +529,17 @@ div.conteneur_actualites {
         .contenu_actualites {
 
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
             padding-left: 30px;
             padding-right: 30px;
         }
+    }
+
+    div.sous_contenu_actualites {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
 }
 
@@ -836,6 +849,8 @@ footer {
         justify-content: center;
         padding-top: 5vh;
         overflow: hidden;
+        width: 95vw;
+        height: 40vh;
 
         h3 {
             font-size: 3.5vw;
@@ -855,11 +870,12 @@ footer {
         }
 
         img {
-            width: auto;
-            height: auto;
-            max-width: 35vw;
-            margin-left: 22vw;
-            // max-height: 40vh;
+            padding-top: 5vh;
+            width: 50vw;
+            height: 50vw;
+            max-width: 40vw;
+            max-height: 40vw;
+            margin-left: 3vw;
         }
 
         div.sous_conteneur_actualites {
@@ -1197,8 +1213,17 @@ footer {
         padding-top: 5vh;
         overflow: hidden;
 
+
+        div.contenu_actualites_breakpoint {
+            display: flex;
+            flex-direction: column;
+        }
+
+
         h3 {
-            font-size: 3.5vw;
+            padding-top: 5vh;
+            max-width: 80vw;
+            font-size: clamp(20px, 3.5vw, 18px);
             font-family: "franklin-gothic-atf", sans-serif;
             font-weight: 600;
             font-style: normal;
@@ -1215,17 +1240,18 @@ footer {
         }
 
         img {
-            width: auto;
-            height: auto;
-            max-width: 35vw;
-            margin-left: 22vw;
-            // max-height: 40vh;
+            padding-top: 5vh;
+            width: 60vw;
+            height: 60vw;
+            max-width: 60vw;
+            max-height: 60vw;
+            margin-left: 7vw;
         }
 
         div.sous_conteneur_actualites {
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: start;
             height: 80vh;
             width: 90vw;
             background: linear-gradient(#71D6B5, #D4DAFF);
@@ -1238,6 +1264,12 @@ footer {
                 padding-left: 30px;
                 padding-right: 30px;
             }
+        }
+
+        div.sous_contenu_actualites {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
         }
     }
 
