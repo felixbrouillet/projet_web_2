@@ -50,11 +50,6 @@ a.bouton {
     text-decoration: none;
     text-align: center;
     line-height: 10.5vh;
-
-    // :hover {
-    //     transform: scale(1.2);
-    // }
-
 }
 
 p {
@@ -101,7 +96,7 @@ div.ligne_separation {
     left: 2vw;
     background: linear-gradient(#008848, #8aa897);
     font-size: clamp(16px, 2vw, 18px);
-    z-index: 80;
+    z-index: 8;
     margin: 10px 0;
     padding: 10px;
     border-radius: 3px 3px 3px 3px;
@@ -112,7 +107,7 @@ div.ligne_separation {
     left: 2vw;
     background: linear-gradient(#bb0101, #cf6969);
     font-size: clamp(16px, 2vw, 18px);
-    z-index: 80;
+    z-index: 8;
     margin: 10px 0;
     padding: 10px;
     border-radius: 3px 3px 3px 3px;
@@ -278,16 +273,45 @@ div.video_presentation {
 }
 
 
+
+img.fleche_bouton{
+    position: absolute;
+    top: 45%;
+    left: 81%;
+    // background: rgba(182, 182, 182, 0.89);
+    width: auto;
+    height: 10vh;
+    max-height: 6vh;
+    z-index: 100;
+    transition: ease-out 0.3s;
+    transform: rotate(90deg);
+    scale: 0.001;
+    pointer-events: none;
+    z-index: 1;
+}
+
+div.bouton_video_accueil {
+    position: absolute;
+    top: 35vw;
+    left: 20%;
+    width: 55vw;
+    height: 25vh;
+    max-height: 10vh;
+    z-index: 3;
+    transition: ease-out 0.3s;
+}
+
 a.bouton_video_accueil {
     position: absolute;
-    top: 40vw;
-    left: 30%;
+    left: 20%;
+    top: 20%;
+    display: block;
     color: white;
     font-size: 3vw;
     font-family: "franklin-gothic-atf", sans-serif;
     font-weight: 500;
     font-style: normal;
-    width: 35vw;
+    width: 45vw;
     height: 15vh;
     max-height: 10vh;
     border: solid;
@@ -297,15 +321,26 @@ a.bouton_video_accueil {
     text-decoration: none;
     text-align: center;
     line-height: 75px;
-    z-index: 3;
+    z-index: 4;
+    transition: all 1.5s;
 
     &:hover {
-        // transform: scale(1.2);
-        // background-color: red;
+        background: rgba(182, 182, 182, 0.363);
+        transition: ease-out 0.3s;
+        left: 10%;
 
     }
 
+    &:hover + .fleche_bouton {
+        z-index: 100;
+        transform: rotate(-0.5deg);
+        display:flex;
+        transform: scale(1100);
+
+    }
 }
+
+
 
 /* Section programmation ------------------------------------------------------------- */
 
@@ -589,34 +624,75 @@ footer {
         padding-bottom: 5vh;
     }
 
+
+    // Bouton de la vidéo d'accueil tablette
+
+    img.fleche_bouton{
+        position: absolute;
+        top: 32%;
+        left: 108%;
+        // background: rgba(182, 182, 182, 0.89);
+        width: auto;
+        height: 10vh;
+        max-height: 6vh;
+        z-index: 0.1;
+        transition: ease-out 0.3s;
+        transform: rotate(90deg);
+        scale: 0.001;
+        pointer-events: none;
+    }
+
+    div.bouton_video_accueil {
+        position: absolute;
+        top: 30vw;
+        left: 5%;
+        width: 55vw;
+        height: 25vh;
+        max-height: 10vh;
+        z-index: 3;
+        transition: ease-out 0.3s;
+    }
+
     a.bouton_video_accueil {
         position: absolute;
-        top: 35vw;
-        left: 30%;
+        left: 20%;
+        top: 20%;
+        display: block;
         color: white;
-        font-size: 3vw;
+        font-size: clamp(20px, 3vw, 18px);
         font-family: "franklin-gothic-atf", sans-serif;
         font-weight: 500;
         font-style: normal;
-        width: 35vw;
-        height: 8vh;
-        max-height: 8vh;
+        width: 65vw;
+        height: 7vh;
+        max-height: 10vh;
         border: solid;
-        border-width: 6px;
+        border-width: 7px;
         border-color: white;
         background: rgba(0, 0, 0, 0.438);
         text-decoration: none;
         text-align: center;
-        line-height: 60px;
-        z-index: 3;
+        line-height: 65px;
+        z-index: 4;
+        transition: all 1.5s;
 
         &:hover {
-            // transform: scale(1.2);
-            // background-color: red;
+            background: rgba(182, 182, 182, 0.363);
+            transition: ease-out 0.3s;
+            left: 10%;
 
         }
 
+        &:hover + .fleche_bouton {
+            z-index: 100;
+            transform: rotate(-0.5deg);
+            display:flex;
+            transform: scale(900);
+
+        }
     }
+
+
 
     // Fiche de présentation -----------------------------------------------------
 
@@ -931,33 +1007,71 @@ footer {
         background: blue;
     }
 
+    // Bouton de la vidéo d'accueil tablette
+
+    img.fleche_bouton{
+        position: absolute;
+        top: 23%;
+        left: 140%;
+        // background: rgba(182, 182, 182, 0.89);
+        width: auto;
+        height: 10vh;
+        max-height: 6vh;
+        z-index: 0.1;
+        transition: ease-out 0.3s;
+        transform: rotate(90deg);
+        scale: 0.001;
+        pointer-events: none;
+    }
+
+    div.bouton_video_accueil {
+        position: absolute;
+        top: 30vw;
+        left: -5%;
+        width: 55vw;
+        height: 25vh;
+        max-height: 10vh;
+        z-index: 3;
+        transition: ease-out 0.3s;
+    }
+
     a.bouton_video_accueil {
         position: absolute;
-        top: 38vw;
-        left: 10%;
+        left: 20%;
+        top: 20%;
+        display: block;
         color: white;
-        font-size: clamp(16px, 2vw, 22px);
+        font-size: clamp(20px, 3vw, 18px);
         font-family: "franklin-gothic-atf", sans-serif;
         font-weight: 500;
         font-style: normal;
-        width: 80vw;
-        height: 180px;
-        max-height: 6vh;
+        width: 85vw;
+        height: 5vh;
+        max-height: 10vh;
         border: solid;
         border-width: 5px;
         border-color: white;
         background: rgba(0, 0, 0, 0.438);
         text-decoration: none;
         text-align: center;
-        line-height: 50px;
-        z-index: 3;
+        line-height: 45px;
+        z-index: 4;
+        transition: all 1.5s;
 
         &:hover {
-            // transform: scale(1.2);
-            // background-color: red;
+            background: rgba(182, 182, 182, 0.363);
+            transition: ease-out 0.3s;
+            left: 10%;
 
         }
 
+        &:hover + .fleche_bouton {
+            z-index: 100;
+            transform: rotate(-0.5deg);
+            display:flex;
+            transform: scale(500);
+
+        }
     }
 
 
@@ -1147,7 +1261,7 @@ footer {
 
         &:hover {
             // transform: scale(1.2);
-            // background-color: red;
+            // background: rgba(182, 182, 182, 0.89);
 
         }
 
