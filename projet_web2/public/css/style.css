@@ -317,4 +317,139 @@ header .hero_activites h1 {
 }
 .forfaits .forfait-pair {
   margin-left: auto;
+}
+
+.validation {
+  background-image: url("/img/images/stage_nuit4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+.validation .validation-forfait {
+  padding: 2rem;
+  background-color: #f3f3f3;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  max-width: 600px;
+  margin: auto;
+}
+.validation .validation-forfait h1 {
+  font-family: "halogen", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 2rem;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  color: #F564A7;
+}
+.validation .validation-forfait .forfait-info p {
+  font-size: 1.2rem;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 1rem 0;
+}
+.validation .validation-forfait .confirmation-message {
+  font-size: 1.2rem;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 2rem;
+}
+.validation .validation-forfait .confirmation-form {
+  margin-top: 2rem;
+}
+.validation .validation-forfait .confirmation-form .btn-confirmer {
+  font-family: "halogen", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  background-color: #F564A7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.validation .validation-forfait .confirmation-form .btn-confirmer:hover {
+  background-color: #D651F5;
+}
+.validation .validation-forfait .confirmation-form .btn-annuler {
+  font-family: "halogen", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #F564A7;
+  border: 2px solid #F564A7;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.validation .validation-forfait .confirmation-form .btn-annuler:hover {
+  background-color: #F564A7;
+  color: #fff;
+}
+
+/* Styles pour le main */
+.actualites {
+  padding-top: 10vh;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  padding-bottom: 10vh;
+  background: linear-gradient(0deg, rgb(245, 100, 167) 0%, rgb(140, 88, 245) 100%);
+  color: #202020;
+}
+.actualites h1 {
+  font-family: "halogen", sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: 10vh;
+  color: #F3F3F3;
+}
+.actualites .actualite {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: linear-gradient(0deg, rgb(212, 218, 255) 0%, rgb(113, 214, 181) 100%);
+  margin-bottom: 4vh;
+  padding: 40px;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: bold;
+  height: auto;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.363);
+}
+.actualites .actualite h2 {
+  margin-right: 20px;
+  margin-bottom: 2vh;
+  font-size: 1.2vw;
+}
+.actualites .actualite .contenu {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+}
+.actualites .actualite .actualite-image {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 20px;
+}
+.actualites .actualite p {
+  font-size: 1vw;
+  font-weight: lighter;
+  flex: 1;
+  white-space: pre-line;
 }/*# sourceMappingURL=style.css.map */
