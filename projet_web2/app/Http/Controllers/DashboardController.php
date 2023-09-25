@@ -17,7 +17,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         return view('dashboard.index');
     }
 
@@ -38,16 +37,7 @@ class DashboardController extends Controller
     
         return view('dashboard.admins', compact('admins', 'paginatorInfo', 'user'));
     }
-=======
-        // Récupère la liste des administrateurs depuis la base de données
-        $admins = User::where('role_id', 1)->get(); 
-        
-        // Récupère l'utilisateur connecté
-        $user = auth()->user();
->>>>>>> 14f7dfa70ba242ea128dc7653b9acdc838edc31b
 
-        return view('dashboard.index', ['admins' => $admins, 'user' => $user]);
-    }
     /**
      * Affichage de la page actualités dans le dashboard
      *
@@ -89,7 +79,6 @@ class DashboardController extends Controller
     public function showClients()
     {
         $clients = DB::table('users')
-<<<<<<< HEAD
             ->join('forfaits', 'users.forfait_id', '=', 'forfaits.id')
             ->select('users.*', 'forfaits.nom as forfait_nom')
             ->where('users.role_id', 2)
@@ -102,14 +91,5 @@ class DashboardController extends Controller
         ];
 
         return view('dashboard.clients', ['elements' => $clients, 'paginatorInfo' => $paginatorInfo, 'clients' => $clients]);
-=======
-        ->join('forfaits', 'users.forfait_id', '=', 'forfaits.id')
-        ->select('users.*', 'forfaits.nom as forfait_nom')
-        ->where('users.role_id', 2)
-        ->orderBy('users.date_achat_forfait', 'asc')
-        ->get();
-    
-        return view('dashboard.clients', ['clients' => $clients]);
->>>>>>> 14f7dfa70ba242ea128dc7653b9acdc838edc31b
     }
 }

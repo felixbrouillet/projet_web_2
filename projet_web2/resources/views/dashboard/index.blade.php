@@ -1,4 +1,4 @@
-<x-layout titre="Dashboard-Admin">
+<x-layout titre="Dashboard-Clients">
     <x-dashboard.liens-dashboard />
 
     {{-- Messages d'alertes succes ou erreur --}}

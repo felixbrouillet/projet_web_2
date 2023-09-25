@@ -1,39 +1,38 @@
 @props(['client', 'route', 'forfaits'])
 
-<h2>Éditer un utilisateur</h2>
-<form action="{{ route('clients.update', ['id' => $client->id]) }}" method="POST">
-    @csrf
+<div class="container">
+    <form class="formulaire" action="{{ route('clients.update', ['id' => $client->id]) }}" method="POST">
+        <h2 class="dashboard-h2">Éditer un utilisateur</h2>
+        
+        @csrf
 
-    <!-- Champ Prénom -->
-    <div class="form-cell">
-        <label for="prenom" class="form-label">Prénom</label>
-        <input type="text" class="form-control" id="prenom" name="prenom" value="{{ old('prenom', $client->prenom) }}" required>
-    </div>
+        <!-- Champ Prénom -->
+        <div class="form-cell">
+            <input type="text" id="prenom" name="prenom" value="{{ old('prenom', $client->prenom) }}" required placeholder="Prénom">
+        </div>
 
-    <!-- Champ Nom -->
-    <div class="form-cell">
-        <label for="nom" class="form-label">Nom</label>
-        <input type="text" class="form-control" id="nom" name="nom" value="{{ old('nom', $client->nom) }}" required>
-    </div>
+        <!-- Champ Nom -->
+        <div>
+            <input type="text" id="nom" name="nom" value="{{ old('nom', $client->nom) }}" required placeholder="Nom">
+        </div>
 
-    <!-- Champ Email -->
-    <div class="form-cell">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $client->email) }}" required>
-    </div>
+        <!-- Champ Email -->
+        <div>
+            <input type="email" id="email" name="email" value="{{ old('email', $client->email) }}" required placeholder="Email">
+        </div>
 
-    <!-- Champ Forfait ID -->
-    <div class="form-cell">
-        <label for="forfait_id" class="form-label">Forfait</label>
-        <select class="form-control" id="forfait_id" name="forfait_id" required>
-            @foreach ($forfaits as $forfait)
-                <option value="{{ $forfait->id }}" {{ $forfait->id === $client->forfait_id ? 'selected' : '' }}>
-                    {{ $forfait->nom }}
-                </option>
-            @endforeach
-        </select>
-    </div>
+        <!-- Champ Forfait ID -->
+        <div>
+            <select id="forfait_id" name="forfait_id" required>
+                @foreach ($forfaits as $forfait)
+                    <option value="{{ $forfait->id }}" {{ $forfait->id === $client->forfait_id ? 'selected' : '' }}>
+                        {{ $forfait->nom }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
 
-    <!-- Bouton de soumission -->
-    <button type="submit">Enregistrer les modifications</button>
-</form>
+        <!-- Bouton de soumission -->
+        <button type="submit">Enregistrer les modifications</button>
+    </form>
+</div>
