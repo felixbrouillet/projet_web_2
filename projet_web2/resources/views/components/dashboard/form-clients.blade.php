@@ -1,8 +1,9 @@
 @props(['client', 'route', 'forfaits'])
 
 <div class="container">
-    <h2>Éditer un utilisateur</h2>
     <form class="formulaire" action="{{ route('clients.update', ['id' => $client->id]) }}" method="POST">
+        <h2 class="dashboard-h2">Éditer un utilisateur</h2>
+        
         @csrf
 
         <!-- Champ Prénom -->

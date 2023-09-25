@@ -1,8 +1,9 @@
 @props(['user', 'route', 'isEdit'])
 
 <div class="container">
-    <h2 class="h2-noir">{{ $isEdit ? 'Éditer' : 'Ajouter' }} un administrateur</h2>
     <form class="formulaire" action="{{ $route }}" method="POST">
+        <h2 class="dashboard-h2">{{ $isEdit ? 'Éditer' : 'Ajouter' }} un administrateur</h2>
+
         @csrf
         <!-- Champ Prénom -->
         <div>

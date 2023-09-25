@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Activite;
 use App\Models\Actualite;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 class DashboardController extends Controller
 {
@@ -74,7 +75,7 @@ class DashboardController extends Controller
         ->select('users.*', 'forfaits.nom as forfait_nom')
         ->where('users.role_id', 2)
         ->orderBy('users.date_achat_forfait', 'asc')
-        ->get();
+        ->paginate(10);
     
         return view('dashboard.clients', ['clients' => $clients]);
     }

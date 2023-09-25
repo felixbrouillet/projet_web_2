@@ -1,8 +1,9 @@
 @props(['activite', 'route', 'isEdit'])
 
 <div class="container">
-    <h2 class="h2-noir">{{ $isEdit ? 'Éditer' : 'Ajouter' }} une activité</h2>
     <form class="formulaire" action="{{ $route }}" method="POST" enctype="multipart/form-data">
+        <h2 class="dashboard-h2">{{ $isEdit ? 'Éditer' : 'Ajouter' }} une activité</h2>
+
         @csrf
     
         <!-- Champ Nom de l'activité -->

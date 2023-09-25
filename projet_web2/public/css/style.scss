@@ -627,18 +627,20 @@ div {
     }
   }
 
-  /* Style pour les formulaires du dashboard */
+/* SCSS pour les formulaires */
+.dashboard-h2{
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    font-family: "halogen", sans-serif;
+    padding-bottom: 20px;
+}
 
-/* SCSS pour les activités */
 .container {
-    .h2-noir{
-        color: #000;
-    }
     input[type="file"],
     input[type="text"],
     input[type="password"],
     input[type="email"] {
-      color: black;
       font-size: 1.5em;
       font-family: "franklin-gothic-atf", sans-serif;
     }
@@ -667,11 +669,11 @@ div {
   }
 
 /* SCSS pour le style des listes */
-.list-h2 {
-    margin-top: 0.8em;
-    font-size: 4em;
+  .aucun_client{
+    color: white;
+    font-size: 1.5em;
+    font-family: "franklin-gothic-atf", sans-serif;  
     text-align: center;
-    font-family: "halogen", sans-serif;
   }
 
   .list-dashboard {
@@ -680,13 +682,6 @@ div {
     width: 40vw;
     margin: 30px auto;
     list-style-type: none;
-
-    h2 {
-      font-size: 2em;
-      color: white;
-      font-family: "halogen", sans-serif;
-      margin-bottom: 10px;
-    }
 
     li {
       color: white;
@@ -697,15 +692,11 @@ div {
       a {
         text-decoration: none;
         margin-left: 10px;
-
-        &:hover {
-          transform: scale(1.2);
-        }
       }
     }
 
     span {
-      font-size: 1em;
+      font-size: 1.15   em;
       font-weight: bold;
     }
   }
@@ -721,31 +712,57 @@ div {
     }
   }
 
+  .list_li{
+    text-align: center;
+  }
+
+  .btn_modif_sup{
+    padding: 20px;
+    text-align: center;
+    margin: 10px 0;
+    
+      a{
+        border: 5px solid white;
+        padding: 5px 10px;
+        color: rgb(255, 255, 255);
+
+        &:hover{
+            color: #000;
+            border-color: #000;
+        }
+      }
+  }
+
   /* Style de la page d'accueil du dashboard */
   .liens-dashboard {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 10%;
     margin: 0 auto;
     max-width: 800px;
-    padding: 20px;
+    padding: 6vh;
+    justify-content: center;
+    align-items: center; 
 
     a {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      border: 5px solid black;
-      color: black;
-      font-size: 1.5em;
-      font-family: "franklin-gothic-atf", sans-serif;
-
-      &:hover {
+        width: 15em;
+        height: 10em;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
         background: linear-gradient(to bottom, #76CEB8, #D355F3);
-      }
+        color: white;
+        font-size: 1.5em;
+        font-family: "franklin-gothic-atf", sans-serif;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
-  }
+}
 
   /* Style du bouton retour */
   .retour {
@@ -760,5 +777,42 @@ div {
 
     &:hover {
       background: linear-gradient(to bottom, #D355F3, #76CEB8);
+      transform: scale(1.05);
     }
   }
+
+  /* SCSS pour la pagination */
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+ul.pagination li.page-item {
+    margin: 0;
+}
+
+ul.pagination li.page-item a.page-link {
+    color: black;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    display: block;
+    color: white;
+    border: 5px solid white;
+}
+
+ul.pagination li.page-item a.page-link:hover {
+    color: #000;
+    border-color: #000;
+}
+
+ul.pagination li.page-item.disabled a.page-link {
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: #8d8d8d;
+    border-color: #8d8d8d;
+}
+
+  

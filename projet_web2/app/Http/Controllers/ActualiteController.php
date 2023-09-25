@@ -33,36 +33,37 @@ class ActualiteController extends Controller
         $validatedData = $request->validate([
             'nom' => 'required|string|max:255',
             'contenu' => 'required|string',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
         ]);
-
+    
         // Créer une nouvelle actualité
         $actualite = new Actualite([
             'nom' => $validatedData['nom'],
             'contenu' => $validatedData['contenu'],
         ]);
-
-        // Gestion de l'image s'il y en a une
+    
+        // Gestion de l'image s'il y en a une et ajout du logo s'il n'y en a pas
         if ($request->hasFile('image')) {
             // Récupérer le nom du fichier (sans le chemin)
             $imageName = $request->file('image')->getClientOriginalName();
-
+        
             // Stocker l'image dans le dossier public/img/images
             $request->file('image')->move(public_path('img/images'), $imageName);
-
+        
             // Assigner le nom de l'image à l'actualité
             $actualite->image = $imageName;
         } else {
-            echo 'Aucun fichier image envoyé.';
+            // Si aucune image n'est fournie, utiliser le logo par défaut
+            $actualite->image = "default.png";
         }
-
+                    
         // Enregistrez l'actualité dans la base de données
         $actualite->save();
-
-        // Redirection vers la page des actualité avec un message de succès
-        return redirect()->route('dashboard.activites')->with('succes', 'Activité ajoutée avec succès');
-    }
     
+        // Redirection vers la page des actualité avec un message de succès
+        return redirect()->route('dashboard.actualites')->with('succes', 'Actualité ajoutée avec succès');
+    }
+        
     /**
      * Affiche le formulaire pour modifier une actualité.
      *

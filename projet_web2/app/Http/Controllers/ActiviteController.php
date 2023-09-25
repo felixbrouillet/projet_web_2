@@ -46,14 +46,15 @@ class ActiviteController extends Controller
         if ($request->hasFile('image')) {
             // Récupérer le nom du fichier (sans le chemin)
             $imageName = $request->file('image')->getClientOriginalName();
-
+        
             // Stocker l'image dans le dossier public/img/images
             $request->file('image')->move(public_path('img/images'), $imageName);
-
+        
             // Assigner le nom de l'image à l'activité
             $activite->image = $imageName;
         } else {
-            echo 'Aucun fichier image envoyé.';
+            // Si aucune image n'est fournie, utiliser le logo par défaut
+            $activite->image = "default.png";
         }
 
         // Enregistrez l'activité dans la base de données
