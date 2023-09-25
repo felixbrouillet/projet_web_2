@@ -276,7 +276,7 @@ div.video_presentation {
 
 
 
-img.fleche_bouton{
+img.fleche_bouton {
     position: absolute;
     top: 45%;
     left: 81%;
@@ -333,10 +333,10 @@ a.bouton_video_accueil {
 
     }
 
-    &:hover + .fleche_bouton {
+    &:hover+.fleche_bouton {
         z-index: 100;
         transform: rotate(-0.5deg);
-        display:flex;
+        display: flex;
         transform: scale(1100);
 
     }
@@ -642,7 +642,7 @@ footer {
 
     // Bouton de la vidéo d'accueil tablette
 
-    img.fleche_bouton{
+    img.fleche_bouton {
         position: absolute;
         top: 32%;
         left: 108%;
@@ -698,10 +698,10 @@ footer {
 
         }
 
-        &:hover + .fleche_bouton {
+        &:hover+.fleche_bouton {
             z-index: 100;
             transform: rotate(-0.5deg);
-            display:flex;
+            display: flex;
             transform: scale(900);
 
         }
@@ -1027,7 +1027,7 @@ footer {
 
     // Bouton de la vidéo d'accueil tablette
 
-    img.fleche_bouton{
+    img.fleche_bouton {
         position: absolute;
         top: 23%;
         left: 140%;
@@ -1083,10 +1083,10 @@ footer {
 
         }
 
-        &:hover + .fleche_bouton {
+        &:hover+.fleche_bouton {
             z-index: 100;
             transform: rotate(-0.5deg);
-            display:flex;
+            display: flex;
             transform: scale(500);
 
         }
@@ -1334,7 +1334,7 @@ header {
         align-items: center;
 
         h1 {
-            font-size: 3rem;
+            font-size: 4rem;
         }
     }
 }
@@ -1730,20 +1730,20 @@ header {
 
 div {
     h2 {
-      font-size: 4em;
-      color: white;
-      font-family: "halogen", sans-serif;
+        font-size: 4em;
+        color: white;
+        font-family: "halogen", sans-serif;
     }
 
     &.auth {
-      background-image: url('../img/images/stage_nuit4.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100%;
+        background-image: url('../img/images/stage_nuit4.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100%;
     }
-  }
+}
 
-  .container {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1752,51 +1752,52 @@ div {
     margin-top: 2em;
 
     form {
-      &.formulaire {
-        padding: 8vh;
-        width: 40vw;
-        background: linear-gradient(to bottom, #76CEB8, #D355F3);
-        display: flex;
-        flex-direction: column;
-        gap: 0.5em;
-        align-items: center;
-        margin: auto;
+        &.formulaire {
+            padding: 8vh;
+            width: 40vw;
+            background: linear-gradient(to bottom, #76CEB8, #D355F3);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            align-items: center;
+            margin: auto;
 
-        input, button {
-          width: 25vw;
-          padding: 15px 0 15px 10px;
-          box-sizing: border-box;
-          border: white 5px solid;
-          font-family: "franklin-gothic-atf", sans-serif;
+            input,
+            button {
+                width: 25vw;
+                padding: 15px 0 15px 10px;
+                box-sizing: border-box;
+                border: white 5px solid;
+                font-family: "franklin-gothic-atf", sans-serif;
+            }
+
+            button {
+                color: white;
+                background-color: transparent;
+                font-size: 1.5em;
+                padding-left: 0px;
+
+                &:hover {
+                    border-color: black;
+                    color: black;
+                    cursor: pointer;
+                    font-size: 1.5em;
+                }
+            }
         }
-
-        button {
-          color: white;
-          background-color: transparent;
-          font-size: 1.5em;
-          padding-left: 0px;
-
-          &:hover {
-            border-color: black;
-            color: black;
-            cursor: pointer;
-            font-size: 1.5em;
-          }
-        }
-      }
     }
 
     .user-create {
-      margin-top: 1.5em;
-      color: white;
-      text-decoration: none;
-      font-family: "franklin-gothic-atf", sans-serif;
+        margin-top: 1.5em;
+        color: white;
+        text-decoration: none;
+        font-family: "franklin-gothic-atf", sans-serif;
 
-      &:hover {
-        color: black;
-      }
+        &:hover {
+            color: black;
+        }
     }
-  }
+}
 
 // ******************************************************************************************************************
 // FIN PAGE CONNEXION
@@ -1808,21 +1809,11 @@ div {
 
 div {
     &.create {
-      background-image: url('../img/images/stage_nuit1.jpg');
-      background-size: cover;
-      background-position: center;
+        background-image: url('../img/images/stage_nuit1.jpg');
+        background-size: cover;
+        background-position: center;
     }
 
-<<<<<<< HEAD
-/* SCSS pour les formulaires */
-.dashboard-h2{
-    text-align: center;
-    font-size: 2em;
-    color: white;
-    font-family: "halogen", sans-serif;
-    padding-bottom: 20px;
-}
-=======
     .container.create {
         margin: 0;
         padding-bottom: 8vh;
@@ -1835,51 +1826,145 @@ div {
 // ******************************************************************************************************************
 
 // ******************************************************************************************************************
+// DÉBUT PAGE DE COMPTE CLIENT
+// ******************************************************************************************************************
+
+/* Styles for the Account Page */
+.account {
+    background-image: url('/img/images/dj.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+
+    .account-info {
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        max-width: 600px;
+        text-align: center;
+
+        h1 {
+            font-family: "halogen", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+            font-size: 2rem;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            color: #F564A7;
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            margin: 1rem 0;
+        }
+
+        .forfait-info {
+            margin-top: 2rem;
+
+            p {
+                font-size: 1.2rem;
+                font-family: "franklin-gothic-atf", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                margin: 1rem 0;
+            }
+        }
+
+        .reservation-actions {
+            margin-top: 2rem;
+
+            a {
+                display: inline-block;
+                font-size: 1.2rem;
+                font-family: "franklin-gothic-atf", sans-serif;
+                font-weight: 600;
+                font-style: normal;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                border: 2px solid #F564A7;
+                color: #F564A7;
+                border-radius: 5px;
+                transition: background-color 0.3s, color 0.3s;
+
+                &:hover {
+                    background-color: #F564A7;
+                    color: #fff;
+                }
+
+                &.cancel-link {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// ******************************************************************************************************************
+// FIN PAGE DE COMPTE CLIENT
+// ******************************************************************************************************************
+
+// ******************************************************************************************************************
 // DÉBUT PAGE DASHBOARD (ADMINS)
 // ******************************************************************************************************************
->>>>>>> af19af700a387f6df48f1e6eb8676a51f4342bda
 
 .container {
+
     input[type="file"],
     input[type="text"],
     input[type="password"],
     input[type="email"] {
-      font-size: 1.5em;
-      font-family: "franklin-gothic-atf", sans-serif;
+        font-size: 1.5em;
+        font-family: "franklin-gothic-atf", sans-serif;
     }
 
     input[type="file"] {
-      color: white;
+        color: white;
 
-      &:hover {
-        color: #000;
-        border-color: #000;
-      }
+        &:hover {
+            color: #000;
+            border-color: #000;
+        }
     }
 
     textarea {
-      padding-left: 15px;
-      width: 24.1vw;
-      height: 35vh;
-      font-size: 2em;
-      border: none;
+        padding-left: 15px;
+        width: 24.1vw;
+        height: 35vh;
+        font-size: 2em;
+        border: none;
     }
 
     input[type="file"]::-webkit-file-upload-button {
-      visibility: hidden;
-      margin-right: -80px;
+        visibility: hidden;
+        margin-right: -80px;
     }
-  }
+}
+
+/* SCSS pour les formulaires */
+.dashboard-h2 {
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    font-family: "halogen", sans-serif;
+    padding-bottom: 20px;
+}
 
 /* SCSS pour le style des listes */
-  .aucun_client{
+.aucun_client {
     color: white;
     font-size: 1.5em;
-    font-family: "franklin-gothic-atf", sans-serif;  
+    font-family: "franklin-gothic-atf", sans-serif;
     text-align: center;
-  }
+}
 
-  .list-dashboard {
+.list-dashboard {
     background: linear-gradient(to bottom, #76CEB8, #D355F3);
     padding: 5vw;
     width: 40vw;
@@ -1887,57 +1972,57 @@ div {
     list-style-type: none;
 
     li {
-      color: white;
-      font-family: "franklin-gothic-atf", sans-serif;
-      font-size: 1.5em;
-      margin-bottom: 10px;
+        color: white;
+        font-family: "franklin-gothic-atf", sans-serif;
+        font-size: 1.5em;
+        margin-bottom: 10px;
 
-      a {
-        text-decoration: none;
-        margin-left: 10px;
-      }
+        a {
+            text-decoration: none;
+            margin-left: 10px;
+        }
     }
 
     span {
-      font-size: 1.15   em;
-      font-weight: bold;
+        font-size: 1.15 em;
+        font-weight: bold;
     }
-  }
+}
 
-  div {
+div {
     select {
-      width: 25vw;
-      padding: 15px 10px;
-      font-size: 1.5em;
-      border: 5px solid white;
-      color: black;
-      font-family: "franklin-gothic-atf", sans-serif;
+        width: 25vw;
+        padding: 15px 10px;
+        font-size: 1.5em;
+        border: 5px solid white;
+        color: black;
+        font-family: "franklin-gothic-atf", sans-serif;
     }
-  }
+}
 
-  .list_li{
+.list_li {
     text-align: center;
-  }
+}
 
-  .btn_modif_sup{
+.btn_modif_sup {
     padding: 20px;
     text-align: center;
     margin: 10px 0;
-    
-      a{
+
+    a {
         border: 5px solid white;
         padding: 5px 10px;
         color: rgb(255, 255, 255);
 
-        &:hover{
+        &:hover {
             color: #000;
             border-color: #000;
         }
-      }
-  }
+    }
+}
 
-  /* Style de la page d'accueil du dashboard */
-  .liens-dashboard {
+/* Style de la page d'accueil du dashboard */
+.liens-dashboard {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10%;
@@ -1945,7 +2030,7 @@ div {
     max-width: 800px;
     padding: 6vh;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 
     a {
         width: 15em;
@@ -1967,8 +2052,8 @@ div {
     }
 }
 
-  /* Style du bouton retour */
-  .retour {
+/* Style du bouton retour */
+.retour {
     text-decoration: none;
     display: inline-block;
     padding: 15px 20px;
@@ -1979,14 +2064,13 @@ div {
     margin: 10px 0 0 10px;
 
     &:hover {
-      background: linear-gradient(to bottom, #D355F3, #76CEB8);
-      transform: scale(1.05);
+        background: linear-gradient(to bottom, #D355F3, #76CEB8);
+        transform: scale(1.05);
     }
-  }
+}
 
-<<<<<<< HEAD
-  /* SCSS pour la pagination */
-  .pagination {
+/* SCSS pour la pagination */
+.pagination {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -2019,8 +2103,7 @@ ul.pagination li.page-item.disabled a.page-link {
     border-color: #8d8d8d;
 }
 
-  
-=======
+
 // ******************************************************************************************************************
 // FIN PAGE DASHBOARD (ADMINS)
 // ******************************************************************************************************************
@@ -2111,4 +2194,3 @@ ul.pagination li.page-item.disabled a.page-link {
 // ******************************************************************************************************************
 
 @import "_reset.css";
->>>>>>> af19af700a387f6df48f1e6eb8676a51f4342bda
