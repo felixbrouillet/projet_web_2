@@ -37,10 +37,10 @@ class ClientController extends Controller
 
         if ($clients) {
             $clients->delete();
-            return redirect()->route('dashboard.clients')->with('success', 'Utilisateur supprimé avec succès');
+            return redirect()->route('dashboard.clients')->with('succes', 'Utilisateur supprimé avec succès');
         }
 
-        return redirect()->route('dashboard.clients')->with('error', 'Utilisateur non trouvé');
+        return redirect()->route('dashboard.clients')->with('erreur', 'Utilisateur non trouvé');
     }
 
     /**
@@ -71,6 +71,6 @@ class ClientController extends Controller
         // Enregistrer les modifications
         $user->save();
 
-        return redirect()->route('dashboard.clients')->with('success', 'Utilisateur mis à jour avec succès');
+        return redirect()->route('dashboard.clients')->with('succes', 'Utilisateur mis à jour avec succès');
     }
 }

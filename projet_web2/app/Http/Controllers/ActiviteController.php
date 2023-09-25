@@ -17,7 +17,7 @@ class ActiviteController extends Controller
     {
         // Récupère toutes les activités
         $activites = Activite::all();
-        
+
         return view('activites.index', ['activites' => $activites]);
     }
 
@@ -62,7 +62,7 @@ class ActiviteController extends Controller
         // Redirection vers la page des activités avec un message de succès
         return redirect()->route('dashboard.activites')->with('succes', 'Activité ajoutée avec succès');
     }
-    
+
     /**
      * Affiche le formulaire pour modifier une activité.
      *
@@ -77,7 +77,7 @@ class ActiviteController extends Controller
             return view('dashboard.edit.edit-activites', ['activite' => $activite, 'isEdit' => true]);
         }
 
-        return redirect()->route('dashboard.activites')->with('error', 'Activité non trouvée');
+        return redirect()->route('dashboard.activites')->with('erreur', 'Activité introuvable');
     }
 
     /**
@@ -90,7 +90,7 @@ class ActiviteController extends Controller
     public function update(Request $request, $id)
     {
         $activite = Activite::find($id);
-        
+
         if ($activite) {
             // Valider les données du formulaire (vous pouvez les personnaliser)
             $validatedData = $request->validate([
@@ -118,10 +118,10 @@ class ActiviteController extends Controller
             // Enregistrer les modifications
             $activite->save();
 
-            return redirect()->route('dashboard.activites')->with('success', 'Activité mise à jour avec succès');
+            return redirect()->route('dashboard.activites')->with('succes', 'Activité mise à jour avec succès');
         }
 
-        return redirect()->route('dashboard.activites')->with('error', 'Activité non trouvée');
+        return redirect()->route('dashboard.activites')->with('erreur', 'Activité introuvable');
     }
 
     /**
@@ -136,9 +136,9 @@ class ActiviteController extends Controller
 
         if ($activite) {
             $activite->delete();
-            return redirect()->route('dashboard.activites')->with('success', 'Activité supprimée avec succès');
+            return redirect()->route('dashboard.activites')->with('succes', 'Activité supprimée avec succès');
         }
 
-        return redirect()->route('dashboard.activites')->with('error', 'Activité non trouvée');
+        return redirect()->route('dashboard.activites')->with('erreur', 'Activité introuvable');
     }
 }

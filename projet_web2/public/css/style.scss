@@ -1,4 +1,123 @@
 // ******************************************************************************************************************
+// DEBUT STYLES GÉNÉRAUX
+// ******************************************************************************************************************
+
+body {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: "ohm-bold", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    font-size: 3.5vw;
+    max-width: 45vw;
+    min-width: 20vw;
+
+    // à voir pour le placer relativement à son parent.
+    position: absolute;
+    top: 5vh;
+    left: 50vw;
+    text-align: end;
+    z-index: 3;
+}
+
+h2 {
+    font-family: "halogen", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+
+// Bouton -----------------------------------------------------------------------
+
+a.bouton {
+    color: white;
+    font-size: 3vw;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    width: 35vw;
+    height: 12vh;
+    border: solid;
+    border-width: 7px;
+    border-color: white;
+    background: rgba(0, 0, 0, 0.438);
+    text-decoration: none;
+    text-align: center;
+    line-height: 10.5vh;
+}
+
+p {
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    // background: linear-gradient(#8C58F5, #F564A7);
+
+}
+
+main.accueil {
+    // autre code qui fonctionne pour le body au besoin :
+    // background: -webkit-gradient(linear, left top, left bottom, from(#8C58F5), to(#F564A7)) fixed;
+
+    background: linear-gradient(#8C58F5, #F564A7);
+
+}
+
+/* ligne de séparation --------------------------------------------------------------------------- */
+
+div.conteneur_ligne_separation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+}
+
+div.ligne_separation {
+    width: 50vw;
+    height: 3px;
+    background-color: white;
+}
+
+.succes {
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+    background: linear-gradient(#008848, #8aa897);
+    font-size: clamp(16px, 2vw, 18px);
+    z-index: 8;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.erreur {
+    top: 2vh;
+    left: 2vw;
+    background: linear-gradient(#bb0101, #cf6969);
+    font-size: clamp(16px, 2vw, 18px);
+    z-index: 8;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+// ******************************************************************************************************************
+// FIN STYLES GÉNÉRAUX
+// ******************************************************************************************************************
+
+// ******************************************************************************************************************
 // DEBUT NAV
 // ******************************************************************************************************************
 nav {
@@ -56,6 +175,7 @@ nav {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.664);
     transition: left 0.5s ease-in-out;
+    z-index: 60;
 }
 
 /* Afficher les liens lorsque la classe "show" est ajoutée */
@@ -125,6 +245,1064 @@ nav {
 
 // ******************************************************************************************************************
 // FIN NAV
+// ******************************************************************************************************************
+
+
+// ******************************************************************************************************************
+// DÉBUT ACCUEIL
+// ******************************************************************************************************************
+
+// Section vidéo d'accueil -------------------------------------------------------------------------------
+
+div.conteneur_video_presentation {
+    display: flex;
+    justify-content: center;
+
+}
+
+div.video_presentation {
+    width: 100vw;
+    background-color: black;
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+}
+
+
+
+img.fleche_bouton{
+    position: absolute;
+    top: 45%;
+    left: 81%;
+    // background: rgba(182, 182, 182, 0.89);
+    width: auto;
+    height: 10vh;
+    max-height: 6vh;
+    z-index: 100;
+    transition: ease-out 0.3s;
+    transform: rotate(90deg);
+    scale: 0.001;
+    pointer-events: none;
+    z-index: 1;
+}
+
+div.bouton_video_accueil {
+    position: absolute;
+    top: 35vw;
+    left: 20%;
+    width: 55vw;
+    height: 25vh;
+    max-height: 10vh;
+    z-index: 3;
+    transition: ease-out 0.3s;
+}
+
+a.bouton_video_accueil {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    display: block;
+    color: white;
+    font-size: 3vw;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    width: 45vw;
+    height: 15vh;
+    max-height: 10vh;
+    border: solid;
+    border-width: 7px;
+    border-color: white;
+    background: rgba(0, 0, 0, 0.438);
+    text-decoration: none;
+    text-align: center;
+    line-height: 75px;
+    z-index: 4;
+    transition: all 1.5s;
+
+    &:hover {
+        background: rgba(182, 182, 182, 0.363);
+        transition: ease-out 0.3s;
+        left: 10%;
+
+    }
+
+    &:hover + .fleche_bouton {
+        z-index: 100;
+        transform: rotate(-0.5deg);
+        display:flex;
+        transform: scale(1100);
+
+    }
+}
+
+
+
+/* Section programmation ------------------------------------------------------------- */
+
+div.conteneur_programmation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15vh;
+}
+
+.contenu_programmation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.fiche_programmation {
+    height: 120vh;
+    width: 70vw;
+    background: linear-gradient(#58CFA8 0%, #7855ED 50%, #F363A8 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .logo_fiche {
+        width: 20vw;
+        height: auto;
+        min-width: 200px;
+        padding-top: 50px;
+    }
+
+    .contenu_fiche_programmation {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        // padding-bottom: 20px;
+
+        p {
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 2vw;
+
+        }
+
+        p.fiche_programmation_date {
+            font-family: "ohm-bold", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: max(3em, 20px);
+        }
+
+        p.fiche_programmation_emplacement {
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: black;
+        }
+
+        p.premiere_rangee {
+            font-size: 3vw;
+        }
+
+        p.deuxieme_rangee {
+            font-size: 2.5vw;
+        }
+    }
+}
+
+// Section carte intéractive et coordonnées -------------------------------------------------------------------------------------------------------------------
+
+div.section_carte_directions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 65vh;
+
+    div.conteneur_carte {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    div.conteneur_carte_directions {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+
+    div.conteneur_directions {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    div.directions {
+        width: 30vw;
+        height: 50vh;
+        background: linear-gradient(#71D6B5 0%, #F6B99E 50%, #F564A7 100%);
+
+        .directions_sous_conteneur {
+            display: flex;
+            flex-direction: row;
+            padding-top: 4vh;
+
+            .directions_sous_conteneur_texte {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                p {
+                    font-size: 1.2vw;
+                    margin-left: 2vw;
+                    max-width: 15vw;
+                }
+            }
+        }
+
+        img {
+            // margin-top: 2vh;
+            margin-left: 2vw;
+            height: 100px;
+            width: 100px;
+        }
+    }
+
+    iframe.carte {
+        width: 30vw;
+        height: 50vh;
+    }
+}
+
+
+// Section actualitées ------------------------------------------------------------------------------------------------------
+
+div.conteneur_actualites {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 5vh;
+
+    div.contenu_actualites_breakpoint {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    h3 {
+        padding-top: 3vh;
+        font-size: 2vw;
+        font-family: "franklin-gothic-atf", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        padding-left: 30px;
+    }
+
+    p {
+        font-size: 1.3vw;
+        font-family: "franklin-gothic-atf", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        padding: 2vw;
+    }
+
+    img {
+        width: auto;
+        height: auto;
+        max-width: 40vw;
+        max-height: 40vh;
+    }
+
+    div.sous_conteneur_actualites {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 50vh;
+        width: 80vw;
+        background: linear-gradient(#71D6B5, #D4DAFF);
+
+        .contenu_actualites {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
+
+    div.sous_contenu_actualites {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+a.bouton_actualites {
+    // position: absolute;
+    // top: 15%;
+    // left: 30%;
+    color: white;
+    font-size: 2vw;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    width: 35vw;
+    height: 12vh;
+    border: solid;
+    border-width: 7px;
+    border-color: white;
+    background: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    text-align: center;
+    line-height: 10.5vh;
+    margin-bottom: 10vh;
+    margin-top: 7vh;
+}
+
+// Footer -------------------------------------------------------------------------
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: black;
+    height: 30vh;
+    color: white;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+
+    img {
+        width: 5vw;
+        height: 5vw;
+        border-radius: 100%;
+    }
+
+    p {
+        padding-top: 10px;
+        font-size: clamp(16px, 2vw, 18px);
+        color: #ABABAB;
+    }
+
+    a {
+        font-size: 2vw;
+        text-decoration: none;
+        color: #D4DAFF;
+        padding: 1vw;
+    }
+
+    .conteneur_footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+    }
+}
+
+// Tablette -----------------------------------------------------------------------------------------------------------------------------------------
+
+@media (max-width: 1023px) {
+
+
+    //  styles généraux ---------------------------------------------------------------
+    main.accueil {
+        background: red;
+    }
+
+    h1 {
+        font-size: 4.5vw;
+        max-width: 60vw;
+        min-width: 30vw;
+
+        // à voir pour le placer relativement à son parent.
+        position: absolute;
+        top: 5vh;
+        left: 35vw;
+        text-align: end;
+    }
+
+    h2 {
+        font-family: "halogen", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 5vw;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+
+
+    // Bouton de la vidéo d'accueil tablette
+
+    img.fleche_bouton{
+        position: absolute;
+        top: 32%;
+        left: 108%;
+        // background: rgba(182, 182, 182, 0.89);
+        width: auto;
+        height: 10vh;
+        max-height: 6vh;
+        z-index: 0.1;
+        transition: ease-out 0.3s;
+        transform: rotate(90deg);
+        scale: 0.001;
+        pointer-events: none;
+    }
+
+    div.bouton_video_accueil {
+        position: absolute;
+        top: 30vw;
+        left: 5%;
+        width: 55vw;
+        height: 25vh;
+        max-height: 10vh;
+        z-index: 3;
+        transition: ease-out 0.3s;
+    }
+
+    a.bouton_video_accueil {
+        position: absolute;
+        left: 20%;
+        top: 20%;
+        display: block;
+        color: white;
+        font-size: clamp(20px, 3vw, 18px);
+        font-family: "franklin-gothic-atf", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        width: 65vw;
+        height: 7vh;
+        max-height: 10vh;
+        border: solid;
+        border-width: 7px;
+        border-color: white;
+        background: rgba(0, 0, 0, 0.438);
+        text-decoration: none;
+        text-align: center;
+        line-height: 65px;
+        z-index: 4;
+        transition: all 1.5s;
+
+        &:hover {
+            background: rgba(182, 182, 182, 0.363);
+            transition: ease-out 0.3s;
+            left: 10%;
+
+        }
+
+        &:hover + .fleche_bouton {
+            z-index: 100;
+            transform: rotate(-0.5deg);
+            display:flex;
+            transform: scale(900);
+
+        }
+    }
+
+
+
+    // Fiche de présentation -----------------------------------------------------
+
+    div.conteneur_programmation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 8vh;
+    }
+
+    .fiche_programmation {
+        height: 110vh;
+        width: 90vw;
+        background: linear-gradient(#58CFA8 0%, #7855ED 50%, #F363A8 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .logo_fiche {
+            width: 20vw;
+            height: auto;
+        }
+
+
+        // section fiche de programmation ----------------------------------------------------
+        .contenu_fiche_programmation {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            // padding-bottom: 20px;
+
+            p {
+                font-family: "franklin-gothic-atf", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                color: white;
+                padding-left: 2vw;
+                padding-right: 2vw;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-size: 16px;
+
+                p.premiere_rangee {
+                    font-size: 16px;
+                }
+
+                p.deuxieme_rangee {
+                    font-size: 16px;
+                }
+            }
+
+            p.fiche_programmation_date {
+                font-family: "ohm-bold", sans-serif;
+                font-weight: 700;
+                font-style: normal;
+                font-size: max(1.5em, 30px);
+            }
+
+            p.premiere_rangee {
+                font-size: 16px;
+            }
+
+            p.deuxieme_rangee {
+                font-size: 16px;
+            }
+        }
+    }
+
+    // Section carte intéractive et coordonnées -------------------------------------------------------------------------------------------------------------------
+
+    div.section_carte_directions {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 65vh;
+
+        div.conteneur_carte {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        div.conteneur_carte_directions {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+        }
+
+        div.conteneur_directions {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        div.directions {
+            width: 45vw;
+            height: 45vh;
+            background: linear-gradient(#71D6B5 0%, #F6B99E 50%, #F564A7 100%);
+
+            .directions_sous_conteneur {
+                display: flex;
+                flex-direction: row;
+                padding-top: 4vh;
+
+                .directions_sous_conteneur_texte {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    p {
+                        font-size: 2.5vw;
+                        margin-left: 2vw;
+                        max-width: 20vw;
+                    }
+                }
+            }
+
+            img {
+                // margin-top: 2vh;
+                margin-left: 2vw;
+                height: 60px;
+                width: 60px;
+            }
+        }
+
+        iframe.carte {
+            width: 45vw;
+            height: 45vh;
+        }
+    }
+
+
+
+
+    // Section actualitées ------------------------------------------------------------------------------------------------------
+
+    div.conteneur_actualites {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 5vh;
+        overflow: hidden;
+        width: 95vw;
+        height: 40vh;
+
+        h3 {
+            font-size: 3.5vw;
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            padding-left: 30px;
+        }
+
+        p {
+            font-size: clamp(16px, 2vw, 22px);
+            margin-top: 2vh;
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            padding: 2vw;
+        }
+
+        img {
+            padding-top: 5vh;
+            width: 50vw;
+            height: 50vw;
+            max-width: 40vw;
+            max-height: 40vw;
+            margin-left: 3vw;
+        }
+
+        div.sous_conteneur_actualites {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 60vh;
+            width: 90vw;
+            background: linear-gradient(#71D6B5, #D4DAFF);
+
+            .contenu_actualites {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+    }
+
+    // Section du footer tablette -------------------------------------------------------------------------------------------------------------------
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: black;
+        height: 30vh;
+        color: white;
+        font-family: "franklin-gothic-atf", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+
+
+        img {
+            width: 75px;
+            height: 75px;
+            border-radius: 100%;
+        }
+
+        p {
+            font-size: clamp(16px, 2vw, 22px);
+            color: #ABABAB;
+        }
+
+        a {
+            font-size: clamp(16px, 3vw, 22px);
+            text-decoration: none;
+            color: #D4DAFF;
+            padding: 1vw;
+        }
+
+        .conteneur_footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+        }
+    }
+}
+
+// =========================================================================================================================================================
+// Cellulaires / appareil Mobiles -------------------------------------------------------------------------------------------------------------------=--
+// =========================================================================================================================================================
+
+@media (max-width: 480px) {
+
+    // styles généraux ---------------------------------------
+    h1 {
+        font-size: 5.5vw;
+        max-width: 60vw;
+        min-width: 30vw;
+
+        // à voir pour le placer relativement à son parent.
+        position: absolute;
+        top: 5vh;
+        left: 35vw;
+        text-align: end;
+    }
+
+    h2 {
+        font-family: "halogen", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 7vw;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+
+    // Nav Header mobile -------------------------------------------------------------
+
+    nav {
+        font-family: "halogen", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 15vh;
+        width: 100%;
+        background: linear-gradient(#D651F5, #F564A7);
+
+        .logo {
+            min-width: 8vw;
+            height: 13vh;
+            margin-right: 3vw;
+        }
+
+        .icones {
+            display: flex;
+            align-items: center;
+            margin-left: 3vw;
+
+            .menu_hamburger,
+            .image_compte {
+                object-fit: cover;
+                height: 5vh;
+                margin-right: 1vw;
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    .menu-links {
+        position: fixed;
+        top: 0;
+        left: -500%;
+        width: 320px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.664);
+        transition: left 0.5s ease-in-out;
+        z-index: 60;
+    }
+
+
+
+    // main mobile -----------------------------------------------------------------------------------------------
+
+    main.accueil {
+        background: blue;
+    }
+
+    // Bouton de la vidéo d'accueil tablette
+
+    img.fleche_bouton{
+        position: absolute;
+        top: 23%;
+        left: 140%;
+        // background: rgba(182, 182, 182, 0.89);
+        width: auto;
+        height: 10vh;
+        max-height: 6vh;
+        z-index: 0.1;
+        transition: ease-out 0.3s;
+        transform: rotate(90deg);
+        scale: 0.001;
+        pointer-events: none;
+    }
+
+    div.bouton_video_accueil {
+        position: absolute;
+        top: 30vw;
+        left: -5%;
+        width: 55vw;
+        height: 25vh;
+        max-height: 10vh;
+        z-index: 3;
+        transition: ease-out 0.3s;
+    }
+
+    a.bouton_video_accueil {
+        position: absolute;
+        left: 20%;
+        top: 20%;
+        display: block;
+        color: white;
+        font-size: clamp(20px, 3vw, 18px);
+        font-family: "franklin-gothic-atf", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        width: 85vw;
+        height: 5vh;
+        max-height: 10vh;
+        border: solid;
+        border-width: 5px;
+        border-color: white;
+        background: rgba(0, 0, 0, 0.438);
+        text-decoration: none;
+        text-align: center;
+        line-height: 45px;
+        z-index: 4;
+        transition: all 1.5s;
+
+        &:hover {
+            background: rgba(182, 182, 182, 0.363);
+            transition: ease-out 0.3s;
+            left: 10%;
+
+        }
+
+        &:hover + .fleche_bouton {
+            z-index: 100;
+            transform: rotate(-0.5deg);
+            display:flex;
+            transform: scale(500);
+
+        }
+    }
+
+
+
+    // section fiche de programmation ----------------------------------------------------
+    .contenu_fiche_programmation {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        // padding-bottom: 20px;
+
+        p.fiche_programmation_date {
+            font-family: "ohm-bold", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+
+        }
+
+        p {
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            padding-left: 2vw;
+            padding-right: 2vw;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 13px;
+
+            p.premiere_rangee {
+                font-size: 13px;
+            }
+
+            p.deuxieme_rangee {
+                font-size: 13px;
+            }
+        }
+
+
+
+        p.premiere_rangee {
+            font-size: 13px;
+        }
+
+        p.deuxieme_rangee {
+            font-size: 13px;
+        }
+    }
+
+    // Section carte et directions -------------------------------------------------------------------------
+    div.section_carte_directions {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 65vh;
+        margin-bottom: 35vh;
+
+
+        div.conteneur_carte {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        div.conteneur_carte_directions {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        div.conteneur_directions {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        div.directions {
+            width: 80vw;
+            height: 45vh;
+            background: linear-gradient(#71D6B5 0%, #F6B99E 50%, #F564A7 100%);
+
+            .directions_sous_conteneur {
+                display: flex;
+                flex-direction: row;
+                padding-top: 4vh;
+                padding-left: 7vw;
+
+                .directions_sous_conteneur_texte {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    p {
+                        font-size: 3.5vw;
+                        margin-left: 4vw;
+                        max-width: 40vw;
+                    }
+                }
+            }
+
+            img {
+                // margin-top: 2vh;
+                margin-left: 2vw;
+                height: 60px;
+                width: 60px;
+            }
+        }
+
+        iframe.carte {
+            width: 80vw;
+            height: 45vh;
+        }
+    }
+
+    // Section actualitées ------------------------------------------------------------------------------------------------------
+
+    div.conteneur_actualites {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 5vh;
+        overflow: hidden;
+
+
+        div.contenu_actualites_breakpoint {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        h3 {
+            padding-top: 5vh;
+            max-width: 80vw;
+            font-size: clamp(20px, 3.5vw, 18px);
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            padding-left: 30px;
+        }
+
+        p {
+            font-size: clamp(16px, 2vw, 22px);
+            margin-top: 2vh;
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            padding: 2vw;
+        }
+
+        img {
+            padding-top: 5vh;
+            width: 60vw;
+            height: 60vw;
+            max-width: 60vw;
+            max-height: 60vw;
+            margin-left: 7vw;
+        }
+
+        div.sous_conteneur_actualites {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            height: 80vh;
+            width: 90vw;
+            background: linear-gradient(#71D6B5, #D4DAFF);
+
+            .contenu_actualites {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+
+        div.sous_contenu_actualites {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    a.bouton_actualites {
+        color: white;
+        font-size: clamp(16px, 2vw, 22px);
+        font-family: "franklin-gothic-atf", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        width: 80vw;
+        height: 180px;
+        max-height: 6vh;
+        border: solid;
+        border-width: 5px;
+        border-color: white;
+        background: rgba(0, 0, 0, 0.438);
+        text-decoration: none;
+        text-align: center;
+        line-height: 50px;
+        z-index: 3;
+
+        &:hover {
+            // transform: scale(1.2);
+            // background: rgba(182, 182, 182, 0.89);
+
+        }
+
+    }
+
+}
+
+// ******************************************************************************************************************
+// FIN ACCUEIL
 // ******************************************************************************************************************
 
 

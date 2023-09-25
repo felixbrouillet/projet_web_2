@@ -1,6 +1,11 @@
 <x-layout titre="Actualités">
     <main class="actualites">
         <h1>Actualités</h1>
+
+        {{-- Messages d'alertes succes ou erreur --}}
+        <x-alertes.alerte cle="succes" />
+        <x-alertes.alerte cle="erreur" />
+
         @foreach ($actualites as $actualite)
             <div class="actualite">
                 <h2>{{ $actualite->nom }}</h2>

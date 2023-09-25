@@ -70,6 +70,6 @@ class UserController extends Controller
         $user->save();
 
         // Redirection vers une page de succès ou une autre action
-        return redirect()->route('index')->with('success', 'Votre compte a été créé avec succès');
+        return redirect()->route('index')->with('succes', 'Votre compte a été créé avec succès');
     }
 }

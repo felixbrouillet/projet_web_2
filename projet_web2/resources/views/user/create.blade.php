@@ -1,5 +1,10 @@
 <div class="create">
     <x-layout titre="Créer un compte">
+
+        {{-- Messages d'alertes succes ou erreur --}}
+        <x-alertes.alerte cle="succes" />
+        <x-alertes.alerte cle="erreur" />
+
         <div class="container">
             <h2>Créer un compte</h2>
             <form class="formulaire create" action="{{ route('user.store') }}" method="POST">
