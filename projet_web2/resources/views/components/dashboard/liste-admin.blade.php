@@ -1,4 +1,4 @@
-<ul>
+<ul class="list-dashboard">
     <h2>Liste des administrateurs</h2>
     @foreach ($admins as $admin)
         <li>{{ $admin->prenom }} {{ $admin->nom }}

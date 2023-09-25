@@ -44,15 +44,23 @@ class ActualiteController extends Controller
 
         // Gestion de l'image s'il y en a une
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('actualite_images'); // Enregistrez l'image dans le dossier "actualite_images"
-            $actualite->image = $imagePath;
+            // Récupérer le nom du fichier (sans le chemin)
+            $imageName = $request->file('image')->getClientOriginalName();
+
+            // Stocker l'image dans le dossier public/img/images
+            $request->file('image')->move(public_path('img/images'), $imageName);
+
+            // Assigner le nom de l'image à l'actualité
+            $actualite->image = $imageName;
+        } else {
+            echo 'Aucun fichier image envoyé.';
         }
 
         // Enregistrez l'actualité dans la base de données
         $actualite->save();
 
-        // Redirection vers la page des actualités avec un message de succès
-        return redirect()->route('dashboard.actualites')->with('succes', 'Actualité ajoutée avec succès');
+        // Redirection vers la page des actualité avec un message de succès
+        return redirect()->route('dashboard.activites')->with('succes', 'Activité ajoutée avec succès');
     }
 
     /**

@@ -44,8 +44,16 @@ class ActiviteController extends Controller
 
         // Gestion de l'image s'il y en a une
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('activite_images'); // Enregistrez l'image dans le dossier "activite_images"
-            $activite->image = $imagePath;
+            // Récupérer le nom du fichier (sans le chemin)
+            $imageName = $request->file('image')->getClientOriginalName();
+
+            // Stocker l'image dans le dossier public/img/images
+            $request->file('image')->move(public_path('img/images'), $imageName);
+
+            // Assigner le nom de l'image à l'activité
+            $activite->image = $imageName;
+        } else {
+            echo 'Aucun fichier image envoyé.';
         }
 
         // Enregistrez l'activité dans la base de données
@@ -103,7 +111,7 @@ class ActiviteController extends Controller
                 }
 
                 // Enregistrez la nouvelle image
-                $imagePath = $request->file('image')->store('activite_images');
+                $imagePath = $request->file('image')->store('img/images');
                 $activite->image = $imagePath;
             }
 

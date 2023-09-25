@@ -1,5 +1,4 @@
-
-<body class="create">
+<div class="create">
     <x-layout titre="Créer un compte">
 
         {{-- Messages d'alertes succes ou erreur --}}
@@ -36,4 +35,4 @@
             </form>
         </div>
     </x-layout>
-</body>
+</div>

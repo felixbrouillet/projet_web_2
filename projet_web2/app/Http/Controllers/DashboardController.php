@@ -16,14 +16,25 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        return view('dashboard.index');
+    }
+
+    /**
+     * Affichage de la page des administrateurs dans le dashboard 
+     *
+     * @return View
+     */
+    public function showAdmin()
+    {
         // Récupère la liste des administrateurs depuis la base de données
         $admins = User::where('role_id', 1)->get(); 
         
         // Récupère l'utilisateur connecté
         $user = auth()->user();
-
-        return view('dashboard.index', ['admins' => $admins, 'user' => $user]);
+        
+        return view('dashboard.admins', ['admins' => $admins, 'user' => $user]);
     }
+
     /**
      * Affichage de la page actualités dans le dashboard 
      *
@@ -36,6 +47,7 @@ class DashboardController extends Controller
         
         return view('dashboard.actualites', ['actualites' => $actualites]);
     }
+
     /**
      * Affichage de la page activites dans le dashboard 
      *
