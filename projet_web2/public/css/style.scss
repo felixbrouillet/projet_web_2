@@ -761,15 +761,13 @@ div {
       background: linear-gradient(to bottom, #D355F3, #76CEB8);
     }
   }
-<<<<<<< HEAD
-=======
-
+  
   ::selection {
     background-color: rgba(245, 100, 167, 1); 
     color: rgba(113, 214, 181, 1);
   }
   
-  body {
+  * {
     cursor: none;
   }
   
@@ -783,12 +781,13 @@ div {
     pointer-events: none;
     transform: translate(-50%, -50%);
   }
+  
   #cursor.active {
     width: 20px;
     height: 20px;
   }
-    
-  nav, a, input, div, img, textarea, button {
-    cursor: none;
+
+  .cursor.bump {
+    transform: scale(1.2);
+    transition: transform 0.2s;
   }
->>>>>>> origin/Jacob
