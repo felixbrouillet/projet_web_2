@@ -35,43 +35,35 @@ class ActualiteController extends Controller
             'contenu' => 'required|string',
             'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
         ]);
-    
+
         // Créer une nouvelle actualité
         $actualite = new Actualite([
             'nom' => $validatedData['nom'],
             'contenu' => $validatedData['contenu'],
         ]);
-    
+
         // Gestion de l'image s'il y en a une et ajout du logo s'il n'y en a pas
         if ($request->hasFile('image')) {
             // Récupérer le nom du fichier (sans le chemin)
             $imageName = $request->file('image')->getClientOriginalName();
-        
+
             // Stocker l'image dans le dossier public/img/images
             $request->file('image')->move(public_path('img/images'), $imageName);
-        
+
             // Assigner le nom de l'image à l'actualité
             $actualite->image = $imageName;
         } else {
             // Si aucune image n'est fournie, utiliser le logo par défaut
             $actualite->image = "default.png";
         }
-                    
+
         // Enregistrez l'actualité dans la base de données
         $actualite->save();
-<<<<<<< HEAD
-    
+
         // Redirection vers la page des actualité avec un message de succès
         return redirect()->route('dashboard.actualites')->with('succes', 'Actualité ajoutée avec succès');
     }
-        
-=======
 
-        // Redirection vers la page des actualité avec un message de succès
-        return redirect()->route('dashboard.activites')->with('succes', 'Activité ajoutée avec succès');
-    }
-
->>>>>>> af19af700a387f6df48f1e6eb8676a51f4342bda
     /**
      * Affiche le formulaire pour modifier une actualité.
      *
