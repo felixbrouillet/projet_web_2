@@ -1,5 +1,8 @@
 <x-layout titre="Valider le forfait">
     <main class="validation">
+        {{-- Messages d'alertes succes ou erreur --}}
+        <x-alertes.alerte cle="succes" />
+        <x-alertes.alerte cle="erreur" />
         <div class="validation-forfait">
             <h1>Validation du Forfait</h1>
             <div class="forfait-info">

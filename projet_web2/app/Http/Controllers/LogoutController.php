@@ -17,6 +17,6 @@ class LogoutController extends Controller
         Auth::logout();
 
         // Redirige vers la page d'accueil et affiche un message de succès
-        return redirect()->route('index')->with('success', 'Vous avez été déconnecté avec succès.');
+        return redirect()->route('index')->with('succes', 'Vous avez été déconnecté avec succès.');
     }
 }

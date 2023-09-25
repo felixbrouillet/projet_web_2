@@ -17,7 +17,7 @@ class ActualiteController extends Controller
     {
         // Récupère toutes les actualités
         $actualites = Actualite::all();
-        
+
         return view('actualites.index', ['actualites' => $actualites]);
     }
 
@@ -59,11 +59,19 @@ class ActualiteController extends Controller
                     
         // Enregistrez l'actualité dans la base de données
         $actualite->save();
+<<<<<<< HEAD
     
         // Redirection vers la page des actualité avec un message de succès
         return redirect()->route('dashboard.actualites')->with('succes', 'Actualité ajoutée avec succès');
     }
         
+=======
+
+        // Redirection vers la page des actualité avec un message de succès
+        return redirect()->route('dashboard.activites')->with('succes', 'Activité ajoutée avec succès');
+    }
+
+>>>>>>> af19af700a387f6df48f1e6eb8676a51f4342bda
     /**
      * Affiche le formulaire pour modifier une actualité.
      *
@@ -78,7 +86,7 @@ class ActualiteController extends Controller
             return view('dashboard.edit.edit-actualites', ['actualite' => $actualite, 'isEdit' => true]);
         }
 
-        return redirect()->route('dashboard.actualites')->with('error', 'Actualité non trouvée');
+        return redirect()->route('dashboard.actualites')->with('erreur', 'Actualité introuvable');
     }
 
     /**
@@ -91,7 +99,7 @@ class ActualiteController extends Controller
     public function update(Request $request, $id)
     {
         $actualite = Actualite::find($id);
-        
+
         if ($actualite) {
             // Valider les données du formulaire (vous pouvez les personnaliser)
             $validatedData = $request->validate([
@@ -119,10 +127,10 @@ class ActualiteController extends Controller
             // Enregistrer les modifications
             $actualite->save();
 
-            return redirect()->route('dashboard.actualites')->with('success', 'Actualité mise à jour avec succès');
+            return redirect()->route('dashboard.actualites')->with('succes', 'Actualité mise à jour avec succès');
         }
 
-        return redirect()->route('dashboard.actualites')->with('error', 'Actualité non trouvée');
+        return redirect()->route('dashboard.actualites')->with('erreur', 'Actualité introuvable');
     }
 
     /**
@@ -137,9 +145,9 @@ class ActualiteController extends Controller
 
         if ($actualite) {
             $actualite->delete();
-            return redirect()->route('dashboard.actualites')->with('success', 'Actualité supprimée avec succès');
+            return redirect()->route('dashboard.actualites')->with('succes', 'Actualité supprimée avec succès');
         }
 
-        return redirect()->route('dashboard.actualites')->with('error', 'Actualité non trouvée');
-    } 
+        return redirect()->route('dashboard.actualites')->with('erreur', 'Actualité introuvable');
+    }
 }

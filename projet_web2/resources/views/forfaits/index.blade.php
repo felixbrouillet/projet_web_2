@@ -1,5 +1,11 @@
 <x-layout titre="Forfaits">
     <main class="forfaits">
+
+        {{-- Messages d'alertes succes ou erreur --}}
+        <x-alertes.alerte cle="succes" />
+        <x-alertes.alerte cle="erreur" />
+
+
         <div class="header">
             <h1>Billetterie</h1>
             <p>Choisissez le forfait qui correspond le mieux à vos besoins</p>
