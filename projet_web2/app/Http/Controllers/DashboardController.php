@@ -6,7 +6,6 @@ use App\Models\User;
 use App\Models\Activite;
 use App\Models\Actualite;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Pagination\Paginator;
 
 class DashboardController extends Controller
 {
@@ -48,7 +47,6 @@ class DashboardController extends Controller
 
         return view('dashboard.actualites', ['actualites' => $actualites]);
     }
-
     /**
      * Affichage de la page activites dans le dashboard
      *

@@ -33,7 +33,7 @@ class ActualiteController extends Controller
         $validatedData = $request->validate([
             'nom' => 'required|string|max:255',
             'contenu' => 'required|string',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validation de l'image
         ]);
 
         // Créer une nouvelle actualité

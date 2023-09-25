@@ -1,27 +1,27 @@
-@props(['activite', 'route', 'isEdit'])
+@props(['activites', 'route', 'isEdit'])
 
-<div class="container">
-    <form class="formulaire" action="{{ $route }}" method="POST" enctype="multipart/form-data">
-        <h2 class="dashboard-h2">{{ $isEdit ? 'Éditer' : 'Ajouter' }} une activité</h2>
+<h2>{{ $isEdit ? 'Éditer' : 'Ajouter' }} une activité</h2>
+<form action="{{ $route }}" method="POST" enctype="multipart/form-data">
+    @csrf
 
-        @csrf
-    
-        <!-- Champ Nom de l'activité -->
-        <div>
-            <input type="text" id="nom" name="nom" @if ($isEdit) value="{{ old('nom', $activite->nom) }}" @endif required placeholder="Nom de l'activité">
-        </div>
-    
-        <!-- Champ Description de l'activité -->
-        <div>
-            <textarea id="description" name="description" rows="10" required placeholder="Description de l'activité">@if ($isEdit){{ old('description', $activite->description) }}@endif</textarea>
-        </div>
-    
-        <!-- Champ Image de l'activité -->
-        <div>
-            <input type="file" id="image" name="image"@if ($isEdit){{ old('image', $activite->image) }}@endif>
-        </div>
-    
-        <!-- Bouton de soumission -->
-        <button type="submit">{{ $isEdit ? 'Enregistrer les modifications' : 'Ajouter une activité' }}</button>
-    </form>
-</div>
+    <!-- Champ Nom de l'activité -->
+    <div class="form-cell">
+        <label for="nom" class="form-label">Nom de l'activité</label>
+        <input type="text" class="form-control" id="nom" name="nom" @if ($isEdit) value="{{ old('nom', $activites->nom) }}" @endif required>
+    </div>
+
+    <!-- Champ Description de l'activité -->
+    <div class="form-cell">
+        <label for="description" class="form-label">Description de l'activité</label>
+        <textarea class="form-control" id="description" name="description" rows="4" required>@if ($isEdit){{ old('description', $activites->description) }}@endif</textarea>
+    </div>
+
+    <!-- Champ Image de l'activité -->
+    <div class="form-cell">
+        <label for="image" class="form-label">Image de l'activité</label>
+        <input type="file" class="form-control" id="image" name="image"@if ($isEdit){{ old('description', $activites->image) }}@endif>
+    </div>
+
+    <!-- Bouton de soumission -->
+    <button type="submit">{{ $isEdit ? 'Enregistrer les modifications' : 'Ajouter une activité' }}</button>
+</form>

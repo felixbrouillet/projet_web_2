@@ -188,19 +188,38 @@
 
         <div class="conteneur_actualites">
             @foreach ($actualites as $actualite)
-                <div class="sous_conteneur_actualites" id="actualite-{{ $actualite->id }}">
-                    <h3>{{ $actualite->nom }}</h3>
-                    <div class="contenu_actualites">
-                        <img src="{{ asset('img/images/' . $actualite->image) }}" alt="{{ $actualite->nom }}">
-                        <p>{{ $actualite->contenu }}</p>
+            <div class="sous_conteneur_actualites">
+                <div class="contenu_actualites">
+                    <div class="sous_contenu_actualites_h3">
+                        <h3>{{ $actualite->nom }}</h3>
                     </div>
-                    <a href="{{ route('actualites.show') }}#actualite-{{ $actualite->id }}">Lire la suite</a>
+
                 </div>
+
+                <div class="contenu_actualites">
+                    <div class="contenu_actualites_breakpoint">
+                        <div class="sous_contenu_actualites">
+                            <img src="{{ asset('img/images/' . $actualite->image) }}" alt="{{ $actualite->nom }}">
+                        </div>
+
+                        <div class="sous_contenu_actualites">
+                            <p class="article">{{ $actualite->contenu }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contenu_actualites">
+                    <div class="sous_contenu_actualites_mobile">
+                        <a href="{{ route('actualites.show') }}#actualite-{{ $actualite->id }}" class="lien_article">Lire la suite</a>
+                    </div>
+                </div>
+            </div>
             @endforeach
         </div>
 
-
-        <a class="bouton_actualites" href="{{ route('actualites.show') }}">Voir toutes les actualités</a>
+        <div class="conteneur_bouton_actualites">
+            <a class="bouton_actualites" href="{{ route('actualites.show') }}">Voir toutes les actualités</a>
+        </div>
 
 
     </main>

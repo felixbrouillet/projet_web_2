@@ -1,10 +1,6 @@
 // ******************************************************************************************************************
-// DEBUT PAGE D'ACCUEIL
+// DEBUT STYLES GÉNÉRAUX
 // ******************************************************************************************************************
-
-html {
-    scroll-behavior: smooth;
-}
 
 body {
     box-sizing: border-box;
@@ -32,7 +28,7 @@ h2.accueil {
     font-weight: 900;
     font-style: normal;
     font-size: 3vw;
-    padding-top: 5vh;
+    margin-top: 15vh;
     padding-bottom: 5vh;
 }
 
@@ -78,6 +74,8 @@ main.accueil {
 
 }
 
+/* ligne de séparation --------------------------------------------------------------------------- */
+
 div.conteneur_ligne_separation {
     display: flex;
     flex-direction: row;
@@ -116,7 +114,7 @@ div.ligne_separation {
 }
 
 // ******************************************************************************************************************
-// FIN STYLES PAGE D'ACCUEIL
+// FIN STYLES GÉNÉRAUX
 // ******************************************************************************************************************
 
 // ******************************************************************************************************************
@@ -176,7 +174,7 @@ nav {
     width: 350px;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.664);
-    transition: left 0.5s ease-in-out;
+    transition: left 0.3s ease-in-out;
     z-index: 60;
 }
 
@@ -324,7 +322,7 @@ a.bouton_video_accueil {
     text-align: center;
     line-height: 75px;
     z-index: 4;
-    transition: all 1.5s;
+    transition: all 0.3s;
 
     &:hover {
         background: rgba(182, 182, 182, 0.363);
@@ -350,7 +348,14 @@ div.conteneur_programmation {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 15vh;
+    margin-top: 5vh;
+}
+
+div.conteneur_bouton_actualites {
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .contenu_programmation {
@@ -484,33 +489,80 @@ div.section_carte_directions {
 
 // Section actualitées ------------------------------------------------------------------------------------------------------
 
+
+div.conteneur_h2_actualites {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+div.sous_contenu_actualites {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.sous_contenu_actualites_mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
 div.conteneur_actualites {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-top: 5vh;
+    height: 60vh;
 
     div.contenu_actualites_breakpoint {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: start;
     }
 
     h3 {
         padding-top: 3vh;
+        padding-bottom: 3vh;
+        padding-left: 0vh;
+        padding-right: 0vh;
         font-size: 2vw;
         font-family: "franklin-gothic-atf", sans-serif;
         font-weight: 600;
         font-style: normal;
-        padding-left: 30px;
     }
 
     p {
-        font-size: 1.3vw;
+        font-size: clamp(18px, 2vw, 22px);
+        margin-top: 2vh;
         font-family: "franklin-gothic-atf", sans-serif;
         font-weight: 400;
         font-style: normal;
         padding: 2vw;
+        max-height: 200px;
+
+        white-space: wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 30vw;
+
+    }
+
+    a.lien_article {
+        font-size: 18px;
+        font-family: "franklin-gothic-atf", sans-serif;
+        color: #000;
+        text-decoration: none;
+        transition: ease-out 0.3s;
+        padding-bottom: 20px;
+
+        &:hover {
+            font-weight: bolder;
+            text-decoration: underline;
+        }
+
     }
 
     img {
@@ -524,7 +576,7 @@ div.conteneur_actualites {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 50vh;
+        height: 55vh;
         width: 80vw;
         background: linear-gradient(#71D6B5, #D4DAFF);
 
@@ -541,30 +593,37 @@ div.conteneur_actualites {
     div.sous_contenu_actualites {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: start;
     }
 }
 
+
 a.bouton_actualites {
-    // position: absolute;
-    // top: 15%;
-    // left: 30%;
     color: white;
-    font-size: 2vw;
+    font-size: 18px;
     font-family: "franklin-gothic-atf", sans-serif;
     font-weight: 500;
     font-style: normal;
-    width: 35vw;
+    width: 70vw;
+    max-width: 500px;
     height: 12vh;
+    max-height: 100px;
     border: solid;
     border-width: 7px;
     border-color: white;
     background: rgba(0, 0, 0, 0);
     text-decoration: none;
     text-align: center;
-    line-height: 10.5vh;
+    line-height: 10vh;
     margin-bottom: 10vh;
     margin-top: 7vh;
+    transition: ease-out 0.3s;
+
+    &:hover {
+        font-weight: bolder;
+        color: white;
+        scale: 1.1;
+    }
 }
 
 // Footer -------------------------------------------------------------------------
@@ -614,11 +673,9 @@ footer {
 
 
     //  styles généraux ---------------------------------------------------------------
-    main.accueil {
-        background: red;
-    }
 
-    h1 {
+
+    h1.accueil {
         font-size: 4.5vw;
         max-width: 60vw;
         min-width: 30vw;
@@ -635,7 +692,7 @@ footer {
         font-weight: 900;
         font-style: normal;
         font-size: 5vw;
-        padding-top: 5vh;
+        margin-top: 15vh;
         padding-bottom: 5vh;
     }
 
@@ -689,7 +746,7 @@ footer {
         text-align: center;
         line-height: 65px;
         z-index: 4;
-        transition: all 1.5s;
+        transition: all 0.3s;
 
         &:hover {
             background: rgba(182, 182, 182, 0.363);
@@ -782,7 +839,7 @@ footer {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 65vh;
+        height: 75vh;
 
         div.conteneur_carte {
             display: flex;
@@ -845,6 +902,32 @@ footer {
 
     // Section actualitées ------------------------------------------------------------------------------------------------------
 
+    div.conteneur_h2_actualites {
+        margin-top: 0px;
+    }
+
+    div.sous_contenu_actualites {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    div.sous_contenu_actualites_mobile {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+
+        a {
+            padding: 10px;
+        }
+    }
+
+    div.sous_contenu_actualites_h3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+    }
+
     div.conteneur_actualites {
         display: flex;
         flex-direction: row;
@@ -855,11 +938,11 @@ footer {
         height: 40vh;
 
         h3 {
-            font-size: 3.5vw;
+            font-size: 18px;
             font-family: "franklin-gothic-atf", sans-serif;
             font-weight: 600;
             font-style: normal;
-            padding-left: 30px;
+            padding-left: 0px;
         }
 
         p {
@@ -869,24 +952,38 @@ footer {
             font-weight: 400;
             font-style: normal;
             padding: 2vw;
+            max-height: 160px;
+
+            white-space: wrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 30vw;
+
         }
 
         img {
-            padding-top: 5vh;
-            width: 50vw;
-            height: 50vw;
-            max-width: 40vw;
-            max-height: 40vw;
-            margin-left: 3vw;
+            padding-top: 10px;
+            height: auto;
+            width: auto;
+            max-height: 200px;
+            // max-width: 40vw;
+            // max-height: 40vw;
+            // margin-left: 3vw;
+        }
+
+        div.contenu_actualites_breakpoint {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
         }
 
         div.sous_conteneur_actualites {
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
             height: 60vh;
             width: 90vw;
             background: linear-gradient(#71D6B5, #D4DAFF);
+            justify-content: start;
 
             .contenu_actualites {
 
@@ -897,6 +994,35 @@ footer {
                 padding-right: 30px;
             }
         }
+
+        a.bouton_actualites {
+            color: black;
+            font-size: clamp(16px, 2vw, 22px);
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            width: 80vw;
+            max-width: 500px;
+            height: 220px;
+            max-height: 10vh;
+            border: solid;
+            border-width: 5px;
+            border-color: white;
+            background: rgba(0, 0, 0, 0.438);
+            text-decoration: none;
+            text-align: center;
+            line-height: 60px;
+            z-index: 3;
+
+            &:hover {
+                // transform: scale(1.2);
+                // background: rgba(182, 182, 182, 0.89);
+
+            }
+
+        }
+
+
     }
 
     // Section du footer tablette -------------------------------------------------------------------------------------------------------------------
@@ -946,7 +1072,7 @@ footer {
 @media (max-width: 480px) {
 
     // styles généraux ---------------------------------------
-    h1 {
+    h1.accueil {
         font-size: 5.5vw;
         max-width: 60vw;
         min-width: 30vw;
@@ -1013,7 +1139,7 @@ footer {
         width: 320px;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.664);
-        transition: left 0.5s ease-in-out;
+        transition: left 0.3s ease-in-out;
         z-index: 60;
     }
 
@@ -1021,9 +1147,6 @@ footer {
 
     // main mobile -----------------------------------------------------------------------------------------------
 
-    main.accueil {
-        background: blue;
-    }
 
     // Bouton de la vidéo d'accueil tablette
 
@@ -1074,7 +1197,7 @@ footer {
         text-align: center;
         line-height: 45px;
         z-index: 4;
-        transition: all 1.5s;
+        transition: all 0.3s;
 
         &:hover {
             background: rgba(182, 182, 182, 0.363);
@@ -1095,6 +1218,20 @@ footer {
 
 
     // section fiche de programmation ----------------------------------------------------
+
+    h2.accueil {
+        margin-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    h2.contenu_programmation{
+        margin-top: 0px;
+    }
+
+    div.fiche_programmation {
+        margin-bottom: 70px;
+    }
+
     .contenu_fiche_programmation {
         display: flex;
         flex-direction: row;
@@ -1106,7 +1243,6 @@ footer {
             font-family: "ohm-bold", sans-serif;
             font-weight: 700;
             font-style: normal;
-
         }
 
         p {
@@ -1145,14 +1281,15 @@ footer {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 65vh;
-        margin-bottom: 35vh;
+        height: 70vh;
+        margin-bottom: 40vh;
 
 
         div.conteneur_carte {
             display: flex;
             flex-direction: row;
             justify-content: center;
+            margin-bottom: 5vh;
         }
 
         div.conteneur_carte_directions {
@@ -1166,9 +1303,11 @@ footer {
             display: flex;
             flex-direction: row;
             justify-content: center;
+            padding-top: 3vh;
         }
 
         div.directions {
+            padding-top: 2vh;
             width: 80vw;
             height: 45vh;
             background: linear-gradient(#71D6B5 0%, #F6B99E 50%, #F564A7 100%);
@@ -1208,12 +1347,42 @@ footer {
 
     // Section actualitées ------------------------------------------------------------------------------------------------------
 
+    div.sous_contenu_actualites {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        display: none;
+
+        a {
+            padding-top: 20px;
+            display: none;
+        }
+    }
+
+    div.sous_contenu_actualites_h3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-left: 30px;
+    }
+
+    div.sous_contenu_actualites_mobile {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        a {
+            padding-top: 20px;
+        }
+    }
+
     div.conteneur_actualites {
         display: flex;
         flex-direction: row;
         justify-content: center;
         padding-top: 5vh;
         overflow: hidden;
+        height: 55vh;
 
 
         div.contenu_actualites_breakpoint {
@@ -1229,7 +1398,6 @@ footer {
             font-family: "franklin-gothic-atf", sans-serif;
             font-weight: 600;
             font-style: normal;
-            padding-left: 30px;
         }
 
         p {
@@ -1239,6 +1407,7 @@ footer {
             font-weight: 400;
             font-style: normal;
             padding: 2vw;
+            display: none;
         }
 
         img {
@@ -1247,15 +1416,14 @@ footer {
             height: 60vw;
             max-width: 60vw;
             max-height: 60vw;
-            margin-left: 7vw;
         }
 
         div.sous_conteneur_actualites {
             display: flex;
             flex-direction: column;
             justify-content: start;
-            height: 80vh;
-            width: 90vw;
+            height: 55vh;
+            width: 80vw;
             background: linear-gradient(#71D6B5, #D4DAFF);
 
             .contenu_actualites {
@@ -1268,11 +1436,7 @@ footer {
             }
         }
 
-        div.sous_contenu_actualites {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
+
     }
 
     a.bouton_actualites {
@@ -1305,7 +1469,9 @@ footer {
 
 // ******************************************************************************************************************
 // FIN ACCUEIL
-// ******************************************************************************************************************
+
+// FIN Cellulaires / appareil Mobiles -------------------------------------------------------------------------------------------------------------------=--
+// =========================================================================================================================================================
 
 
 // ******************************************************************************************************************
@@ -1315,11 +1481,12 @@ footer {
 /* Styles pour le héros (hero) */
 header {
 
-    h1 {
+    h1.accueil {
         font-family: "halogen", sans-serif;
         font-weight: 900;
         font-style: normal;
         text-shadow: 0px 6px 8px rgb(0, 0, 0);
+        font-size: 3rem;
     }
 
     .hero_activites {
@@ -1437,7 +1604,7 @@ header {
             font-style: normal;
             text-shadow: 6px 6px 8px rgb(0, 0, 0);
             text-align: center;
-            margin-bottom: 5vh;
+            margin-bottom: 10vh;
         }
 
         p {
@@ -1447,108 +1614,95 @@ header {
             font-style: normal;
             text-shadow: 6px 6px 8px rgb(0, 0, 0);
             text-align: center;
+            margin-bottom: 10vh;
             margin-left: 17vw;
             margin-right: 17vw;
         }
     }
 
     /* Styles pour chaque forfait */
-    .conteneur-forfaits {
+    .forfait {
         display: flex;
-        flex-wrap: wrap;
-        margin-top: 2vh;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 900px;
+        height: fit-content;
+        padding: 50px 50px;
+        margin-top: 10vh;
+        background: linear-gradient(0deg, rgba(214, 81, 245, 1) 0%, rgba(113, 214, 181, 1) 100%);
 
-        .forfait-link {
-            text-decoration: none;
-            color: #F3F3F3;
+        h2 {
+            font-size: 2vw;
+            font-family: "halogen", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+            text-align: left;
+            margin-bottom: 3vh;
         }
 
-        .forfait {
+        .prix-et-reservation {
             display: flex;
-            flex-direction: column;
-            width: 900px;
-            height: fit-content;
-            padding: 50px 50px;
-            margin-top: 6vh;
-            background: linear-gradient(0deg, rgba(214, 81, 245, 1) 0%, rgba(113, 214, 181, 1) 100%);
-            transition: transform 0.3s ease;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 5vh;
+            width: 100%;
 
-            &:hover {
-                transform: scale(1.05);
-            }
-
-            h2 {
-                font-size: 2vw;
-                font-family: "halogen", sans-serif;
-                font-weight: 900;
-                font-style: normal;
-                text-align: left;
-                margin-bottom: 3vh;
-            }
-
-            .prix-et-reservation {
+            .prix {
                 display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                margin-top: 5vh;
-                width: 100%;
+                align-items: center;
 
-                .prix {
-                    display: flex;
-                    align-items: center;
-
-                    p {
-                        font-family: "halogen", sans-serif;
-                        font-weight: 900;
-                        font-style: normal;
-                        font-size: 2vw;
-                        margin-right: 10px;
-                    }
-
-                    .frais-et-taxes {
-                        font-size: 0.8vw;
-                        font-family: "franklin-gothic-atf", sans-serif;
-                        font-weight: 400;
-                        font-style: normal;
-                    }
+                p {
+                    font-family: "halogen", sans-serif;
+                    font-weight: 900;
+                    font-style: normal;
+                    font-size: 2vw;
+                    margin-right: 10px;
                 }
 
-                a.btn_reservation {
-                    text-decoration: none;
+                .frais-et-taxes {
+                    font-size: 0.8vw;
                     font-family: "franklin-gothic-atf", sans-serif;
                     font-weight: 400;
                     font-style: normal;
-                    font-size: 1.2vw;
-                    color: #F3F3F3;
-                    border: solid 2.5px white;
-                    padding: 20px 40px;
-                    margin-top: 1rem;
-                    background-color: transparent;
-                    transition: background-color 0.3s, color 0.3s;
-
-                    &:hover {
-                        border: solid 2.5px #000;
-                        color: #000;
-                        font-weight: bold;
-                    }
                 }
             }
 
-            p {
-                font-size: 1.2vw;
+            a.btn_reservation {
+                text-decoration: none;
                 font-family: "franklin-gothic-atf", sans-serif;
                 font-weight: 400;
                 font-style: normal;
-                white-space: pre-line;
-                line-height: 2;
+                font-size: 1.2vw;
+                color: #F3F3F3;
+                border: solid 2.5px white;
+                padding: 20px 40px;
+                margin-top: 1rem;
+                background-color: transparent;
+                transition: background-color 0.3s, color 0.3s;
+
+                &:hover {
+                    border: solid 2.5px #000;
+                    color: #000;
+                    font-weight: bold;
+                }
             }
         }
-    }
 
-    /* Placement à droite pour les forfaits pairs */
-    .forfait-pair {
-        margin-left: auto;
+        p {
+            font-size: 1.2vw;
+            font-family: "franklin-gothic-atf", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            white-space: pre-line;
+            line-height: 2;
+        }
     }
+}
+
+
+/* Style différent pour les forfaits pairs */
+.forfait-pair {
+    flex-direction: row-reverse;
 }
 
 // ******************************************************************************************************************
@@ -2106,91 +2260,6 @@ ul.pagination li.page-item.disabled a.page-link {
 
 // ******************************************************************************************************************
 // FIN PAGE DASHBOARD (ADMINS)
-// ******************************************************************************************************************
-
-// ******************************************************************************************************************
-// DÉBUT PAGE DE COMPTE CLIENT
-// ******************************************************************************************************************
-
-/* Styles for the Account Page */
-.account {
-    background-image: url('/img/images/dj.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 85vh;
-
-    .account-info {
-        padding: 2rem;
-        background-color: rgba(255, 255, 255, 0.9);
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        max-width: 600px;
-        text-align: center;
-
-        h1 {
-            font-family: "halogen", sans-serif;
-            font-weight: 900;
-            font-style: normal;
-            font-size: 2rem;
-            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-            color: #F564A7;
-        }
-
-        p {
-            font-size: 1.2rem;
-            font-family: "franklin-gothic-atf", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            margin: 1rem 0;
-        }
-
-        .forfait-info {
-            margin-top: 2rem;
-
-            p {
-                font-size: 1.2rem;
-                font-family: "franklin-gothic-atf", sans-serif;
-                font-weight: 400;
-                font-style: normal;
-                margin: 1rem 0;
-            }
-        }
-
-        .reservation-actions {
-            margin-top: 2rem;
-
-            a {
-                display: inline-block;
-                font-size: 1.2rem;
-                font-family: "franklin-gothic-atf", sans-serif;
-                font-weight: 600;
-                font-style: normal;
-                text-decoration: none;
-                padding: 0.5rem 1rem;
-                border: 2px solid #F564A7;
-                color: #F564A7;
-                border-radius: 5px;
-                transition: background-color 0.3s, color 0.3s;
-
-                &:hover {
-                    background-color: #F564A7;
-                    color: #fff;
-                }
-
-                &.cancel-link {
-                    margin-top: 1rem;
-                }
-            }
-        }
-    }
-}
-
-// ******************************************************************************************************************
-// FIN PAGE DE COMPTE CLIENT
 // ******************************************************************************************************************
 
 @import "_reset.css";
