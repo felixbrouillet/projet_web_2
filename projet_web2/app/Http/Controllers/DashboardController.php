@@ -11,7 +11,7 @@ use Illuminate\Pagination\Paginator;
 class DashboardController extends Controller
 {
     /**
-     * Affichage de la page administrateurs dans le dashboard 
+     * Affichage de la page administrateurs dans le dashboard
      *
      * @return View
      */
@@ -21,23 +21,23 @@ class DashboardController extends Controller
     }
 
     /**
-     * Affichage de la page des administrateurs dans le dashboard 
+     * Affichage de la page des administrateurs dans le dashboard
      *
      * @return View
      */
     public function showAdmin()
     {
         // Récupère la liste des administrateurs depuis la base de données
-        $admins = User::where('role_id', 1)->get(); 
-        
+        $admins = User::where('role_id', 1)->get();
+
         // Récupère l'utilisateur connecté
         $user = auth()->user();
-        
+
         return view('dashboard.admins', ['admins' => $admins, 'user' => $user]);
     }
 
     /**
-     * Affichage de la page actualités dans le dashboard 
+     * Affichage de la page actualités dans le dashboard
      *
      * @return View
      */
@@ -45,12 +45,12 @@ class DashboardController extends Controller
     {
         // Récupère la liste des actualites depuis la base de données
         $actualites = Actualite::all();
-        
+
         return view('dashboard.actualites', ['actualites' => $actualites]);
     }
 
     /**
-     * Affichage de la page activites dans le dashboard 
+     * Affichage de la page activites dans le dashboard
      *
      * @return View
      */
@@ -58,12 +58,12 @@ class DashboardController extends Controller
     {
         // Récupère la liste des activités depuis la base de données
         $activites = Activite::all();
-        
+
         return view('dashboard.activites', ['activites' => $activites]);
     }
 
     /**
-     * Affichage de la page clients dans le dashboard 
+     * Affichage de la page clients dans le dashboard
      *
      * @return View
      */
@@ -76,7 +76,7 @@ class DashboardController extends Controller
         ->where('users.role_id', 2)
         ->orderBy('users.date_achat_forfait', 'asc')
         ->paginate(10);
-    
+
         return view('dashboard.clients', ['clients' => $clients]);
     }
 
