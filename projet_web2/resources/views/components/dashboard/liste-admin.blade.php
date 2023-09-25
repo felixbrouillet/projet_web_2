@@ -8,4 +8,5 @@
             </div>
         </li>
     @endforeach
+    @include('components.pagination', ['elements' => $admins, 'paginatorInfo' => ['currentPage' => $admins->currentPage(), 'lastPage' => $admins->lastPage()]])
 </ul>

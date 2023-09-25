@@ -59,19 +59,11 @@ class ActualiteController extends Controller
                     
         // Enregistrez l'actualité dans la base de données
         $actualite->save();
-<<<<<<< HEAD
     
         // Redirection vers la page des actualité avec un message de succès
         return redirect()->route('dashboard.actualites')->with('succes', 'Actualité ajoutée avec succès');
     }
         
-=======
-
-        // Redirection vers la page des actualité avec un message de succès
-        return redirect()->route('dashboard.activites')->with('succes', 'Activité ajoutée avec succès');
-    }
-
->>>>>>> af19af700a387f6df48f1e6eb8676a51f4342bda
     /**
      * Affiche le formulaire pour modifier une actualité.
      *

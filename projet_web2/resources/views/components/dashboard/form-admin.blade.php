@@ -23,7 +23,7 @@
         <!-- Champ Mot de passe -->
         
         <div>
-            <input type="password" id="password" name="password" @if ($isEdit) value="{{ old('password', $user->password) }}" @endif required placeholder="Mot de passe">
+            <input type="text" id="password" name="password" @if ($isEdit) value="{{ isset($decryptedPassword) ? $decryptedPassword : '' }}" @endif required placeholder="Mot de passe">
         </div>
 
         <!-- Champ caché pour role_id -->

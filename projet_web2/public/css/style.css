@@ -1057,6 +1057,10 @@ footer .conteneur_footer {
     line-height: 50px;
     z-index: 3;
   }
+  a.bouton_actualites:hover {
+    transform: scale(1.2);
+    background: rgba(182, 182, 182, 0.89);
+  }
 }
 /* Styles pour le héros (hero) */
 header h1 {
@@ -1460,13 +1464,7 @@ div.create {
   background-size: cover;
   background-position: center;
 }
-div .container.create {
-  margin: 0;
-  padding-bottom: 8vh;
-  padding-top: 8vh;
-}
 
-<<<<<<< HEAD
 /* SCSS pour les formulaires */
 .dashboard-h2 {
   text-align: center;
@@ -1474,11 +1472,12 @@ div .container.create {
   color: white;
   font-family: "halogen", sans-serif;
   padding-bottom: 20px;
-=======
-/* SCSS pour les activités */
-.container .h2-noir {
-  color: #000;
->>>>>>> af19af700a387f6df48f1e6eb8676a51f4342bda
+}
+
+.container.create {
+  margin: 0;
+  padding-bottom: 8vh;
+  padding-top: 8vh;
 }
 
 .container input[type=file],
@@ -1573,6 +1572,7 @@ div select {
   margin: 0 auto;
   max-width: 800px;
   padding: 6vh;
+  margin-bottom: 40px;
   justify-content: center;
   align-items: center;
 }
@@ -1607,7 +1607,6 @@ div select {
 }
 .retour:hover {
   background: linear-gradient(to bottom, #D355F3, #76CEB8);
-<<<<<<< HEAD
   transform: scale(1.05);
 }
 
@@ -1643,7 +1642,6 @@ ul.pagination li.page-item.disabled a.page-link {
   cursor: not-allowed;
   background-color: #8d8d8d;
   border-color: #8d8d8d;
-=======
 }
 
 /* Styles for the Account Page */
@@ -1712,5 +1710,4 @@ ul.pagination li.page-item.disabled a.page-link {
 }
 .account .account-info .reservation-actions a.cancel-link {
   margin-top: 1rem;
->>>>>>> af19af700a387f6df48f1e6eb8676a51f4342bda
 }/*# sourceMappingURL=style.css.map */

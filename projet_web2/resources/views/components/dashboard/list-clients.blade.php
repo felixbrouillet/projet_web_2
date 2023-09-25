@@ -14,7 +14,5 @@
             </li>
         @endforeach
     @endif
-    @include('components.pagination', ['paginator' => $paginator, 'currentPage' => $currentPage, 'lastPage' => $lastPage])
-
-
+    @include('components.pagination', ['elements' => $clients, 'paginatorInfo' => ['currentPage' => $clients->currentPage(), 'lastPage' => $clients->lastPage()]])
 </ul>

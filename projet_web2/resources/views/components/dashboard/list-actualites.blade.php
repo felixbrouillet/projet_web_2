@@ -9,4 +9,6 @@
             </div>
         </li>
     @endforeach
+
+    @include('components.pagination', ['elements' => $actualites, 'paginatorInfo' => ['currentPage' => $actualites->currentPage(), 'lastPage' => $actualites->lastPage()]])
 </ul>

@@ -49,11 +49,21 @@ class AdminController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-
+    
+        // Vérifier si le mot de passe est crypté
+        if ($user && \Hash::needsRehash($user->password)) {
+            // Si le mot de passe est crypté, le décrypter
+            $decryptedPassword = decrypt($user->password);
+        } else {
+            // Si le mot de passe n'est pas crypté, simplement l'assigner
+            $decryptedPassword = $user->password;
+        }
+    
         $isEdit = true;
-        return view('dashboard.edit.edit-admin', ['user' => $user]);
+    
+        return view('dashboard.edit.edit-admin', ['user' => $user, 'decryptedPassword' => $decryptedPassword]);
     }
-
+    
     /**
      * Met à jour les informations d'un administrateur
      *

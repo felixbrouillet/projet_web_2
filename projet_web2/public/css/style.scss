@@ -1294,8 +1294,8 @@ footer {
         z-index: 3;
 
         &:hover {
-            // transform: scale(1.2);
-            // background: rgba(182, 182, 182, 0.89);
+            transform: scale(1.2);
+            background: rgba(182, 182, 182, 0.89);
 
         }
 
@@ -1812,24 +1812,7 @@ div {
       background-size: cover;
       background-position: center;
     }
-
-<<<<<<< HEAD
-/* SCSS pour les formulaires */
-.dashboard-h2{
-    text-align: center;
-    font-size: 2em;
-    color: white;
-    font-family: "halogen", sans-serif;
-    padding-bottom: 20px;
 }
-=======
-    .container.create {
-        margin: 0;
-        padding-bottom: 8vh;
-        padding-top: 8vh;
-    }
-}
-
 // ******************************************************************************************************************
 // FIN PAGE CRÉATION DE COMPTE
 // ******************************************************************************************************************
@@ -1837,7 +1820,22 @@ div {
 // ******************************************************************************************************************
 // DÉBUT PAGE DASHBOARD (ADMINS)
 // ******************************************************************************************************************
->>>>>>> af19af700a387f6df48f1e6eb8676a51f4342bda
+
+/* SCSS pour les formulaires */
+.dashboard-h2{
+    text-align: center;
+    font-size: 2em;
+    color: white; 
+    font-family: "halogen", sans-serif;
+    padding-bottom: 20px;
+}
+
+.container.create {
+    margin: 0;
+    padding-bottom: 8vh;
+    padding-top: 8vh;
+}
+
 
 .container {
     input[type="file"],
@@ -1944,6 +1942,7 @@ div {
     margin: 0 auto;
     max-width: 800px;
     padding: 6vh;
+    margin-bottom: 40px;
     justify-content: center;
     align-items: center; 
 
@@ -1984,7 +1983,6 @@ div {
     }
   }
 
-<<<<<<< HEAD
   /* SCSS pour la pagination */
   .pagination {
     display: flex;
@@ -2020,7 +2018,6 @@ ul.pagination li.page-item.disabled a.page-link {
 }
 
   
-=======
 // ******************************************************************************************************************
 // FIN PAGE DASHBOARD (ADMINS)
 // ******************************************************************************************************************
@@ -2111,4 +2108,3 @@ ul.pagination li.page-item.disabled a.page-link {
 // ******************************************************************************************************************
 
 @import "_reset.css";
->>>>>>> af19af700a387f6df48f1e6eb8676a51f4342bda
