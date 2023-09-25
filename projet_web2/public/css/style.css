@@ -1538,8 +1538,6 @@ div.auth {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2em;
-  margin-top: 2em;
 }
 .container form.formulaire {
   padding: 8vh;
@@ -1549,7 +1547,6 @@ div.auth {
   flex-direction: column;
   gap: 0.5em;
   align-items: center;
-  margin: auto;
 }
 .container form.formulaire input, .container form.formulaire button {
   width: 25vw;

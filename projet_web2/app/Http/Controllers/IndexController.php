@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Actualite;
 
 class IndexController extends Controller
 {
@@ -10,6 +11,9 @@ class IndexController extends Controller
      * @return View
      */
     public function index() {
-        return view('index');
+        // Récupère toutes les actualités
+        $actualites = Actualite::all();
+
+        return view('index', ['actualites' => $actualites]);
     }
 }
