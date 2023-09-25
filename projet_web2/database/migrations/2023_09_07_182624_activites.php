@@ -17,7 +17,7 @@ class Activites extends Migration
             $table->id();
             $table->string('nom');
             $table->text('description');
-            $table->string('image')->nullable();
+            $table->string('image');
             $table->timestamps();
         });
     }

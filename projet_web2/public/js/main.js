@@ -56,4 +56,3 @@ closeCompteMenuIcon.addEventListener("click", function() {
 
 
 
-

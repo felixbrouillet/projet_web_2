@@ -1,35 +1,44 @@
 @props(['user', 'route', 'isEdit'])
 
-<div class="container">
-    <form class="formulaire" action="{{ $route }}" method="POST">
-        <h2 class="dashboard-h2">{{ $isEdit ? 'Éditer' : 'Ajouter' }} un administrateur</h2>
+<h2>{{ $isEdit ? 'Éditer' : 'Ajouter' }} un administrateur</h2>
+<form action="{{ $route }}" method="POST">
+    @csrf
+    <!-- Champ Prénom -->
+    <div class="form-cell">
+        <label for="prenom" class="form-label">Prénom</label>
+        <input type="text" class="form-control" id="prenom" name="prenom" @if ($isEdit) value="{{ old('prenom', $user->prenom) }}" @endif required>
+    </div>
 
-        @csrf
-        <!-- Champ Prénom -->
-        <div>
-            <input type="text" id="prenom" name="prenom" @if ($isEdit) value="{{ old('prenom', $user->prenom) }}" @endif required placeholder="Prénom">
-        </div>
+    <!-- Champ Nom -->
+    <div class="form-cell">
+        <label for="nom" class="form-label">Nom</label>
+        <input type="text" class="form-control" id="nom" name="nom" @if ($isEdit) value="{{ old('nom', $user->nom) }}" @endif required>
+    </div>
 
-        <!-- Champ Nom -->
-        <div>
-            <input type="text" id="nom" name="nom" @if ($isEdit) value="{{ old('nom', $user->nom) }}" @endif required placeholder="Nom">
-        </div>
+    <!-- Champ Email -->
+    <div class="form-cell">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" @if ($isEdit) value="{{ old('email', $user->email) }}" @endif required>
+    </div>
 
-        <!-- Champ Email -->
-        <div>
-            <input type="email" id="email" name="email" @if ($isEdit) value="{{ old('email', $user->email) }}" @endif required placeholder="Email">
-        </div>
+    <!-- Champ Mot de passe -->
+    
+    <div class="form-cell">
+        <label for="password" class="form-label">Mot de passe</label>
+        <input type="password" class="form-control" id="password" name="password" @if ($isEdit) value="{{ old('password', $user->password) }}" @endif required>
+    </div>
 
+<<<<<<< HEAD
         <!-- Champ Mot de passe -->
         
         <div>
             <input type="text" id="password" name="password" @if ($isEdit) value="{{ isset($decryptedPassword) ? $decryptedPassword : '' }}" @endif required placeholder="Mot de passe">
         </div>
+=======
+    <!-- Champ caché pour role_id -->
+    <input type="hidden" name="role_id" value="1">
+>>>>>>> 14f7dfa70ba242ea128dc7653b9acdc838edc31b
 
-        <!-- Champ caché pour role_id -->
-        <input type="hidden" name="role_id" value="1">
-
-        <!-- Bouton de soumission -->
-        <button type="submit">{{ $isEdit ? 'Enregistrer les modifications' : 'Ajouter un administrateur' }}</button>
-    </form>
-</div>
+    <!-- Bouton de soumission -->
+    <button type="submit">{{ $isEdit ? 'Enregistrer les modifications' : 'Ajouter un administrateur' }}</button>
+</form>

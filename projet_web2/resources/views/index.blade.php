@@ -133,7 +133,7 @@
         <div class="section_carte_directions">
 
             <div class="conteneur_directions">
-                <h2>Directions</h2>
+                <h2 class="accueil" >Directions</h2>
             </div>
 
             <div class="conteneur_carte_directions">
@@ -184,23 +184,86 @@
 
         <!-- section pour les actualités --------------------------------------------------------------------------------------------------------- -->
 
-        <h2>Actualites</h2>
-
-        <div class="conteneur_actualites">
-            @foreach ($actualites as $actualite)
-                <div class="sous_conteneur_actualites" id="actualite-{{ $actualite->id }}">
-                    <h3>{{ $actualite->nom }}</h3>
-                    <div class="contenu_actualites">
-                        <img src="{{ asset('img/images/' . $actualite->image) }}" alt="{{ $actualite->nom }}">
-                        <p>{{ $actualite->contenu }}</p>
-                    </div>
-                    <a href="{{ route('actualites.show') }}#actualite-{{ $actualite->id }}">Lire la suite</a>
-                </div>
-            @endforeach
+        <div class="conteneur_h2_actualites">
+            <h2 class="accueil">Actualités</h2>
         </div>
 
+        <div class="conteneur_actualites">
+            <div class="sous_conteneur_actualites">
+                <div class="contenu_actualites">
+                    <div class="sous_contenu_actualites_h3">
 
-        <a class="bouton_actualites" href="{{ route('actualites.show') }}">Voir toutes les actualités</a>
+                        <h3>Préparez-vous pour un festival de musique inoubliable! 🎶🎉</h3>
+                    </div>
+
+                </div>
+
+                <div class="contenu_actualites">
+                    <div class="contenu_actualites_breakpoint">
+                        <div class="sous_contenu_actualites">
+                            <img src="img/images/dj.jpg" alt="">
+                        </div>
+
+                        <div class="sous_contenu_actualites">
+                            <p class="article">🚀 Le compte à rebours est lancé ! 🚀
+
+                                Le MFMF est à nos portes, et l'excitation est à son comble ! Préparez-vous à une aventure
+                                musicale épique qui vous transportera dans un univers de sons envoûtants et de vibes
+                                incroyables. Les artistes se préparent, les scènes se montent, et tout est en place pour un
+                                week-end de pure magie musicale.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contenu_actualites">
+                    <div class="sous_contenu_actualites_mobile">
+                        <a class="lien_article" href="">Lire l'article</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Section des actualitées ---------------------------------------------------------------------------------- -->
+        <!-- à dynamiser ----------------------------------------- -->
+        <div class="conteneur_actualites">
+            <div class="sous_conteneur_actualites">
+                <div class="contenu_actualites">
+                    <div class="sous_contenu_actualites_h3">
+                        <h3>Préparez-vous pour un festival de musique inoubliable! 🎶🎉</h3>
+                    </div>
+
+                </div>
+
+                <div class="contenu_actualites">
+                    <div class="contenu_actualites_breakpoint">
+                        <div class="sous_contenu_actualites">
+                            <img src="img/images/dj.jpg" alt="">
+                        </div>
+
+                        <div class="sous_contenu_actualites">
+                            <p class="article">🚀 Le compte à rebours est lancé ! 🚀
+
+                                Le MFMF est à nos portes, et l'excitation est à son comble ! Préparez-vous à une aventure
+                                musicale épique qui vous transportera dans un univers de sons envoûtants et de vibes
+                                incroyables. Les artistes se préparent, les scènes se montent, et tout est en place pour un
+                                week-end de pure magie musicale.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contenu_actualites">
+                    <div class="sous_contenu_actualites_mobile">
+                        <a class="lien_article" href="">Lire l'article</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="conteneur_bouton_actualites">
+            <a class="bouton_actualites" href="">Voir toutes les actualités</a>
+        </div>
 
 
     </main>

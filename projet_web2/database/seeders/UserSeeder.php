@@ -25,6 +25,33 @@ class UserSeeder extends Seeder
             'date_achat_forfait' => null,
         ]);
 
-        User::factory()->count(200)->create();
+        // Créer des employés
+        User::create([
+            'prenom' => 'Utilisateur1',
+            'nom' => 'Nom1',
+            'email' => 'user1@example.com',
+            'password' => Hash::make('password'),
+            'role_id' => 2,
+            'date_achat_forfait' => null,
+        ]);
+
+        // Créer des utilisateurs réguliers
+        User::create([
+            'prenom' => 'Utilisateur2',
+            'nom' => 'Nom2',
+            'email' => 'user2@example.com',
+            'password' => Hash::make('password'),
+            'role_id' => 2,
+            'date_achat_forfait' => '2023-09-07',
+        ]);
+        User::create([
+            'prenom' => 'Clien',
+            'nom' => 'Nom',
+            'email' => 'test@test.com',
+            'password' => Hash::make('test'),
+            'role_id' => 2,
+            'date_achat_forfait' => '2023-09-07',
+        ]);
+        // Ajouter d'autres utilisateurs avec des données différentes ici...
     }
 }
