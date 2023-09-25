@@ -221,6 +221,5 @@
             <a class="bouton_actualites" href="{{ route('actualites.show') }}">Voir toutes les actualités</a>
         </div>
 
-
     </main>
 </x-layout>
