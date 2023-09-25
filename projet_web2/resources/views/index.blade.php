@@ -194,7 +194,7 @@
                         <img src="{{ asset('img/images/' . $actualite->image) }}" alt="{{ $actualite->nom }}">
                         <p>{{ $actualite->contenu }}</p>
                     </div>
-                    <a href="{{ route('actualites.show', $actualite->id) }}#actualite-{{ $actualite->id }}">Lire la suite</a>
+                    <a href="{{ route('actualites.show') }}#actualite-{{ $actualite->id }}">Lire la suite</a>
                 </div>
             @endforeach
         </div>
