@@ -46,13 +46,47 @@ compteIcon.addEventListener("click", function() {
 });
 
 // Ajouter un gestionnaire d'événements pour le clic sur l'icône de fermeture du sous-menu utilisateur
-closeCompteMenuIcon.addEventListener("click", function() {
-    // Masquer le sous-menu en supprimant la classe "show"
-    compteMenu.classList.remove("show");
-});
+// closeCompteMenuIcon.addEventListener("click", function() {
+//     // Masquer le sous-menu en supprimant la classe "show"
+//     compteMenu.classList.remove("show");
+// });
 
 
+  const cursor = document.getElementById('cursor');
 
+  cursor.addEventListener('mousedown', () => {
+    cursor.classList.add('bump');
+    alert('mousedown event triggered!');
+    // Supprimer la classe 'bump' après un court délai
+    setTimeout(() => {
+      cursor.classList.remove('bump');
+    }, 200); // 200ms correspond à la durée de l'effet de "bump"
+  });
 
+  document.addEventListener('mousemove', (e) => {
+    updateCursorPosition(e.clientX, e.clientY);
+  });
 
+  document.addEventListener('scroll', () => {
+    const { clientX, clientY } = getLastCursorPosition();
+    updateCursorPosition(clientX, clientY);
+  });
 
+  function getLastCursorPosition() {
+    return {
+      clientX: parseFloat(cursor.dataset.clientX) || 0,
+      clientY: parseFloat(cursor.dataset.clientY) || 0,
+    };
+  }
+
+  function updateCursorPosition(x, y) {
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    cursor.style.left = x + scrollX + 'px';
+    cursor.style.top = y + scrollY + 'px';
+
+    // Store the cursor position including scroll in a data attribute
+    cursor.dataset.clientX = x;
+    cursor.dataset.clientY = y;
+  }
