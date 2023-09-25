@@ -23,7 +23,7 @@ h1.accueil {
     z-index: 3;
 }
 
-h2 {
+h2.accueil {
     font-family: "halogen", sans-serif;
     font-weight: 900;
     font-style: normal;
@@ -362,6 +362,13 @@ div.conteneur_bouton_actualites {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 5vh;
+
+    font-family: "halogen", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: clamp(26px, 3vw, 52px);
+    padding-bottom: 5vh;
 }
 
 .fiche_programmation {
@@ -402,7 +409,7 @@ div.conteneur_bouton_actualites {
             font-family: "ohm-bold", sans-serif;
             font-weight: 700;
             font-style: normal;
-            font-size: max(3em, 20px);
+            font-size: max(2em, 20px);
         }
 
         p.fiche_programmation_emplacement {
@@ -691,9 +698,13 @@ footer {
         font-family: "halogen", sans-serif;
         font-weight: 900;
         font-style: normal;
-        font-size: 5vw;
+        font-size: clamp(19px, 5vw, 22px);
         margin-top: 15vh;
         padding-bottom: 5vh;
+    }
+
+    div.conteneur_programmation {
+        margin-top: 0vh;
     }
 
 
@@ -772,7 +783,7 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-top: 8vh;
+        margin-top: 0vh;
     }
 
     .fiche_programmation {
@@ -1222,11 +1233,9 @@ footer {
     h2.accueil {
         margin-top: 0px;
         padding-bottom: 0px;
+        font-size: clamp(26px, 3vw, 32px);
     }
 
-    h2.contenu_programmation{
-        margin-top: 0px;
-    }
 
     div.fiche_programmation {
         margin-bottom: 70px;
@@ -1451,7 +1460,6 @@ footer {
         border: solid;
         border-width: 5px;
         border-color: white;
-        background: rgba(0, 0, 0, 0.438);
         text-decoration: none;
         text-align: center;
         line-height: 50px;
@@ -1481,7 +1489,7 @@ footer {
 /* Styles pour le héros (hero) */
 header {
 
-    h1.accueil {
+    h1 {
         font-family: "halogen", sans-serif;
         font-weight: 900;
         font-style: normal;
@@ -1708,4 +1716,344 @@ header {
 // ******************************************************************************************************************
 // FIN PAGE BILLETTERIE
 // ******************************************************************************************************************
+
+
+// ******************************************************************************************************************
+
+// DÉBUT PAGE ACTUALITÉS
+
+// ******************************************************************************************************************
+
+/* Styles pour le main */
+
+.actualites {
+
+    padding-top: 10vh;
+
+    padding-left: 15vw;
+
+    padding-right: 15vw;
+
+    padding-bottom: 10vh;
+
+    background: linear-gradient(0deg, rgba(245, 100, 167, 1) 0%, rgba(140, 88, 245, 1) 100%);
+
+
+
+    h1 {
+
+        font-family: "halogen", sans-serif;
+
+        font-weight: 900;
+
+        font-size: 60px;
+
+        font-style: normal;
+
+        text-align: center;
+
+        margin-bottom: 10vh;
+
+        color: #F3F3F3;
+
+    }
+
+
+
+    .actualite {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        background: linear-gradient(0deg, rgba(212, 218, 255, 1) 0%, rgba(113, 214, 181, 1) 100%);
+
+        margin-bottom: 4vh;
+
+        padding: 40px;
+
+        font-family: "franklin-gothic-atf", sans-serif;
+
+        font-weight: 400;
+
+        font-style: normal;
+
+        font-weight: bold;
+
+        height: auto;
+
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.363);
+
+
+
+        h2 {
+
+            margin-right: 20px;
+
+            margin-bottom: 2vh;
+
+            font-size: 1.2vw;
+
+            color: #202020;
+
+        }
+
+
+
+        .contenu {
+
+            display: flex;
+
+            flex-direction: row;
+
+            align-items: flex-start;
+
+            width: 100%;
+
+        }
+
+
+
+        .actualite-image {
+
+            width: 300px;
+
+            height: 300px;
+
+            object-fit: cover;
+
+            margin-right: 20px;
+
+        }
+
+
+
+        p {
+
+            font-size: 1vw;
+
+            font-weight: lighter;
+
+            flex: 1;
+
+            white-space: pre-line;
+
+            color: #202020;
+
+        }
+
+    }
+
+
+
+}
+
+
+
+// ******************************************************************************************************************
+
+// FIN PAGE ACTUALITÉS
+
+// ******************************************************************************************************************
+
+// ******************************************************************************************************************
+
+// DÉBUT PAGE CONNEXION
+
+// ******************************************************************************************************************
+
+
+
+div.container {
+
+    h2 {
+
+      font-size: 6em;
+
+      color: white;
+
+      font-family: "halogen", sans-serif;
+
+    }
+
+
+
+    &.auth {
+
+      background-image: url('../img/images/stage_nuit4.jpg');
+
+      background-size: cover;
+
+      background-position: center;
+
+      height: 100%;
+
+    }
+
+  }
+
+
+
+  .container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    gap: 2em;
+
+    margin-top: 2em;
+
+
+
+    form {
+
+      &.formulaire {
+
+        padding: 8vh;
+
+        width: 40vw;
+
+        background: linear-gradient(to bottom, #76CEB8, #D355F3);
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0.5em;
+
+        align-items: center;
+
+        margin: auto;
+
+
+
+        input, button {
+
+          width: 25vw;
+
+          padding: 15px 0 15px 10px;
+
+          box-sizing: border-box;
+
+          border: white 5px solid;
+
+          font-family: "franklin-gothic-atf", sans-serif;
+
+        }
+
+
+
+        button {
+
+          color: white;
+
+          background-color: transparent;
+
+          font-size: 1.5em;
+
+          padding-left: 0px;
+
+
+
+          &:hover {
+
+            border-color: black;
+
+            color: black;
+
+            cursor: pointer;
+
+            font-size: 1.5em;
+
+          }
+
+        }
+
+      }
+
+    }
+
+
+
+    .user-create {
+
+      margin-top: 1.5em;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-family: "franklin-gothic-atf", sans-serif;
+
+
+
+      &:hover {
+
+        color: black;
+
+      }
+
+    }
+
+  }
+
+
+
+// ******************************************************************************************************************
+
+// FIN PAGE CONNEXION
+
+// ******************************************************************************************************************
+
+
+// ******************************************************************************************************************
+
+// DÉBUT PAGE CRÉATION DE COMPTE
+
+// ******************************************************************************************************************
+
+
+
+div {
+
+    &.create {
+
+      background-image: url('../img/images/stage_nuit1.jpg');
+
+      background-size: cover;
+
+      background-position: center;
+
+    }
+
+
+
+    .container.create {
+
+        margin: 0;
+
+        padding-bottom: 8vh;
+
+        padding-top: 8vh;
+
+    }
+
+}
+
+
+
+// ******************************************************************************************************************
+
+// FIN PAGE CRÉATION DE COMPTE
+
+// ******************************************************************************************************************
+
+
 @import "_reset.css";
