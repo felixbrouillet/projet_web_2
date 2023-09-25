@@ -133,7 +133,7 @@
         <div class="section_carte_directions">
 
             <div class="conteneur_directions">
-                <h2>Directions</h2>
+                <h2 class="accueil">Directions</h2>
             </div>
 
             <div class="conteneur_carte_directions">
@@ -184,7 +184,7 @@
 
         <!-- section pour les actualités --------------------------------------------------------------------------------------------------------- -->
 
-        <h2>Actualites</h2>
+        <h2 class="accueil">Actualites</h2>
 
         <div class="conteneur_actualites">
             @foreach ($actualites as $actualite)

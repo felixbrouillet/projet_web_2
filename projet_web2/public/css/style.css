@@ -23,7 +23,7 @@ h1.accueil {
   z-index: 3;
 }
 
-h2 {
+h2.accueil {
   font-family: "halogen", sans-serif;
   font-weight: 900;
   font-style: normal;
