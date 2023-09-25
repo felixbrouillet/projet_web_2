@@ -52,6 +52,30 @@ closeCompteMenuIcon.addEventListener("click", function() {
 });
 
 
+// ******************************************************************************************************************
+// PAGE D'ACTUALITÉ
+// ******************************************************************************************************************
+
+// Récupérer le fragment d'URL (l'ID de l'actualité) et défilez jusqu'à cette section
+document.addEventListener('DOMContentLoaded', function () {
+    // Récupérer le fragment d'URL (l'ID de l'actualité)
+    var fragment = window.location.hash.substr(1);
+    if (fragment) {
+        var element = document.getElementById(fragment);
+        if (element) {
+            // Attendre un court instant pour que la page ait le temps de se charger complètement
+            setTimeout(function () {
+                // Défilement fluide vers l'élément avec le fragment d'URL correspondant
+                element.scrollIntoView({ behavior: 'smooth' });
+                // Supprimer le fragment d'URL après le défilement
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            }, 500);
+        }
+    }
+});
+
+
+
 
 
 

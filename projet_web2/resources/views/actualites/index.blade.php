@@ -7,7 +7,7 @@
         <x-alertes.alerte cle="erreur" />
 
         @foreach ($actualites as $actualite)
-            <div class="actualite">
+            <div class="actualite" id="actualite-{{ $actualite->id }}">
                 <h2>{{ $actualite->nom }}</h2>
                 <div class="contenu">
                     <img src="{{ asset('img/images/' . $actualite->image) }}" alt="{{ $actualite->nom }}"

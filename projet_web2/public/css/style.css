@@ -1,10 +1,14 @@
 @charset "UTF-8";
 @import "_reset.css";
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
 }
 
-h1 {
+h1.accueil {
   font-family: "ohm-bold", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -61,7 +65,6 @@ main.accueil {
   background: linear-gradient(#8C58F5, #F564A7);
 }
 
-/* ligne de séparation --------------------------------------------------------------------------- */
 div.conteneur_ligne_separation {
   display: flex;
   flex-direction: row;
