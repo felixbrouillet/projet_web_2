@@ -1459,7 +1459,11 @@ div.create {
   background-image: url("../img/images/stage_nuit1.jpg");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+}
+div .container.create {
+  margin: 0;
+  padding-bottom: 8vh;
+  padding-top: 8vh;
 }
 
 /* SCSS pour les activités */
