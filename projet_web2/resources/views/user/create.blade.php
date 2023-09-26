@@ -6,7 +6,7 @@
         <x-alertes.alerte cle="erreur" />
 
         <div class="container create"> <!-- Ajoutez la classe au conteneur du formulaire -->
-            <h2>Créer un compte</h2>
+            <h2 class="h2-connexion">Créer un compte</h2>
             <form class="formulaire create" action="{{ route('user.store') }}" method="POST">
                 @csrf
                 <!-- Champ Prénom -->

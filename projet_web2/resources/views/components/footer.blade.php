@@ -8,11 +8,11 @@
     </div>
 
     <div class="conteneur_footer">
-        <a href="https://www.facebook.com"><img src="img/icones/facebook.png" alt="Facebook"></a>
-        <a href="https://www.instagram.com"><img src="img/icones/instagram.png" alt="Instagram"></a>
-        <a href="https://www.tiktok.com"><img src="img/icones/tik-tok.png" alt="TikTok"></a>
+        <a href="{{ url('https://www.facebook.com') }}"><img src="{{ url('img/icones/facebook.png') }}" alt="Facebook"></a>
+        <a href="{{ url('https://www.instagram.com') }}"><img src="{{ url('img/icones/instagram.png') }}" alt="Instagram"></a>
+        <a href="{{ url('https://www.tiktok.com') }}"><img src="{{ url('img/icones/tik-tok.png') }}" alt="TikTok"></a>
     </div>
-
+    
     <div class="conteneur_footer">
         <p> &#169 2023 MFMF Music Festival</p>
     </div>

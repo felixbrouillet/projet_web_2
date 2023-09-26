@@ -44,14 +44,22 @@ class ActualiteController extends Controller
 
         // Gestion de l'image s'il y en a une
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('actualite_images'); // Enregistrez l'image dans le dossier "actualite_images"
-            $actualite->image = $imagePath;
+            // Récupérer le nom du fichier (sans le chemin)
+            $imageName = $request->file('image')->getClientOriginalName();
+
+            // Stocker l'image dans le dossier public/img/images
+            $request->file('image')->move(public_path('img/images'), $imageName);
+
+            // Assigner le nom de l'image à l'actualité
+            $actualite->image = $imageName;
+        } else {
+            echo 'Aucun fichier image envoyé.';
         }
 
         // Enregistrez l'actualité dans la base de données
         $actualite->save();
-    
-        // Redirection vers la page des actualité avec un message de succès
+
+        // Redirection vers la page des actualités avec un message de succès
         return redirect()->route('dashboard.actualites')->with('succes', 'Actualité ajoutée avec succès');
     }
         
@@ -82,7 +90,7 @@ class ActualiteController extends Controller
     public function update(Request $request, $id)
     {
         $actualite = Actualite::find($id);
-
+        
         if ($actualite) {
             // Valider les données du formulaire (vous pouvez les personnaliser)
             $validatedData = $request->validate([
@@ -103,17 +111,17 @@ class ActualiteController extends Controller
                 }
 
                 // Enregistrez la nouvelle image
-                $imagePath = $request->file('image')->store('actualite_images');
-                $actualite->image = $imagePath;
+                $imageName = $request->file('image')->getClientOriginalName();
+                $actualite->image = $imageName;
             }
 
             // Enregistrer les modifications
             $actualite->save();
 
-            return redirect()->route('dashboard.actualites')->with('succes', 'Actualité mise à jour avec succès');
+            return redirect()->route('dashboard.actualites')->with('success', 'Actualité mise à jour avec succès');
         }
 
-        return redirect()->route('dashboard.actualites')->with('erreur', 'Actualité introuvable');
+        return redirect()->route('dashboard.actualites')->with('error', 'Actualité non trouvée');
     }
 
     /**

@@ -17,7 +17,7 @@ class ActiviteController extends Controller
     {
         // Récupère toutes les activités
         $activites = Activite::all();
-
+        
         return view('activites.index', ['activites' => $activites]);
     }
 
@@ -44,8 +44,16 @@ class ActiviteController extends Controller
 
         // Gestion de l'image s'il y en a une
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('activite_images'); // Enregistrez l'image dans le dossier "activite_images"
-            $activite->image = $imagePath;
+            // Récupérer le nom du fichier (sans le chemin)
+            $imageName = $request->file('image')->getClientOriginalName();
+
+            // Stocker l'image dans le dossier public/img/images
+            $request->file('image')->move(public_path('img/images'), $imageName);
+
+            // Assigner le nom de l'image à l'activité
+            $activite->image = $imageName;
+        } else {
+            echo 'Aucun fichier image envoyé.';
         }
 
         // Enregistrez l'activité dans la base de données
@@ -54,7 +62,7 @@ class ActiviteController extends Controller
         // Redirection vers la page des activités avec un message de succès
         return redirect()->route('dashboard.activites')->with('succes', 'Activité ajoutée avec succès');
     }
-
+    
     /**
      * Affiche le formulaire pour modifier une activité.
      *
@@ -69,7 +77,7 @@ class ActiviteController extends Controller
             return view('dashboard.edit.edit-activites', ['activite' => $activite, 'isEdit' => true]);
         }
 
-        return redirect()->route('dashboard.activites')->with('erreur', 'Activité introuvable');
+        return redirect()->route('dashboard.activites')->with('error', 'Activité non trouvée');
     }
 
     /**
@@ -82,7 +90,7 @@ class ActiviteController extends Controller
     public function update(Request $request, $id)
     {
         $activite = Activite::find($id);
-
+        
         if ($activite) {
             // Valider les données du formulaire (vous pouvez les personnaliser)
             $validatedData = $request->validate([
@@ -103,17 +111,17 @@ class ActiviteController extends Controller
                 }
 
                 // Enregistrez la nouvelle image
-                $imagePath = $request->file('image')->store('activite_images');
-                $activite->image = $imagePath;
+                $imageName = $request->file('image')->getClientOriginalName();
+                $activite->image = $imageName;
             }
 
             // Enregistrer les modifications
             $activite->save();
 
-            return redirect()->route('dashboard.activites')->with('succes', 'Activité mise à jour avec succès');
+            return redirect()->route('dashboard.activites')->with('success', 'Activité mise à jour avec succès');
         }
 
-        return redirect()->route('dashboard.activites')->with('erreur', 'Activité introuvable');
+        return redirect()->route('dashboard.activites')->with('error', 'Activité non trouvée');
     }
 
     /**
@@ -128,9 +136,9 @@ class ActiviteController extends Controller
 
         if ($activite) {
             $activite->delete();
-            return redirect()->route('dashboard.activites')->with('succes', 'Activité supprimée avec succès');
+            return redirect()->route('dashboard.activites')->with('success', 'Activité supprimée avec succès');
         }
 
-        return redirect()->route('dashboard.activites')->with('erreur', 'Activité introuvable');
+        return redirect()->route('dashboard.activites')->with('error', 'Activité non trouvée');
     }
 }
