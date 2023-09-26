@@ -10,7 +10,7 @@
 
 
         <div class="bouton_video_accueil">
-            <a class="bouton_video_accueil" href="">Acheter des billets</a>
+            <a class="bouton_video_accueil" href="{{route('forfaits.show')}}">Acheter des billets</a>
             <img class="fleche_bouton" src="img/icones/fleche_blanche.png" alt="">
         </div>
 

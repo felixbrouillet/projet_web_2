@@ -32,7 +32,7 @@ Route::get("/logout", [LogoutController::class, 'logout'])
     ->name('logout')
     ->middleware('auth');
 
-// ROUTES DE DASHBOARD
+// ROUTES DES VUES DASHBOARD
 
 // Affichage de la page admin du dashboard (nécessite une connexion et un rôle 'client')
 Route::get("/dashboard", [DashboardController::class, 'index'])
@@ -81,7 +81,7 @@ Route::get("/admin/{id}/delete", [AdminController::class, 'delete'])
     ->name('admin.delete')
     ->middleware('auth');
 
-// ROUTES DE GESTION DES CLIENTS
+// ROUTES DES CLIENTS
 
 // Amène au formulaire de modification d'un client (nécessite une connexion)
 Route::get("/clients/{id}/edit", [ClientController::class, 'edit'])
@@ -98,7 +98,7 @@ Route::get("/clients/{id}/delete", [ClientController::class, 'delete'])
     ->name('clients.delete')
     ->middleware('auth');
 
-// ROUTES DE GESTION DES ACTIVITÉS
+// ROUTES DES ACTIVITÉS
 
 // Affichage de la page des activités publiquement (sans authentification requise)
 Route::get("/activites", [ActiviteController::class, 'show'])
@@ -130,7 +130,7 @@ Route::get("/activites/{id}/delete", [ActiviteController::class, 'delete'])
     ->name('activites.delete')
     ->middleware('auth');
 
-// ROUTES DE GESTION DES FORFAITS
+// ROUTES DES FORFAITS
 
 // Affichage de la page des forfaits publiquement (sans authentification requise)
 Route::get("/forfaits", [ForfaitController::class, 'show'])
@@ -153,7 +153,7 @@ Route::get("/delete", [ForfaitController::class, 'delete'])
 
 // ... (autres routes)
 
-// ROUTES DE GESTION DES ACTUALITÉS
+// ROUTES DES ACTUALITÉS
 
 // Affichage de la page des actualités publiquement (sans authentification requise)
 Route::get("/actualites", [ActualiteController::class, 'show'])
