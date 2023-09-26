@@ -12,7 +12,7 @@ class IndexController extends Controller
      */
     public function index() {
         // Récupère toutes les actualités
-        $actualites = Actualite::all();
+        $actualites = Actualite::take(2)->get();
 
         return view('index', ['actualites' => $actualites]);
     }
