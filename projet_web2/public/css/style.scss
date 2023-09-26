@@ -1481,12 +1481,11 @@ footer {
 /* Styles pour le héros (hero) */
 header {
 
-    h1.accueil {
+    h1 {
         font-family: "halogen", sans-serif;
         font-weight: 900;
         font-style: normal;
         text-shadow: 0px 6px 8px rgb(0, 0, 0);
-        font-size: 3rem;
     }
 
     .hero_activites {
@@ -1887,6 +1886,8 @@ div {
         font-size: 4em;
         color: white;
         font-family: "halogen", sans-serif;
+        margin-bottom: 6vh;
+        margin-top: 6vh;
     }
 
     &.auth {
@@ -1963,9 +1964,9 @@ div {
 
 div {
     &.create {
-        background-image: url('../img/images/stage_nuit1.jpg');
-        background-size: cover;
-        background-position: center;
+      background-image: url('../img/images/stage_nuit1.jpg');
+      background-size: cover;
+      background-position: center;
     }
 
     .container.create {
